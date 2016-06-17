@@ -222,7 +222,7 @@ function openInfo() {
             getInfo.css("display", "block");
 
             TweenMax.to(getImg, 0.3, { y: "-120%", delay: 0.0 });
-            TweenMax.to(getItemTitle, 0.3, { y: "-350px", delay: 0.0 });
+            TweenMax.to(getItemTitle, 0.3, { y: "100px", delay: 0.0 });
             TweenMax.to(getItemDes, 0.3, { y: "200%", delay: 0.0 });
 
             TweenMax.fromTo(getInfo, 0.3, { scale: 0 }, { scale: 1 });
@@ -235,9 +235,9 @@ function openInfo() {
 
             $(this).children().toggleClass("barToggle");
             $(this).parent().siblings(".info").css("display", "none");
-            TweenMax.to(getImg, 0.3, { y: "0%", delay: 0.0 });
-            TweenMax.to(getItemTitle, 0.3, { y: "0%", delay: 0.0 });
-            TweenMax.to(getItemDes, 0.3, { y: "0%", delay: 0.0 });
+            TweenMax.to(getImg, 0.3, { y: "0%", delay: 0.1 });
+            TweenMax.to(getItemTitle, 0.3, { y: "0%", delay: 0.1 });
+            TweenMax.to(getItemDes, 0.3, { y: "0%", delay: 0.1 });
 
             $(this).children().children("i").removeClass("fa-close").addClass("fa-info");
             TweenMax.fromTo(getInfo, 0.3, { scale: 1 }, { scale: 0 });

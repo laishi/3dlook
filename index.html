@@ -176,12 +176,12 @@
             <div class="blogFilter">
                 <ul>
                     <li id="ChangeLayout" class="filterItem" data-filter="all"> <i class="fa fa-list" aria-hidden="true"></i> </li>
-                    <li class="filterItem filter filterAll" data-filter="all"> <h3> 显示全部 </h3> </li>
-                    <li class="filterItem filter" data-filter=".threeJS"> <h3> ThreeJS</h3> </li>
-                    <li class="filterItem filter" data-filter=".blend4web"> <h3> Blend4Web</h3> </li>
-                    <li class="filterItem filter" data-filter=".playCanvas"> <h3> PlayCanvs</h3> </li>
+                    <li class="filterItem filter filterAll" data-filter="all"> <h3> 全部 </h3> </li>
+                    <li class="filterItem filter" data-filter=".article"> <h3> 文章</h3> </li>
+                    <li class="filterItem filter" data-filter=".video"> <h3> 视频</h3> </li>
+                    <li class="filterItem filter" data-filter=".case"> <h3> 案例</h3> </li>
                     <li class="filterItem filterInput" >
-                        <input type="text" id="input" placeholder="Search" style="font-family:Arial, FontAwesome">
+                        <input type="text" id="input" placeholder="搜" style="font-family:Arial, FontAwesome">
                     </li>
                 </ul>
             </div>
@@ -191,7 +191,7 @@
 
                 <template v-for="data in blog">
 
-                    <div class="{{data.useClass}} item mix mixItem mdl-js-button  mdl-js-ripple-effect">
+                    <div class="{{data.category}} item mix mixItem mdl-js-button  mdl-js-ripple-effect">
 
 
                         <div v-link="'/detail/' + 'blog'" class="itemImg">
@@ -206,7 +206,7 @@
                             </li>
                             <li class="infoItem infoCont">
                                 <h3>{{data.date}}</h3>
-                                <h3>作者：laishi</h3>
+                                <h3>作者：{{data.author}}</h3>
                             </li>
                         </ul>
 
@@ -226,7 +226,7 @@
                                     <ul class="tagName">
                                         <li class="tagTip"><h3> 标签: </h3> </li>
                                         <li><h3 class="pageName"> {{data.useClass}} </h3> </li>
-                                        <li><h3> {{data.tag}} </h3> </li>
+                                        <li><h3> {{data.tags}} </h3> </li>
                                     </ul>
                                     <div class="titlePos"> <h3>titlePos</h3> </div>
                                 </div>

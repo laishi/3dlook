@@ -68,10 +68,6 @@ var blogNames = ["waveLoader", "playcanvas-introduce", "lokiJS", ];
 var blogHtmlFolder = "pages/blog/";
 var blogImgFolder = "img/blogImg/";
 
-var blogImgkUrls = [];
-var blogHtmlUrls = [];
-var blogTitles = [];
-var blogSummary = [];
 
 
 
@@ -84,28 +80,24 @@ $.each(blogNames, function(index, title) {
     var blogOBJ = {};
     blogOBJ.id = index;
     blogOBJ.useClass = title;
-    blogOBJ.title = title;
     blogOBJ.link = blogHtmlUrl;
     blogOBJ.image = blogimgkUrl;
-
-    blogCol.insert(blogOBJ);
-
-    var useClass = "." + title;
-    blogHtmlUrls.push(blogHtmlUrl);
-    blogImgkUrls.push(blogimgkUrl);
 
 
     $.ajax({
         url: blogHtmlUrl,
         async: false,
         success: function(data) {
-            title = $(data).filter('title').text();
-            summary = $(data).find('.summary').text().substring(0,200) + "...";
-            blogOBJ.title = title;
-            blogOBJ.summary = summary;
+            blogOBJ.title           = $(data).filter('title').text();
+            blogOBJ.date            = $(data).find('.date').text();
+            blogOBJ.author          = $(data).find('.author').text();
+            blogOBJ.tags          = $(data).find('.tags').text();
+            blogOBJ.category        = $(data).find('.category').text();
+            blogOBJ.summary         = $(data).find('.summary').text().substring(0,200) + "...";
         }
     });
 
+    blogCol.insert(blogOBJ);
 })
 
 

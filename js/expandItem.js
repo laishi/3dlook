@@ -45,69 +45,69 @@ $(document).ready(function() {
         width: 100 / filterItemL + '%'
     });
 
-    $(".filterItem").hover(over, out);
+    $(".filterInput").hover(over, out);
 
     var getLayoutIcon;
+
+    var getIcons;
     
     function over() {
 
 
+        getIcons = $(this).siblings("#ChangeLayout").children();
 
-        if ($(this).hasClass("filterInput")) {
+        var searchIcon = "<i class='fa fa-search' aria-hidden='true'></i>"
 
+        $(this).siblings("#ChangeLayout").children().remove();
 
+        $(this).siblings("#ChangeLayout").append(searchIcon);
 
-            TweenMax.to($(this), 0.8, {
-                width: 100 -(100 / filterItemL) + '%'
-            });
-
-            TweenMax.to($(this).siblings(), 0.8, {
-                width: 0 + '%'
-            })
-
-            TweenMax.to($(this).siblings().children(), 0.3, {
-                scale: 0
-            })
-
-            TweenMax.to($(this).siblings().first().children(), 0.3, {
-                scale: 1
-            })
-
-            $(".ChangeLayout").html("搜索标题");
-
-            // $(".filterAll").children("h3").css("color","#CB0027");
-
-            TweenMax.to($(this).siblings().first(), 0.8, {
-                width: 100 / filterItemL + '%'
-            })
+        console.log(getIcons.text())
 
 
-        } 
+        TweenMax.to($(this), 0.8, {
+            width: 100 -(100 / filterItemL) + '%'
+        });
 
+        TweenMax.to($(this).siblings(), 0.8, {
+            width: 0 + '%'
+        })
+
+        TweenMax.to($(this).siblings().children(), 0.3, {
+            scale: 0
+        })
+
+        TweenMax.to($(this).siblings().first().children(), 0.3, {
+            scale: 1
+        })
+
+
+        $(this).children().attr("placeholder", "");
+
+
+        // $(".filterAll").children("h3").css("color","#CB0027");
+
+        TweenMax.to($(this).siblings().first(), 0.8, {
+            width: 100 / filterItemL + '%'
+        })
 
     }
 
     function out() {
 
+        $(this).children().attr("placeholder", "搜");
 
-        $("ChangeLayout").html("显示全部");
-
+        $("#ChangeLayout").children().remove();
+        $("#ChangeLayout").append(getIcons);
 
         TweenMax.to($(".filterItem"), 0.8, {
             width: 100 / filterItemL + '%',
             ease: Back.easeOut
         })
-
-
         TweenMax.to($(".filter").children(), 0.3, {
             scale: 1
         })
-
-
-
-
     }
-
 });
 
 /*EXPAND BAR INIT*/

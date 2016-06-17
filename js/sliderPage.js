@@ -174,36 +174,18 @@ function mixConf() {
         $container = $('.blogMix'),
         $changeLayout = $('#ChangeLayout');
 
-        var imgWidth = 0;
+
 
     $container.mixItUp({
         callbacks: {
             onMixStart: function(state, futureState){
 
-              console.log(imgWidth);
 
-                if (layout == 'list') {
-
-                    if (imgWidth > 0) {
-                        $(".blogImg").find("img").css({"width":imgWidth});
-                    }
-                    if ($(".itemTotal").hasClass("repos")) {
-
-                    } else {
-                        $(".itemTotal").addClass("repos");
-
-
-                    }
-                }
             },
 
             onMixEnd: function(state){
 
-                imgWidth = $(".blogImg").width();
-
             }
-
-
 
         },
         animation: {

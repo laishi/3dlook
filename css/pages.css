@@ -136,6 +136,26 @@ img {
     float: left;
 }
 
+
+.author{
+    display: none;
+}
+.category{
+    display: none;
+}
+.tags{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
 pre code {
     padding: 0;
 }
