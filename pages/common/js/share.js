@@ -26,14 +26,16 @@ var shareTitle = $("title").text();
 
 var shareSummary = $(".summary").text();
 
+var url = $(location).attr('href');
 
+console.log(url)
 
 window._bd_share_config = {
     common : {
         bdText : shareTitle, 
         bdDesc : shareSummary, 
-        bdUrl : '自定义分享url地址',   
-        bdPic : '/static/web/img/getcode_btn_style2.png?v=9eae2b50.png'
+        bdUrl : url,   
+        bdPic : '../img/3dlogo.png'
     },
     share : [{
         "tag" : "share_1",
