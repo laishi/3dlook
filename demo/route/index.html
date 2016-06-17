@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>router test</title>
+</head>
+
+<body>
+    <div id="page-content">
+        <router-view></router-view>
+    </div>
+    <template id="userBlock">
+        <ul>
+            <li v-for="data in work">
+                <div v-link="{ name: 'detail', params: { itemName: data.useClass }}">
+                    {{data.name}}
+                    <img src="img/moto-img04.png">
+                </div>
+            </li>
+        </ul>
+    </template>
+</body>
+<script src="js/vue.min.js"></script>
+<script src="js/vue-router.min.js"></script>
+<script src="js/vue-detail.js"></script>
+
+</html>

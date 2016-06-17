@@ -1,0 +1,22 @@
+{
+  "blogItems": [
+    {
+      "title": "three.js",
+      "day": "2016-5-20",
+      "description": "very simple webgl and free lib"
+    },{
+      "title": "blend4web",
+      "day": "2016-5-21",
+      "description": "use blender and use blend4web"
+    },{
+      "title": "playcanvas",
+      "day": "2016-5-22",
+      "description": "playcanvas is power pbr workflow"
+    }
+  ],
+  "obj": {
+    "number": 1.2345e-6,
+    "enabled": true
+  },
+  "message": "Strings have to be in double-quotes."
+}

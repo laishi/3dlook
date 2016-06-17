@@ -1,0 +1,116 @@
+<project name="jQuery Address" default="release" basedir=".">
+
+    <property file="build.properties" />
+    
+    <path id="classpath">
+        <fileset dir="lib" includes="*.jar" />
+    </path>
+        
+    <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="classpath" />
+
+    <target name="release">
+        <antcall target="dist" />
+        <antcall target="test" />
+        <antcall target="samples" />
+        <antcall target="bundle" />
+    </target>
+
+    <target name="bundle">
+        <copy todir="${name}-${version}">
+            <fileset dir="${dist.dir}">
+                <include name="${name}-${version}.js" />
+                <include name="${name}-${version}.min.js" />
+            </fileset>
+            <fileset dir="${basedir}">
+                <include name="${samples.dir}/**/*" />
+            </fileset>
+        </copy>
+        <zip destfile="./../${name}-${version}.zip"
+            basedir="${basedir}" 
+            includes="${name}-${version}/" />
+        <delete dir="${name}-${version}" />
+    </target>
+    
+    <target name="dist">
+        <mkdir dir="${dist.dir}" />
+        <delete includeemptydirs="true">
+            <fileset dir="${dist.dir}" includes="**/*" />
+        </delete>
+        <antcall target="validate">
+            <param name="file" value="${src.dir}/${name}" />
+        </antcall>
+        <copy todir="${dist.dir}">
+            <fileset dir="${src.dir}"/>
+        </copy>
+        <replaceregexp match="\$\{version\}" file="${dist.dir}/${name}.js">
+            <substitution expression="${version}"/>
+        </replaceregexp>
+        <move file="${dist.dir}/${name}.js" tofile="${dist.dir}/${name}-${version}.js" />
+        <concat destfile="${dist.dir}/${name}-${version}.lic">
+            <filelist files="${dist.dir}/${name}-${version}.js" />
+            <filterchain>
+                <headfilter lines="1" />
+            </filterchain>
+        </concat>
+        <java jar="${lib.dir}/compiler.jar"
+            failonerror="true" fork="true">
+            <arg line="--js=${dist.dir}/${name}-${version}.js --js_output_file=${dist.dir}/${name}-${version}.tmp" />
+        </java>
+        <concat destfile="${dist.dir}/${name}-${version}.min.js">
+            <filelist files="${dist.dir}/${name}-${version}.lic,${dist.dir}/${name}-${version}.tmp" />
+        </concat>
+        <delete>
+            <filelist files="${dist.dir}/${name}-${version}.lic,${dist.dir}/${name}-${version}.tmp" />
+        </delete>
+    </target>
+    
+    <target name="validate">
+        <java classpath="lib/js.jar" 
+            classname="org.mozilla.javascript.tools.shell.Main"
+            failonerror="true" fork="true">
+            <arg line="${lib.dir}/rhino.js ${file}.js" />
+        </java>
+    </target>
+
+    <target name="sample">
+        <delete>
+            <fileset dir="${dir}" includes="${name}-\d.\d+.min.js" />
+        </delete>
+        <copy file="${dist.dir}/${name}-${version}.min.js" todir="${dir}" overwrite="true" />
+    </target>
+    
+    <target name="samples">
+        <antcall target="sample">
+            <param name="dir" value="${samples.dir}/accordion" />
+        </antcall>
+        <antcall target="sample">
+            <param name="dir" value="${samples.dir}/api" />
+        </antcall>
+        <antcall target="sample">
+            <param name="dir" value="${samples.dir}/events" />
+        </antcall>
+        <antcall target="sample">
+            <param name="dir" value="${samples.dir}/express/public" />
+        </antcall>
+        <antcall target="sample">
+            <param name="dir" value="${samples.dir}/form" />
+        </antcall>
+        <antcall target="sample">
+            <param name="dir" value="${samples.dir}/state" />
+        </antcall>
+        <antcall target="sample">
+            <param name="dir" value="${samples.dir}/subtabs" />
+        </antcall>
+        <antcall target="sample">
+            <param name="dir" value="${samples.dir}/tabs" />
+        </antcall>
+    </target>
+    
+    <target name="test">
+        <delete>
+            <fileset dir="${test.dir}" includes="${name}-\d.\d+.min.js" />
+        </delete>
+        <copy file="${dist.dir}/${name}-${version}.min.js" todir="${test.dir}" overwrite="true" />
+    </target>
+    
+</project>

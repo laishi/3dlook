@@ -1,0 +1,388 @@
+<!doctype html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="3dlook 3d网上展示,三维在线演示,三维产品展示,产品虚拟实现,3d交互动画,3d网站制作,webgl,web3d网上解决方案">
+    <meta name="description" content="3dlook专注：3d网上展示,三维在线演示,三维产品展示,产品虚拟实现,3d交互动画,3d网站制作,webgl,web3d网上交互解决方案。提供技术支持,案例分享 Tel：13640566324">
+    <title>3dlook 3d网上展示,三维在线演示,三维产品展示,产品虚拟实现,3d交互动画,3d网站制作,webgl,web3d网上交互解决方案</title>
+    <link rel="shortcut icon" href="img/logo/favicon.ico" type="image/x-icon" />
+
+    <link rel="stylesheet" href="incude/fontAwesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="incude/mixitup/css/mixitup.css">
+    <link rel="stylesheet" href="incude/slinky/css/slinky.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <!-- <link rel="stylesheet" href="/home/laishi/Work/WWW/3dlookCase/3dlookCase/incude/rippleeffect/css/ripple.css"> -->
+    <!-- <link rel="stylesheet" href="incude/malihu-custom-scrollbar/css/jquery.mCustomScrollbar.min.css"> -->
+
+    <link rel="stylesheet" href="incude/highlight/css/monokai-sublime.css">
+    <link rel="stylesheet" href="css/customize.css">
+
+</head>
+<body>
+
+    <header>
+
+        <div class="headerCont">
+
+            <div class="headereyes">
+                <img class="wxewm" src="img/logo/3dlook-wx.png">
+                <!-- <iframe src="http://lmv.rocks/viewer/?url=http://lmv.rocks/data/racecar/Design.svf" frameBorder=0 scrolling=no width="100%" height="100%"></iframe> -->
+                <!-- <iframe src="assets/webgl/ring/index.html" frameBorder=0 scrolling=no width="100%" height="100%"></iframe> -->
+                <iframe src="assets/webgl/webgl/index.html" frameBorder=0 scrolling=no width="100%" height="100%"></iframe>
+                <!-- <router-view></router-view> -->
+                <!-- <img src="assets/img/logo/3dlogo.png"> -->
+                <!-- <h1>3dLook</h1> -->
+            </div>
+
+        </div>
+
+
+        <nav class="navGrid">
+            <ul class="navMenu">
+                <li v-link = "{ path: '/work'    }" class='navItem' data-page="work">    <h3> 工作 </h3> </li>
+                <li v-link = "{ path: '/blog'    }" class='navItem  navBlog' data-page="blog"> <h3> 博客  </h3> </li>
+                <li v-link = "{ path: '/about'   }" class='navItem' data-page="about">   <h3> 关于 </h3> </li>
+                <li v-link = "{ path: '/contact' }" class='navItem' data-page="contact"> <h3>  联系 </h3> </li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <div class="btns">
+
+        <div v-link="'/' + 'work'" class='btnCicle backCicle backWork' > <i class='fa fa-angle-left' aria-hidden='true'></i> </div>
+
+        <div v-link="'/' + 'blog'" class='btnCicle backCicle backBlog'> <i class='fa fa-angle-left' aria-hidden='true'></i> </div>
+
+        <div class="btnCicle goPageCicle"> <a class="btnCicleMore" href="#"><h3>3D</h3></a> </div>
+
+    </div>
+
+
+
+    <div class="infoMax">
+        <div class="itemDetail">
+
+            <div class="detailTag"> </div>
+            <div class="detailTitle"></div>
+            <div class="detailDes"></div>
+            <div class="detail3d"></div>
+            <div class="detailAdditional"></div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+    <div class="pages">
+
+
+        <!-- pageWork========================================================================================================== -->
+
+
+        <div class="page work">
+
+
+            <div class="barMes">
+                <div class="mark"><h3>Mark</h3></div>
+                <div class="go3d"><h3>GO3D</h3></div>
+                <div class="mes"><h3>Message</h3></div>
+            </div>
+
+            <div class="gridItems w80">
+
+                <template v-for="data in work" id="workVUE">
+
+                    <div class="item scrollItem">
+
+                        <!-- <a v-link="{ name: 'new', params: { name: user.name }}"> -->
+
+                        <div v-link="'/detail/' + {{data.title}} " class="itemImg">
+
+                            <div class="gridImg workImg">
+                                <img v-bind:src="data.image" />
+                            </div>
+                        </div>
+
+                        <div class="itemTitle">
+                            <h3>{{data.title}}</h3>
+                        </div>
+
+                        <div class="itemTag">
+                            <div class="tagTitle">
+
+                                <ul class="tagName">
+                                    <li class="tagTip"><h3> 标签: </h3> </li>
+                                    <li><h3 class="pageName"> {{data.useClass}} </h3> </li>
+                                    <li><h3> {{data.tag}} </h3> </li>
+                                </ul>
+
+                                <div class="titlePos"> <h3>titlePos</h3> </div>
+                            </div>
+                        </div>
+
+
+                        <ul class="info">
+                            <li class="infoItem infoTitle">
+                                <h3>{{data.title}}</h3>
+                            </li>
+                            <li class="infoItem infoCont">
+                                <h3>{{data.date}}</h3>
+                                <h3>作者：laishi</h3>
+                            </li>
+                        </ul>
+
+                        <ul class="bar">
+                            <li class="barItem barMark">
+                                <div> <i class="fa fa-bookmark" aria-hidden="true"></i> </div>
+                            </li>
+
+                            <li class="barItem">
+                                <dir> <a class="moreLink" v-bind:href="data.link3d"> <h3> 3D </h3> </a> </dir>
+                            </li>
+
+                            <li class="barItem barInfo">
+                                <div>
+                                    <i class="fa fa-info"></i>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>{{ }}
+
+                </template>
+
+
+                <div class="gap"></div>
+                <div class="gap"></div>
+                <div class="gap"></div>
+
+            </div>
+        </div>
+
+
+
+        <!-- pageBlog========================================================================================================== -->
+
+
+        <div class="page blog">
+
+            <div class="blogFilter">
+                <ul>
+                    <li id="ChangeLayout" class="filterItem" data-filter="all"> <i class="fa fa-list" aria-hidden="true"></i> </li>
+                    <li class="filterItem filter filterAll" data-filter="all"> <h3> 显示全部 </h3> </li>
+                    <li class="filterItem filter" data-filter=".threeJS"> <h3> ThreeJS</h3> </li>
+                    <li class="filterItem filter" data-filter=".blend4web"> <h3> Blend4Web</h3> </li>
+                    <li class="filterItem filter" data-filter=".playCanvas"> <h3> PlayCanvs</h3> </li>
+                    <li class="filterItem filterInput" >
+                        <input type="text" id="input" placeholder="Search" style="font-family:Arial, FontAwesome">
+                    </li>
+                </ul>
+            </div>
+
+
+            <div class="gridItems blogMix w80">
+
+                <template v-for="data in blog">
+
+                    <div class="{{data.useClass}} item mix mixItem mdl-js-button  mdl-js-ripple-effect">
+
+
+                        <div v-link="'/detail/' + 'blog'" class="itemImg">
+                            <div class="gridImg blogImg">
+                                <img v-bind:src="data.image" />
+                            </div>
+                        </div>
+
+                        <ul class="info">
+                            <li class="infoItem infoTitle">
+                                <h3>{{data.title}}</h3>
+                            </li>
+                            <li class="infoItem infoCont">
+                                <h3>{{data.date}}</h3>
+                                <h3>作者：laishi</h3>
+                            </li>
+                        </ul>
+
+                        <div class="itemTotal">
+
+                            <div class="itemTitle">
+                                <h3>{{data.title}}</h3>
+                            </div>
+
+                            <div class="itemDes">
+                                <p> {{data.summary}} </p>
+                            </div>
+
+
+                            <div class="itemTag">
+                                <div class="tagTitle">
+                                    <ul class="tagName">
+                                        <li class="tagTip"><h3> 标签: </h3> </li>
+                                        <li><h3 class="pageName"> {{data.useClass}} </h3> </li>
+                                        <li><h3> {{data.tag}} </h3> </li>
+                                    </ul>
+                                    <div class="titlePos"> <h3>titlePos</h3> </div>
+                                </div>
+                            </div>
+
+
+
+                            <ul class="bar">
+                                <li class="barItem barLove">
+                                    <div> <i class="fa fa-file-text" aria-hidden="true"></i> </div>
+                                </li>
+
+                                <li class="barItem">
+                                    <dir> <a class="moreLink" v-bind:href="data.link"> <i class="fa fa-link"></i> </a> </dir>
+                                </li>
+
+                                <li class="barItem barInfo">
+                                    <div> <i class="fa fa-info"></i> </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </div>{{ }}
+
+                </template>
+
+                <div class="gap"></div>
+                <div class="gap"></div>
+                <div class="gap"></div>
+            </div>
+        </div>
+
+
+
+        <!-- pageAbout========================================================================================================== -->
+
+        <div class="gridFull page about">
+
+
+            <div class="gridItems normalItems w80" style="margin-top:0;">
+
+                <div class="aboutItem">
+                    <div class="aboutImg"> <img src="img/logo/3dlogo.png"> </div>
+                    <h3>专注于网上3D应用</h3>
+                </div>
+
+                <div class="item">
+
+                    <div class="itemImg">
+
+                        <div class="gridImg workImg">
+                            <img src="img/logo/3dlook-wx.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="item">
+                    <h3>技能:</h3>
+                    <ul>
+                        <li> <p>Maya/Blender/Houdini</p> </li>
+                        <li> <p>Gimp/PS/AI/Inkscape</p> </li>
+                        <li> <p>HTML5 CSS JS WEBGL</p> </li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <h3>擅长领域:</h3>
+                    <ul>
+                        <li> <p>三维交互设计</p> </li>
+                        <li> <p>三维模型</p> </li>
+                        <li> <p>网站开发</p> </li>
+                        <li> <p>3D网站应用</p> </li>
+                        <li> <p>交互设计</p> </li>
+                    </ul>
+                </div>
+
+                <div class="item">
+                    <h3>研究方向:</h3>
+                    <ul>
+                        <li> <p>三维可视化设计</p> </li>
+                        <li> <p>虚拟实现</p> </li>
+                        <li> <p>3D产品展示</p> </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- pageContact========================================================================================================== -->
+
+
+        <div class="gridFull page contact">
+
+
+            <div class="gridItems normalItems w80" style="margin-top:0;">
+
+                <div class="aboutItem">
+                    <div class="aboutImg">
+                        <img src="img/logo/3dlogo.png">
+                    </div>
+                        <h3> 欢迎交流 </h3>
+                </div>
+
+                <div class="item">
+                    <ul>
+                        <li> <p> QQ: 504677424 </p> </li>
+                        <li> <p> phone: 13640566324 </p> </li>
+                        <li> <p> ADD: CHONGQING </p> </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+</body>
+
+
+
+
+<script src="js/jquery-2.2.3.min.js"></script>
+<script src="js/expandItem.js"></script>
+<script src="js/blogshow.js"></script>
+
+<script src="incude/greensock/TweenMax.min.js"></script>
+
+<script src="incude/LokiJS/lokijs.min.js"></script>
+<!-- <script src="incude/LokiJS/lokijs.db.js"></script> -->
+
+<script src="incude/vue/vue-router.min.js"></script>
+<script src="incude/vue/vue.min.js"></script>
+<script src="incude/vue/vueItem.js"></script>
+<!-- <script src="js/vue-detail.js"></script> -->
+
+<!-- <script src="incude/vue/vueconfig.js"></script> -->
+
+<script src='incude/mixitup/js/jquery.mixitup.min.js'></script>
+<script src="incude/slinky/js/slinkyHome.js"></script>
+<script src="incude/highlight/js/highlight.pack.js"></script>
+
+
+<script src="js/scrollheader.js"></script>
+<script src="js/sliderPage.js"></script>
+<script src="js/usedetail.js"></script>
+<script src="js/scrollgrid.js"></script>
+
+
+<!-- <script src="js/rd-smoothscroll.min.js"></script> -->
+
+<script src="js/myjs.js"></script>
+
+
+
+</html>

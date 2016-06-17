@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>web animations material ripple</title>
+    <style>
+    /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+    
+    .ripple {
+        position: absolute;
+        width: 100vmax;
+        height: 100vmax;
+        top: -50vmax;
+        left: -50vmax;
+        border-radius: 50%;
+    }
+    
+    body {
+        overflow: hidden;
+    }
+    
+    .pad {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+    }
+    </style>
+    <!-- <script src="js/prefixfree.min.js"></script> -->
+</head>
+
+<body>
+    <!-- touch or click -->
+    <div class="pad"></div>
+    <script src="js/ripple.js"></script>
+</body>
+
+</html>

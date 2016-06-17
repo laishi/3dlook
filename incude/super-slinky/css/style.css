@@ -1,0 +1,72 @@
+html, body, .vcent {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: "PT Serif", serif;
+  color: #333;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+article {
+  position: relative;
+}
+
+section {
+  width: 480px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+section h1 {
+  position: relative;
+  height: 42px;
+  width: 480px;
+  box-sizing: border-box;
+  margin: 0;
+  padding-left: 1em;
+  font: 16px/42px "PT Sans", sans-serif;
+  background: skyblue;
+  cursor: pointer;
+}
+section h1 .progress {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(255, 255, 255, 0.2);
+}
+section h1 .text {
+  position: relative;
+}
+section p {
+  margin-left: 18px;
+  margin-right: 18px;
+  line-height: 1.46em;
+  font-size: 16px;
+  text-align: justify;
+}
+
+footer {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  font-size: 36px;
+  color: #eee;
+  background: #333;
+}
+footer a {
+  color: #eee;
+}
+
+.vcent, .container {
+  vertical-align: middle;
+  display: inline-block;
+}
+
+.container {
+  width: 60%;
+  text-align: justified;
+}

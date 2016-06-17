@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="3d交互设计">
+    <meta name="description" content="3dlook提供：3d交互设计,三维交互网站360°解决方案。请联系:13640566324">
+    <title>3dlook提供：3d交互设计,三维交互网站360°解决方案。</title>
+    <link rel="stylesheet" href="css/lable.css">
+    <link rel="stylesheet" type="text/css" href="css/loaderbar.css">
+    <!-- <link rel="stylesheet" href="../../../incude/materialize/css/materialize.css"> -->
+    <script src="../../../incude/common/threejs/three.min.js"></script>
+    <script src="../../../incude/common/threejs/BinaryLoader.js"></script>
+    <script src="../../../incude/common/pace.min.js"></script>
+    <script src="../../../incude/common/tween.min.js"></script>
+    <script src="../../../incude/common/threejs/TrackballControls.js"></script>
+    <style>
+    body {
+        background: #1F263D;
+        color: #fff;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        font-family: georgia;
+        text-align: center;
+    }
+    
+    .pace {
+        -webkit-pointer-events: none;
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+    
+    .pace-inactive {
+        display: none;
+    }
+    
+    .pace .pace-progress {
+        background-color: rgba(0, 0, 0, 0.2);
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    .color {
+        width: 100%;
+        height: 120px;
+        background-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+    }
+    
+    .color li {
+        width: 32px;
+        height: 32px;
+        background-color: red;
+        list-style: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    
+    .changeMat {
+        position: absolute;
+        width: 100%;
+        height: 120px;
+        background-color: rgba(200, 20, 20, 0.0);
+    }
+    
+    .changeMat ul li {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        float: left;
+        margin: 32px;
+        cursor: pointer;
+    }
+    
+    .changeMat .greenmap {
+        background-color: #257635;
+    }
+    
+    .changeMat .bluemap {
+        background-color: #254976;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="changeMat">
+        <ul>
+            <li class="greenmap" onclick="changeMat(greenmap)"> </li>
+            <li class="bluemap" onclick="changeMat(bluemap)"> </li>
+        </ul>
+    </div>
+    <div id='contentWrap'>
+        <div id="threecontent"></div>
+    </div>
+    <script>
+    var camera, controls, scene, renderer;
+    var geometry, material, mesh;
+    var nikegroup;
+
+    var x_min = 0;
+    var y_min = 0;
+
+    var x_max = window.innerWidth;
+    var y_max = window.innerHeight;
+
+    var x_mid = window.innerWidth / 2;
+    var y_mid = window.innerHeight / 2;
+
+
+    var raycaster = new THREE.Raycaster(),
+        INTERSECTED;
+    var mouse = new THREE.Vector2();
+
+
+    var map, greenmap, bluemap, envTex;
+    var nikeMat, redMat, blueMat;
+    var changeMat;
+
+
+    var mouseX = 0,
+        mouseY = 0;
+
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
+
+
+
+    init();
+    animate();
+
+    function init() {
+
+
+        nikegroup = new THREE.Object3D(); //END MUST ADD TO SCENCE
+
+        // CAMERA
+
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 200000);
+        camera.position.z = 250;
+        camera.position.x = 0;
+
+
+
+
+
+
+        nikegroup.add(camera);
+
+
+        // RENDER
+        renderer = new THREE.WebGLRenderer({
+            alpha: true,
+            antialias: true
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000000, 0.0);
+        contentWrap.appendChild(renderer.domElement);
+
+        controls = new THREE.TrackballControls(camera, renderer.domElement);
+        controls.minDistance = 10;
+        controls.maxDistance = 1000;
+
+
+        //SCENE
+        scene = new THREE.Scene();
+
+
+        // LIGHT
+
+
+        var ambient = new THREE.AmbientLight(0x020202);
+        scene.add(ambient);
+
+        directionalLight = new THREE.DirectionalLight(0x4D94EC);
+        directionalLight.position.set(300, 200, 300).normalize();
+        directionalLight.intensity = 1.2;
+        scene.add(directionalLight);
+
+        hemiLight = new THREE.HemisphereLight(0xDBE1E4, 0xE4E2D4, 0.8);
+        hemiLight.position.set(0, 100, 0);
+        hemiLight.intensity = 1.8;
+        scene.add(hemiLight);
+
+
+
+
+
+
+        /*ENV CUBE*/
+        var path = "../../img/env/studio-bw/";
+        var format = '.jpg';
+        var urls = [
+            path + 'px' + format, path + 'nx' + format,
+            path + 'py' + format, path + 'ny' + format,
+            path + 'pz' + format, path + 'nz' + format,
+        ];
+
+        envTex = THREE.ImageUtils.loadTextureCube(urls);
+
+        //TEXTURE
+
+        greenmap = THREE.ImageUtils.loadTexture("map/nike-g.jpg");
+        bluemap = THREE.ImageUtils.loadTexture("map/nike-b.jpg");
+
+        var specTex = THREE.ImageUtils.loadTexture("map/nike-s.jpg");
+        var normTex = THREE.ImageUtils.loadTexture("map/nike-n.jpg");
+
+
+        map = greenmap;
+
+
+
+
+
+        //MATERIAL
+
+        redMat = new THREE.MeshPhongMaterial({
+            color: 0x4C4C4C,
+            map: map,
+            specularMap: specTex,
+            bumpMap: normTex,
+            side: THREE.DoubleSide,
+            specular: 0x111111,
+            shininess: 10,
+            envMap: envTex,
+            combine: THREE.AddOperation,
+            refractionRatio: 0.98,
+            reflectivity: 0.1,
+        })
+
+
+
+        nikeMat = redMat;
+        //OBJ
+
+
+        var OBJLoader = new THREE.BinaryLoader();
+
+
+
+        function OBJParams(object, Material) {
+            nikeShose = new THREE.Mesh(object, Material);
+            scene.add(nikeShose);
+        }
+
+
+        // LOAD OBJS
+        OBJPath = 'obj/';
+        OBJLoader.load(OBJPath + 'high2_airrift.js', function(object) {
+            OBJParams(object, nikeMat)
+        });
+
+
+
+
+
+        scene.add(nikegroup);
+
+        nikegroup.position.x = 300;
+        //EVENT
+
+        document.addEventListener('mousemove', onDocumentMouseMove, false);
+        window.addEventListener('resize', onWindowResize, false);
+
+
+    } /*init end*/
+
+
+
+
+
+
+
+
+
+
+
+    function onDocumentMouseMove(event) {
+        mouseX = (event.clientX - windowHalfX) / 2;
+        mouseY = (event.clientY - windowHalfY) / 2;
+
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    }
+
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+
+
+
+
+    function changeMat(newMat) {
+        map = newMat;
+        nikeShose.material.map = map;
+
+    }
+
+
+
+
+
+
+    window.onload = function() {
+
+
+
+        var tween = new TWEEN.Tween(nikegroup.position);
+        tween.to({
+            x: 0,
+            y: 0,
+            z: 0
+        }, 2000);
+        tween.start();
+
+        var tweenR = new TWEEN.Tween(nikegroup.rotation);
+        tweenR.to({
+            x: 0,
+            y: Math.PI / 2,
+            z: 0
+        }, 3000);
+        tweenR.start();
+
+
+        function cameraf() {
+            var tweenR = new TWEEN.Tween(camera.position);
+            tweenR.to({
+                x: 0,
+                y: 0,
+                z: 0
+            }, 5000);
+            tweenR.start();
+
+            camera.lookAt(mynote.geometry.vertices[0]);
+        }
+
+    }
+
+
+
+
+    function animate() {
+        requestAnimationFrame(animate);
+        render();
+        TWEEN.update();
+    }
+
+
+
+    function render() {
+
+
+
+        controls.update();
+
+        /*
+        				camera.position.x += ( mouseX - camera.position.x ) * .1;
+        				camera.position.y += ( - mouseY - camera.position.y ) * .1;
+
+        */
+        camera.lookAt(scene.position);
+        renderer.render(scene, camera);
+    }
+    </script>
+</body>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-71106062-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+</html>

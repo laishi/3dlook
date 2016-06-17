@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="网上3d交互">
+    <meta name="description" content="3dlook提供：网上3d交互,三维交互网站360°解决方案。请联系:13640566324">
+    <title>3dlook提供：网上3d交互,三维交互网站360°解决方案。</title>
+    <link rel="stylesheet" type="text/css" href="fonts/3dlookFonts/lookFonts.css" />
+    <link rel="stylesheet" href="incude/waveProgress/css/UIProgressWave.css" />
+    <link rel="stylesheet" href="css/ui.css" />
+</head>
+
+<body>
+    <div id="uiCont" class="uiCont">
+        <div class="uiMenu uiMenuChange">
+            <i class="lf lf-menu menu-toggle-icon"></i>
+        </div>
+        <ul class="uiItems">
+            <li class="uiItem drawingBG">
+                <div class="uiItemCont x50drawingCan">
+
+
+                    <div class="progressWave">
+                        <div>
+                            <canvas class="progressWaveCanvas" width="198" height="198"></canvas>
+                            <div class="progressWave-text">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="waveBtn"> </div>
+                    <div class="infoTitle">
+                        <ul>
+                            <li class="infoText infoTextL">
+                                <p>外观造型 典雅时尚,全新的前脸和车尾设计。 </p>
+                            </li>
+                            <li class="infoText infoTextM">
+                                <h3> 设计 </h3> </li>
+                            <li class="infoText infoTextR">
+                                <p> 配备四点式 LED 日间行车灯和立体尾灯。</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="x50drawing" class="x50drawing 3dRender"></div>
+            </li>
+            <li class="uiItem">
+                <div class="uiItemCont x50RenderCan">
+                    <div class="waveBtn"> </div>
+                    <div class="infoTitle">
+                        <ul>
+                            <li class="infoText infoTextL">
+                                <p>全新双涡轮增压发动机带来更澎湃的动力 </p>
+                            </li>
+                            <li class="infoText infoTextM">
+                                <h3> 驾驶动态性 </h3> </li>
+                            <li class="infoText infoTextR">
+                                <p>扭矩和转速响应大幅提升，能耗更低。</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </li>
+            <li class="uiItem">
+                <div class="uiItemCont">
+                    <div class="waveBtn">
+                        <h3> FUN Text</h3></div>
+                </div>
+            </li>
+            <li class="uiItem">
+                <div class="uiItemCont">
+                    <div class="waveBtn">
+                        <h3> Shopping </h3></div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</body>
+<script src="js/jquery.min.js"></script>
+<script src="js/TweenMax.min.js"></script>
+<!-- waveProgress -->
+<script src="incude/waveProgress/js/underscore-min.js"></script>
+<script src="incude/waveProgress/js/UIProgressWave.js"></script>
+<script src="js/ui.js"></script>
+<script src="incude/b4w/b4w.min.js"></script>
+<script src="js/X50Drawing.js"></script>
+<script src="js/x50Render.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        console.log("ready!");
+        b4w.require("x50drawing", "inst_0").init("x50drawing");
+        b4w.require("x50Render", "inst_1").init("x50Render");
+    });
+</script>
+
+</html>

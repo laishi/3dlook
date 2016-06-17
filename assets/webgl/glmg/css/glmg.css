@@ -1,0 +1,46 @@
+body {
+    background: #1E000C;
+    color: #fff;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+    font-family: georgia;
+    text-align: center;
+}
+
+
+canvas {
+    pointer-events: none;
+    z-index: 0;
+    position: relative;
+}
+
+#d {
+    text-align: center;
+    z-index: 0;
+    position: absolute;
+    display: block;
+    width: 100%;
+    /*background-color: rgba(0, 0, 0, 0.26);*/
+    margin: 0;
+    padding: 10px;
+    float: left;
+}
+
+#buttons {
+    margin: 0.5em 0 0 0
+}
+
+button {
+    font-family: georgia;
+    border: 0;
+    background: #222;
+    color: #fff;
+    padding: 0.2em 0.5em;
+    cursor: pointer;
+    border-radius: 3px
+}
+
+button:hover {
+    background: #333
+}

@@ -1,0 +1,179 @@
+.navFun{
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    height: 60px;
+    /*background-color: #363636;*/
+    text-align: center;
+    z-index: 1;
+}
+.navFun button{
+    cursor: pointer;
+}
+
+.navFun i{
+    color: #FFFFFF;
+    font-size: 18px;
+}
+
+.menu-toggle-button i{
+    color: #FFFFFF;
+    font-size: 38px;
+}
+
+
+.navFun .navItem{
+    position: relative;
+    margin: 0 auto;
+    float: left;
+    width: 20%;
+    height: 200px;
+    line-height: 60px;
+    color: #C1C1C1;
+    pointer-events: all;
+}
+
+.navFun .cicleItems{
+    position: relative;
+    width: 38px;
+    height: 50px;
+    margin: 0 auto;
+    line-height: 50px;
+    background-color: #F0A4FF;
+}
+
+
+
+.navFun .cicleBtn{
+    position: relative;
+    top: 6px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    color: #C1C1C1;
+    background-color: #22FF49;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.navFun .navItem .cicleItem{
+    position: absolute;
+    top: -100px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    color: #C1C1C1;
+    background-color: #3C8CB6;
+    border-radius: 50%;
+    cursor: pointer;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    -moz-animation-duration: 1s;
+    -o-animation-duration: 1s;
+}
+
+
+
+
+
+
+
+
+.menu {
+
+/*	-webkit-filter: url("#goo");
+	filter: url("../index.html#goo");*/
+	margin: 0 auto 100px;
+	position: relative;
+	-webkit-transform: translateZ(0);
+	transform: translateZ(0);
+	z-index: 10;
+	width: 100%;
+	height: 180px;
+	bottom: 120px;
+	/* pointer-events: none; */
+}
+
+.menu-wrapper {
+	position: absolute;
+	top: 150px;
+	left: 50%;
+	
+}
+
+.menu-toggle-button,
+.menu-item-bounce,
+.menu-item-button {
+	background: #ba0c00;
+	border-radius: 50%;
+	width: 60px;
+	height: 60px;
+	margin-left: -30px;
+	margin-top: -30px;
+	height: 60px;
+	color: #fff;
+	border: none;
+	outline: none;
+	position: relative;
+}
+
+.menu-toggle-button {
+	background: transparent;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.menu-toggle-icon {
+	font-size: 30px;
+	position: absolute;
+
+	text-align: center;
+	left: 0;
+	top: 0;
+	width: 60px;
+	height: 60px;
+	line-height: 60px !important;
+	outline:0 none !important; 
+}
+
+
+
+.menu-items {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+	cursor: pointer;
+}
+
+.menu-item {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 0;
+}
+
+.menu-item-bounce {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.menu-item-button {
+	width: 50px;
+	height: 50px;
+	margin-left: -25px;
+	margin-top: -25px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: #AD4C4C;
+}
+
+.menu-item-button:hover {
+	color: #fff;
+}

@@ -1,0 +1,107 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="webgl产品展示案例">
+    <meta name="description" content="3dlook提供：webgl产品展示案例,三维交互网站360°解决方案。请联系:13640566324">
+    <title>3dlook提供：webgl产品展示案例,三维交互网站360°解决方案。</title>
+    <link rel="shortcut icon" href="assets/img/logo/favicon.ico" type="image/x-icon" />
+    
+    <link rel="stylesheet" href="../../../incude/materialize/css/materialize.min.css">
+    <link rel="stylesheet" href="css/pace.css">
+    <link rel="stylesheet" href="../../../incude/common/annotation/css/annotation.css">
+    <script src="../../../incude/common/threejs/three.min.js"></script>
+    <script src="../../../incude/common/threejs/BinaryLoader.js"></script>
+    <script src="../../../incude/common/pace.min.js"></script>
+    <script src="../../../incude/common/tween.min.js"></script>
+</head>
+
+<body>
+
+
+    <!-- annotation PART =======================================================================================================================-->
+
+    <div id="sm" class="annotation annotation1">
+        <span class="annotationbtn"> + </span>
+        <div class="content">
+
+            <div class="note">
+                <!-- message,calendar,bodyimg,phone,email,wechat -->
+                <!-- 信息 日历 健身记录 电话 邮件 微信 -->
+                <ul class="collection">
+                    <li >
+                        <a href="#!" class="collection-item" onmouseover="changeMap(message)">
+                            信息 <span class="badge"><img src="img/icons/01.png"></span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="#!" class="collection-item" onmouseover="changeMap(calendar)">
+                            日历 <span class="badge"><img src="img/icons/02.png"></span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="#!" class="collection-item" onmouseover="changeMap(bodyimg)">
+                            健身记录 <span class="badge"><img src="img/icons/03.png"></span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="#!" class="collection-item" onmouseover="changeMap(phone)">
+                            电话 <span class="badge"><img src="img/icons/04.png"></span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="#!" class="collection-item" onmouseover="changeMap(email)">
+                            邮件 <span class="badge"><img src="img/icons/05.png"></span>
+                        </a>
+                    </li>
+                    <li >
+                        <a href="#!" class="collection-item" onmouseover="changeMap(wechat)">
+                            微信 <span class="badge"><img src="img/icons/06.png"></span>
+                        </a>
+                    </li>
+
+                </ul>
+
+                <div class="head">
+                    <h3>种种App都会提醒你</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="sm2" class="annotation annotation2">
+        <span class="annotationbtn"> + </span>
+        <div class="content">
+            <div class="head">
+                <h3>手表的重新构想</h3>
+                <p class="sub">by <a href="http://codepen.io/woodwork/" target="_blank">iwatch</a></p>
+            </div>
+            <div class="note">
+                <p>
+                    Apple Watch 可随时随地为你提供重要信息，可帮你在几秒钟内轻松完成日常事务，也可让你与在乎的人、关心的事立刻建立联系，当然还能精确显示时间。没错，它的确是一块手表，但完全超乎你的想象。
+                </p>
+                <div class="action-bar">
+                    <a href="http://images.apple.com/media/cn/watch/2015/a718f271_b19c_47d8_928d_d108fc5d702a/guided-tours/welcome/watch-welcome-cn-20150323_1280x720h.mp4" class="waves-effect waves-light btn">观看介绍视频</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- THREE.JS PART =======================================================================================================================-->
+    <div id='contentWrap'>
+        <div id="threecontent"></div>
+    </div>
+</body>
+    <script src="js/iwatch.js"></script>
+    <script src="../../../incude/common/jquery/jquery.min.js"></script>
+    <script src="../../../incude/common/annotation/js/annotation.js"></script>
+    <script src="../../../incude/materialize/js/materialize.min.js"></script>
+
+
+
+
+</html>

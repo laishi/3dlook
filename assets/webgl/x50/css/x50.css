@@ -1,0 +1,185 @@
+
+
+#X50RenderCanvas{
+    width: 100%;
+    height: 100vh;
+    background-color: #181818;
+}
+
+
+
+
+
+#viewCubeContent{
+    display: block;
+    z-index: 1;
+}
+#X50Render{
+    display: none;
+    cursor: default;
+    }
+
+
+
+
+
+/* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+
+
+
+#viewCubeContent {
+    position: absolute;
+    text-align: center;
+    width: 200px;
+    height: 180px;
+    right: 0px;
+    top: 0px;   
+    /*background-color: #001149;*/
+}
+
+
+.cubeFun{
+    width: 100%;
+    height: 50px;    
+}
+
+.cubeFun .cubeFunItem{
+    width: 33.33%;
+    height: 50px;
+    float: left;
+    line-height: 50px;
+    color: #B9B9B9;
+    cursor: pointer;
+}
+
+.cubeFun .cubeFunItem i{
+    font-size: 24px;
+    color: #B9B9B9;
+}
+
+
+
+
+
+
+
+.cubeIcon {
+    position: absolute;
+    top: 82px;
+    right: 82px;
+    width: 52px;
+    height: 52px;
+    transform-style: preserve-3d;
+    background-image: url(../img/LF-Logo.png);
+    border-radius: 50%;
+
+}
+
+.viewCube  {
+    position: absolute;
+    top: 72px;
+    right: 72px;
+    width: 72px;
+    height: 72px;
+    transform-style: preserve-3d;
+
+}
+
+
+.viewCube h3 { 
+    font-weight: normal;
+    line-height: 72px;
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+
+}
+
+
+.viewCube .viewCubeFace {
+    outline: 1px solid #000;
+    position: absolute;
+    width: 72px;
+    height: 72px;
+    opacity: 0.8;
+    box-shadow: inset 0px 0px 36px #000;
+    background-color: #FF5252;
+}
+
+
+
+
+.viewCube .viewCubeFace:hover {
+    color: #000;
+    background-color: #fff;
+    cursor: pointer;
+
+
+}
+
+.viewCube .shadow:hover {
+    background-color: #000;
+    cursor: normal;
+}
+
+
+.viewCube .front {
+    transform: translateZ(36px);
+}
+.viewCube .back {
+    transform: translateZ(-36px) rotateY(180deg);
+}
+
+
+
+.viewCube .left {
+    transform: rotateY(270deg) translateX(-36px);
+    transform-origin: center left;
+}
+.viewCube .right {
+    transform: rotateY(-270deg) translateX(36px);
+    transform-origin: top right;
+}
+
+.viewCube .top {
+    transform: rotateX(90deg) translateY(-36px);
+    transform-origin: top center;fa;
+}
+.viewCube .bottom {
+    transform: rotateX(-90deg) translateY(36px);
+    transform-origin: bottom center;
+}
+
+
+.viewCube .shadow {
+    transform: rotateX(90deg) translateZ(-40px);
+    transform-origin: center;
+    width: 70px;
+    height: 70px;
+    background-color: #000;
+    box-shadow: 0px 0px 72px #000;
+    backface-visibility: hidden;
+}
+
+
+
+
+
+
+
+
+/*
+@keyframes spin {
+    from {
+        transform: rotateX(0);
+    }
+    to {
+        transform: rotateX(360deg);
+    }
+}
+*/
+.viewCube {
+    transform: rotateY(0deg);
+}
+

@@ -1,0 +1,96 @@
+body{
+  background-color: #171717;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* icon container with excessive gradient */
+
+
+.lable {
+  display: inline-block;
+  position:absolute;
+  -ms-transform:translate(-50%,-50%);
+  -webkit-transform:translate(-50%,-50%);
+  transform:translate(-50%,-50%);
+  z-index: 1;
+  float: left;
+
+}
+/* Icons */
+
+.lable > a {
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.1);
+  text-align: center;
+  text-decoration: none;
+  font-family: fontawesome;
+  position: relative;
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  margin: 0 0px;
+  -o-transition:all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  transition: all .5s;
+   -webkit-font-smoothing: antialiased;
+}
+
+.lable > a:hover {
+  background: rgba(0.8, 0.1, 0, 0.5);
+}
+
+/* pop-up text */
+
+.lable > a  span {
+  color: #888888;
+  position: absolute;
+  bottom: 0;
+  width: 600px;
+  left: -300px;
+  z-index: -1;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: justify;
+  padding: 1em;
+  border-radius: 0.5em;
+  background: rgba(0, 0, 0, 0.72);
+  visibility: hidden;
+  -o-transition:all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -webkit-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  -moz-transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transition: all .5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  cursor: default;
+}
+
+/* pop-up text arrow */
+
+.lable > a span:before {
+  content: '';
+  width: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid rgba(0, 0, 0, 0.72);
+  position: absolute;
+  bottom: -10px;
+  left: 300px; /* 调整箭头位置 */
+}
+
+/* text pops up when icon is in hover state */
+
+.lable > a:hover span {
+  bottom:50px;
+  visibility:visible;
+}
+
+/* font awesome icons */
+
+.lable> a:nth-of-type(1):before {
+content:'S';
+line-height: 24px;
+}
+

@@ -1,0 +1,47 @@
+body {
+	background-color: #26292C;
+	margin: 0;
+	padding: 0;
+}
+
+#progressWave{
+	position: absolute;
+	text-align: center;
+	margin: 0 auto;
+	line-height: 100vh;
+	width: 100%;
+	height: 100vh;
+	z-index: 1;
+	background-color: #380016;
+}
+
+#progressWave ul{
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#progressWave .progressWave-logo{
+	position: relative;
+	width: 100%;
+	height: 50vh;
+}
+
+#progressWave .progressWave-text{
+	position: absolute;
+	width: 100%;
+	height: 50vh;
+}
+
+#progressWave h1{
+    position: relative;
+    color: #D1D1D1;    
+    text-align: center;
+    line-height: 2em;
+    font-size: 2em;
+    font-weight: 300;
+}
+
+#progressWaveCanvas {
+	border-radius: 50%;
+}

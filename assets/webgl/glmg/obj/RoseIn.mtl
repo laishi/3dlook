@@ -1,0 +1,12 @@
+# Blender MTL File: 'rose.blend'
+# Material Count: 1
+
+newmtl mgh
+Ns 749.999996
+Ka 0.000000 0.000000 0.000000
+Kd 0.800000 0.800000 0.800000
+Ks 1.000000 0.383148 0.056510
+Ni 1.000000
+d 1.000000
+illum 0
+map_Kd /home/laishi/Work/Blender/GL-MG/mghramp.png

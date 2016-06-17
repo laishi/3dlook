@@ -1,0 +1,550 @@
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="webgl产品展示案例">
+    <meta name="description" content="3dlook提供：webgl产品展示案例,三维交互网站360°解决方案。请联系:13640566324">
+    <title>3dlook提供：webgl产品展示案例,三维交互网站360°解决方案。</title>
+    <link rel="stylesheet" href="css/lable.css">
+    <link rel="stylesheet" type="text/css" href="css/loaderbar.css">
+    <!-- <link rel="stylesheet" href="../../../incude/materialize/css/materialize.css"> -->
+    <script src="../../../incude/common/threejs/three.min.js"></script>
+    <script src="../../../incude/common/threejs/BinaryLoader.js"></script>
+    <script src="../../../incude/common/pace.min.js"></script>
+    <script src="../../../incude/common/tween.min.js"></script>
+    <script src="../../../incude/common/threejs/TrackballControls.js"></script>
+    <style>
+    body {
+        background: rgba(0, 0, 0, 0);
+        color: #fff;
+        padding: 0;
+        margin: 0;
+        overflow: hidden;
+        font-family: georgia;
+        text-align: center;
+    }
+    
+    .pace {
+        -webkit-pointer-events: none;
+        pointer-events: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+    }
+    
+    .pace-inactive {
+        display: none;
+    }
+    
+    .pace .pace-progress {
+        background-color: rgba(0, 0, 0, 0.2);
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        width: 100%;
+    }
+    
+    .color {
+        width: 100%;
+        height: 120px;
+        background-color: rgba(0, 0, 0, 0.2);
+        position: absolute;
+    }
+    
+    .color li {
+        width: 32px;
+        height: 32px;
+        background-color: red;
+        list-style: none;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="lable" id="sm">
+        <a id="one" href="#">
+            <span> 收取并即时回应各种通知，追踪每天的运动情况，动动嘴就能控制音乐播放，还能随时展开体能训练。有了 Apple Watch，只需轻抬手腕，各种重要信息和功能就尽在掌握。 </span>
+        </a>
+    </div>
+    <div class="lable" id="sm2">
+        <a id="one" href="#">
+            <span> 戴着它，就会爱上它!<br>鼠标移动到表带上可以看到不同颜色的效果 </span>
+            </span>
+        </a>
+    </div>
+    <div id='contentWrap'>
+        <div id="threecontent"></div>
+    </div>
+    <script>
+    var camera, controls, scene, renderer;
+    var geometry, material, mesh;
+    var iwatchgroup;
+
+    var x_min = 0;
+    var y_min = 0;
+
+    var x_max = window.innerWidth;
+    var y_max = window.innerHeight;
+
+    var x_mid = window.innerWidth / 2;
+    var y_mid = window.innerHeight / 2;
+
+
+    var raycaster = new THREE.Raycaster(),
+        INTERSECTED;
+    var mouse = new THREE.Vector2();
+
+
+    var envTex;
+
+    var mynote;
+
+
+
+    var mouseX = 0,
+        mouseY = 0;
+
+    var windowHalfX = window.innerWidth / 2;
+    var windowHalfY = window.innerHeight / 2;
+
+
+
+
+    sm = document.getElementById('sm');
+    sm2 = document.getElementById('sm2');
+
+
+    init();
+    animate();
+
+    function init() {
+
+
+        iwatchgroup = new THREE.Object3D(); //END MUST ADD TO SCENCE
+
+        // CAMERA
+
+        camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 200000);
+        camera.position.z = 120;
+        camera.position.x = 0;
+
+
+
+
+
+
+        iwatchgroup.add(camera);
+
+
+        // RENDER
+        renderer = new THREE.WebGLRenderer({
+            alpha: true,
+            antialias: true
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000000, 0.0);
+        contentWrap.appendChild(renderer.domElement);
+
+        controls = new THREE.TrackballControls(camera, renderer.domElement);
+        controls.minDistance = 10;
+        controls.maxDistance = 1000;
+
+
+        //SCENE
+        scene = new THREE.Scene();
+
+
+        // LIGHT
+
+
+        var ambient = new THREE.AmbientLight(0x020202);
+        scene.add(ambient);
+
+        directionalLight = new THREE.DirectionalLight(0xFFFFFF);
+        directionalLight.position.set(300, 200, 300).normalize();
+        directionalLight.intensity = 0.3;
+        scene.add(directionalLight);
+
+        hemiLight = new THREE.HemisphereLight(0xDBE1E4, 0xE4E2D4, 0.8);
+        hemiLight.position.set(0, 100, 0);
+        hemiLight.intensity = 1.0;
+        scene.add(hemiLight);
+
+
+
+
+        //NOTE P
+
+
+
+        var material = new THREE.LineBasicMaterial({
+            color: 0x2386C0
+        });
+
+        var geometry = new THREE.Geometry();
+        geometry.vertices.push(
+            new THREE.Vector3(25, 10, 30.5),
+            new THREE.Vector3(0, 42, 0),
+            new THREE.Vector3(0, 24, 30)
+        );
+
+        mynote = new THREE.Line(geometry, material);
+        //scene.add( mynote );
+
+
+
+
+        /*ENV CUBE*/
+        var path = "../../img/env/studio-bw/";
+        var format = '.jpg';
+        var urls = [
+            path + 'px' + format, path + 'nx' + format,
+            path + 'py' + format, path + 'ny' + format,
+            path + 'pz' + format, path + 'nz' + format,
+        ];
+
+        envTex = THREE.ImageUtils.loadTextureCube(urls);
+
+
+        // VIDEO
+        video = document.createElement('video');
+        video.src = "video/jk.ogv";
+        video.loop = true;
+        video.load(); // must call after setting/changing source
+        video.play();
+
+
+        videoImage = document.createElement('canvas');
+        videoImage.width = 799;
+        videoImage.height = 1000;
+
+
+        videoImageContext = videoImage.getContext('2d');
+        // background color if no video present
+        videoImageContext.fillStyle = '#000000';
+
+        videoImageContext.fillRect(0, 0, videoImage.width, videoImage.height);
+
+        videoTexture = new THREE.Texture(videoImage);
+        videoTexture.minFilter = THREE.LinearFilter;
+        videoTexture.magFilter = THREE.LinearFilter;
+
+
+
+        //MATERIAL
+
+
+
+        var screenMat = new THREE.MeshPhongMaterial({
+            color: 0xFFFFFF,
+            map: videoTexture,
+            side: THREE.DoubleSide,
+            specular: 0x111111,
+            shininess: 10,
+            envMap: envTex,
+            combine: THREE.AddOperation,
+            refractionRatio: 0.98,
+            reflectivity: 0.1,
+
+        })
+
+        var bodyMat = new THREE.MeshPhongMaterial({
+            color: 0x808080,
+            side: THREE.DoubleSide,
+            specular: 0x111111,
+            shininess: 10,
+            envMap: envTex,
+            combine: THREE.AddOperation,
+            refractionRatio: 0.98,
+            reflectivity: 0.4,
+
+        })
+
+
+
+
+
+
+        var handMat = new THREE.MeshPhongMaterial({
+            color: 0x2380E4,
+            side: THREE.DoubleSide,
+            specular: 0x111111,
+            emissive: new THREE.Color('rgb(10, 10, 10)'),
+            shininess: 5,
+            metal: false,
+        })
+
+        var funMat = new THREE.MeshPhongMaterial({
+            color: 0x2B2B2B,
+            side: THREE.DoubleSide,
+            specular: 0x111111,
+        })
+
+        //OBJ
+
+
+        var OBJLoader = new THREE.BinaryLoader();
+
+
+
+        function OBJParams(object, Material) {
+            object = new THREE.Mesh(object, Material);
+            scene.add(object);
+        }
+
+
+        // LOAD OBJS
+        OBJPath = 'obj/';
+
+
+        OBJLoader.load(OBJPath + 'AppleWatch_000.js', function(object) {
+            OBJParams(object, bodyMat)
+        });
+
+        OBJLoader.load(OBJPath + 'AppleWatch_001.js', function(object) {
+            OBJParams(object, funMat)
+        });
+
+        OBJLoader.load(OBJPath + 'AppleWatch_002.js', function(object) {
+            OBJParams(object, screenMat)
+        });
+
+        OBJLoader.load(OBJPath + 'AppleWatch_003.js', function(object) {
+            OBJParams(object, handMat)
+        });
+
+
+
+
+        scene.add(iwatchgroup);
+
+        iwatchgroup.position.x = 300;
+        //EVENT
+
+        document.addEventListener('mousemove', onDocumentMouseMove, false);
+        window.addEventListener('resize', onWindowResize, false);
+
+
+        document.addEventListener('keydown', onKeyDown, false);
+
+
+
+        var onKeyDown = function(event) {
+            if (event.keyCode == 67) { // when 'c' is pressed
+                object.material.color.setHex(0xff0000); // there is also setHSV and setRGB
+            }
+        };
+
+    } /*init end*/
+
+
+
+
+    function bodymat() {
+
+        var icolor = 0x085AA3;
+        var ccolorr = document.getElementById('ccolorr');
+        ccolorr.onclick = function() {
+            icolor = 0xAC0000;
+        }
+
+
+
+        var bodymat = new THREE.MeshPhongMaterial({
+            color: icolor,
+            side: THREE.DoubleSide,
+            specular: 0x111111,
+            shininess: 10,
+            envMap: envTex,
+            combine: THREE.AddOperation,
+            refractionRatio: 0.98,
+            reflectivity: 0.1,
+
+        })
+        return bodymat;
+
+    }
+
+
+
+
+
+
+
+
+    function onDocumentMouseMove(event) {
+        mouseX = (event.clientX - windowHalfX) / 2;
+        mouseY = (event.clientY - windowHalfY) / 2;
+
+        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+
+    }
+
+    function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+    }
+
+
+
+
+
+
+    function getpos1() {
+        var notepos1 = mynote.geometry.vertices[0];
+        update_labels(notepos1, sm);
+
+    }
+
+    function getpos2() {
+        var notepos2 = mynote.geometry.vertices[1];
+        update_labels(notepos2, sm2);
+
+    }
+
+
+
+
+    function update_labels(vpos, note) {
+        var pos = get_screen_xy(vpos, camera);
+        note.style.left = pos.x;
+        note.style.top = pos.y;
+    }
+
+
+    function get_screen_xy(position, camera) {
+        var pos = position.clone();
+        projScreenMat = new THREE.Matrix4();
+        projScreenMat.multiplyMatrices(camera.projectionMatrix, camera.matrixWorldInverse);
+        pos.applyProjection(projScreenMat);
+
+        return {
+            x: (pos.x + 1) * window.innerWidth / 2,
+            y: (-pos.y + 1) * window.innerHeight / 2
+        };
+    }
+
+    window.onload = function() {
+
+
+        var tween = new TWEEN.Tween(iwatchgroup.position);
+        tween.to({
+            x: 0,
+            y: 0,
+            z: 0
+        }, 2000);
+        tween.start();
+
+        var tweenR = new TWEEN.Tween(iwatchgroup.rotation);
+        tweenR.to({
+            x: 0,
+            y: Math.PI * 2,
+            z: 0
+        }, 3000);
+        tweenR.start();
+
+        sm.addEventListener('mouseover', cameraf, false);
+
+        function cameraf() {
+            var tweenR = new TWEEN.Tween(camera.position);
+            tweenR.to({
+                x: 50,
+                y: 3,
+                z: 50
+            }, 5000);
+            tweenR.start();
+
+            camera.lookAt(mynote.geometry.vertices[0]);
+        }
+
+    }
+
+
+    function pickobj() {
+
+        raycaster.setFromCamera(mouse, camera);
+        var intersects = raycaster.intersectObjects(scene.children);
+
+        if (intersects.length > 0) {
+
+            if (INTERSECTED != intersects[0].object) {
+
+                if (INTERSECTED) INTERSECTED.material.color.setHex(INTERSECTED.currentHex);
+
+                INTERSECTED = intersects[0].object;
+                INTERSECTED.currentHex = INTERSECTED.material.color.getHex();
+                INTERSECTED.material.color.setHex(Math.random() * 0xff0000);
+
+            }
+
+        } else {
+
+            if (INTERSECTED) INTERSECTED.material.color.setHex(INTERSECTED.currentHex);
+            INTERSECTED = null;
+        }
+    }
+
+
+    function animate() {
+        requestAnimationFrame(animate);
+        render();
+        TWEEN.update();
+    }
+
+
+
+    function render() {
+
+        if (video.readyState === video.HAVE_ENOUGH_DATA) {
+            videoImageContext.drawImage(video, 0, 0);
+            if (videoTexture)
+                videoTexture.needsUpdate = true;
+        }
+
+
+        //iwatchgroup.rotation.y = Math.PI/4;
+
+
+        controls.update();
+
+
+        var basespeed = 0.021;
+        var speed = basespeed * mouseX / 100;
+
+
+        if (speed < 0.05 & speed > -0.005) {
+            iwatchgroup.rotation.y = speed / 100;
+        } else if (speed > 0.05) {
+            iwatchgroup.rotation.y += speed;
+        } else {
+            iwatchgroup.rotation.y += speed;
+        };
+
+
+        camera.position.x += (mouseX - camera.position.x) * .1;
+        camera.position.y += (-mouseY - camera.position.y) * .1;
+
+        camera.lookAt(scene.position);
+        renderer.render(scene, camera);
+
+
+
+
+        raycaster.setFromCamera(mouse, camera);
+
+
+
+        getpos1();
+        getpos2();
+        pickobj();
+    }
+    </script>
+</body>
+
+</html>

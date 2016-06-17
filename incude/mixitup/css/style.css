@@ -1,0 +1,63 @@
+.gridItems{
+  /*padding: 2% 2% 0;*/
+  margin: 0 auto;
+  text-align: justify;
+  /*font-size: 0;*/
+  /*background: #E6003F;*/
+}
+
+.gridItems:after{
+  content: '';
+  display: inline-block;
+  width: 100%;
+  border-radius: 
+}
+
+.gridItems .item,
+.gridItems .gap{
+  display: inline-block;
+  width: 49%;
+}
+
+.gridItems .item{
+  position: relative;
+  text-align: left;
+  background: #DCDCDC;
+  margin-bottom: 2%;
+  cursor: pointer;
+  border-radius: 5px;
+  /*position: relative;*/
+  /*display: none; uncomment this rule for use with MixItUp */
+}
+
+
+.isotope-item.is-expanded .gridimg {
+    width: 100%;
+    height: 500px;
+    -webkit-transition: width 1s, height 0.1s;
+    -moz-transition: width 1s, height 0.1s;
+    -o-transition: width 1s, height 0.1s;
+    transition: width 1s, height 0.1s;
+}
+
+
+@media all and (min-width: 640px){
+  .gridItems .item,
+  .gridItems .gap{
+    width: 49%;
+  }
+}
+
+@media all and (min-width: 768px){
+  .gridItems .item,
+  .gridItems .gap{
+    width: 32%;
+  }
+}
+
+@media all and (min-width: 1270px){
+  .gridItems .item,
+  .gridItems .gap{
+    width: 24%;
+  }
+}

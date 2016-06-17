@@ -1,0 +1,17 @@
+.main-menu ul{
+    width: 100%;
+    position: absolute;
+    padding: 0;
+    margin: 0;
+}
+
+
+
+.navItem {
+    background-color: #383838;
+    float: left;
+}
+
+.navItem:hover{
+  background-color: #D60000;
+}

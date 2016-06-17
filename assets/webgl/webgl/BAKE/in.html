@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - interactive cubes</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<style>
+			body {
+				font-family: Monospace;
+				background-color: #f0f0f0;
+				margin: 0px;
+				overflow: hidden;
+			}
+		</style>
+	</head>
+	<body>
+
+
+
+
+
+	    <script src="js/cannon.min.js"></script>
+	    <script src="js/three.min.js"></script>
+
+		<script src="js/stats.min.js"></script>
+
+		<script>
+
+			var container, stats;
+			var camera, scene, raycaster, renderer;
+
+			var mouse = new THREE.Vector2(), INTERSECTED;
+			var radius = 500, theta = 0;
+			var frustumSize = 1000;
+
+
+
+
+
+
+
+
+
+
+
+		    // if (!Detector.webgl) Detector.addGetWebGLMessage();
+
+		    var camera, cubeCamera, scene, renderer, parameters, i, j, k, h, color, x, y, z, s, n, nobjects,
+		        material_depth, cubeMaterial;
+
+		    var spheres = [], bodies = [];
+
+
+		    var mouse = new THREE.Vector2(), INTERSECTED;
+
+
+		    var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
+
+
+		    var world;
+		    var time, lastTime = performance.now();
+
+		    var ballGeometry, ballMaterial, ballBodyMaterial;
+
+		    var intersectionPlane, origin = new THREE.Vector3(0, 0, 0);
+		    var isMouseDown = false;
+		    var mouseX = 0;
+		    var mouseY = 0;
+		    var target = new THREE.Vector3(0, 0, 50);
+		    var height = window.innerHeight;
+
+		    var ray = new THREE.Raycaster();
+		    var mouse3D = new THREE.Vector3();
+
+		    init();
+		    animate();
+
+			function init() {
+
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+
+
+				var aspect = window.innerWidth / window.innerHeight;
+
+				camera = new THREE.OrthographicCamera( frustumSize * aspect / - 2, frustumSize * aspect / 2, frustumSize / 2, frustumSize / - 2, 1, 1000 );
+
+				
+
+				scene = new THREE.Scene();
+
+				var light = new THREE.DirectionalLight( 0xffffff, 1 );
+				light.position.set( 1, 1, 1 ).normalize();
+				scene.add( light );
+
+
+
+
+
+
+
+				raycaster = new THREE.Raycaster();
+
+				renderer = new THREE.WebGLRenderer();
+				renderer.setClearColor( 0xf0f0f0 );
+				renderer.setPixelRatio( window.devicePixelRatio );
+				renderer.setSize( window.innerWidth, window.innerHeight );
+				renderer.sortObjects = false;
+				container.appendChild(renderer.domElement);
+
+				stats = new Stats();
+				container.appendChild( stats.dom );
+
+
+
+
+				var geometry = new THREE.BoxBufferGeometry( 20, 20, 20 );
+
+				for ( var i = 0; i < 100; i ++ ) {
+
+					var object = new THREE.Mesh( geometry, new THREE.MeshLambertMaterial( { color: Math.random() * 0xffffff } ) );
+
+					object.position.x = Math.random() * 800 - 400;
+					object.position.y = Math.random() * 800 - 400;
+					object.position.z = Math.random() * 800 - 400;
+
+					object.rotation.x = Math.random() * 2 * Math.PI;
+					object.rotation.y = Math.random() * 2 * Math.PI;
+					object.rotation.z = Math.random() * 2 * Math.PI;
+
+					object.scale.x = Math.random() + 0.5;
+					object.scale.y = Math.random() + 0.5;
+					object.scale.z = Math.random() + 0.5;
+
+					scene.add( object );
+
+				}
+
+
+
+
+
+		        // GEOMETRY
+
+		        var geometry = new THREE.PlaneGeometry(20, 20, 8, 8);
+		        intersectionPlane = new THREE.Mesh(geometry);
+		        intersectionPlane.position.y = 0;
+		        intersectionPlane.visible = true;
+		        scene.add(intersectionPlane);
+
+
+
+
+
+		        //
+
+
+		        ballGeometry = new THREE.SphereGeometry(0.8, 18, 18);
+
+		        var path = "../../img/eyes/";
+		        var format = '.jpg';
+		        var urls = [
+		            path + 'px' + format, path + 'nx' + format,
+		            path + 'py' + format, path + 'ny' + format,
+		            path + 'pz' + format, path + 'nz' + format
+		        ];
+
+		        var eyesMapPath = '../../img/eyes/eye.jpg';
+
+
+		        textureCube = new THREE.CubeTextureLoader().load( urls );
+
+		        var eyesMap = new THREE.TextureLoader().load( eyesMapPath );
+
+
+		        ballMaterial = new THREE.MeshPhongMaterial({
+		            map: eyesMap,
+		            envMap: textureCube,
+		            combine: THREE.MixOperation,
+		            reflectivity: 0.12,
+		            specular: 0x050505,
+		            shininess: 100,
+		            shading: THREE.SmoothShading
+		        });
+
+
+
+
+	        	// PHYSICS
+
+
+
+		        world = new CANNON.World();
+		        world.broadphase = new CANNON.NaiveBroadphase();
+		        world.gravity.set(0, 0, 0);
+		        world.solver.iterations = 10;
+		        world.solver.tolerance = 1;
+
+		        ballBodyMaterial = new CANNON.Material();
+		        world.addContactMaterial(new CANNON.ContactMaterial(ballBodyMaterial, ballBodyMaterial, 0.2, 0.8));
+
+
+
+
+
+
+
+
+		        for (var i = 0; i < 20; i++) {
+
+		            addBall( Math.random(i) * 100 - 5, Math.random(i) * 10 - 5, Math.random(i) * 10 - 5, 10 )
+		        };
+
+
+
+
+
+
+
+				document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+
+				//
+
+				window.addEventListener( 'resize', onWindowResize, false );
+
+			}
+
+
+
+
+
+
+
+
+
+
+		    function addBall(x, y, z) {
+
+		        x = Math.max(-10, Math.min(100, x));
+		        y = Math.max(-10, Math.min(10, y));
+		        z = Math.max(-10, Math.min(10, z));
+
+		        var size = 1.25;
+
+		        var sphere = new THREE.Mesh(ballGeometry, ballMaterial);
+		        sphere.scale.multiplyScalar(size);
+		        scene.add(sphere);
+
+		        spheres.push(sphere);
+
+		        var sphereShape = new CANNON.Sphere(size);
+		        var sphereBody = new CANNON.RigidBody(0.1, sphereShape, ballBodyMaterial);
+		        sphereBody.position.set(x, y, z);
+		        sphereBody.quaternion.set(Math.random() * 3, Math.random() * 3, Math.random() * 3, Math.random() * 3);
+
+		        sphereBody.preStep = function() {
+		            var moon_to_planet = new CANNON.Vec3((mouseX - window.innerWidth / 2) / 10, (-mouseY + window.innerHeight / 2) / 10, 10);
+		            this.position.negate(moon_to_planet);
+
+		            var distance = moon_to_planet.norm();
+
+		            moon_to_planet.normalize();
+		            moon_to_planet.mult(1, this.force);
+		        }
+
+		        world.add(sphereBody);
+		        bodies.push(sphereBody);
+
+		    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			function onWindowResize() {
+
+				var aspect = window.innerWidth / window.innerHeight;
+
+				camera.left   = - frustumSize * aspect / 2;
+				camera.right  =   frustumSize * aspect / 2;
+				camera.top    =   frustumSize / 2;
+				camera.bottom = - frustumSize / 2;
+
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+			function onDocumentMouseMove( event ) {
+
+				event.preventDefault();
+
+				mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
+				mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
+
+			}
+
+			//
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+
+				render();
+				stats.update();
+
+			}
+
+			function render() {
+
+				theta += 0.1;
+
+				camera.position.x = radius * Math.sin( THREE.Math.degToRad( theta ) );
+				camera.position.y = radius * Math.sin( THREE.Math.degToRad( theta ) );
+				camera.position.z = radius * Math.cos( THREE.Math.degToRad( theta ) );
+				camera.lookAt( scene.position );
+
+				camera.updateMatrixWorld();
+
+				// find intersections
+
+				raycaster.setFromCamera( mouse, camera );
+
+				var intersects = raycaster.intersectObjects( scene.children );
+
+				if ( intersects.length > 0 ) {
+
+					if ( INTERSECTED != intersects[ 0 ].object ) {
+
+						if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+
+						INTERSECTED = intersects[ 0 ].object;
+						INTERSECTED.currentHex = INTERSECTED.material.emissive.getHex();
+						INTERSECTED.material.emissive.setHex( 0xff0000 );
+
+					}
+
+				} else {
+
+					if ( INTERSECTED ) INTERSECTED.material.emissive.setHex( INTERSECTED.currentHex );
+
+					INTERSECTED = null;
+
+				}
+
+				renderer.render( scene, camera );
+
+			}
+
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,312 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    border: 0;
+}
+
+ul li img h3{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+
+
+body{
+	font-family: Tahoma, Helvetica, Arial, "Microsoft Yahei","微软雅黑", STXihei, "华文细黑", sans-serif;
+}
+
+header h3{
+	color: #ccc;
+}
+
+header img {
+    position: relative;
+    margin-top: 100px;
+}
+
+
+h5{
+    line-height: 50px;
+}
+
+
+
+
+.pageTitle {
+    position: relative;
+    width: 100%;
+    height: 320px;
+    text-align: center;
+    margin: 0 auto;
+    background-color: #E6003F;
+    text-align: center;
+    z-index: 100;
+    background-image: url(../../../img/bg/pattern.png);    
+}
+.pageTitle p{
+    font-size: 16px;
+    line-height: 32px;
+    color: #ccc;
+}
+
+.goHome {
+    position: fixed;
+    text-align: center;
+    top: 290px;
+    right: 0;
+    margin: 0 auto;
+    left: 1200px;
+    width: 60px;
+    height: 60px;
+    opacity: 1;
+    border-radius: 50%;
+    z-index: 300;
+    background-color: #E6003F;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1), 0 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+.goHome i {
+    width: 100%;
+    font-size: 24px;
+    line-height: 60px;
+    font-weight: 300;
+    text-align: center;
+    color: #ccc;
+}
+
+
+
+.pageTitle img {
+    vertical-align: top;
+    text-align: center;
+    margin-top: 80px;
+}
+
+
+.pageTitle h3 {
+    color: #ccc;
+}
+
+
+
+
+
+
+
+
+
+
+
+img {
+    vertical-align: top;
+    text-align: center;
+}
+
+.titleCont {
+    padding: 0px;
+}
+.byDate {
+    display: block;
+}
+
+.tags {
+    position: relative;
+    width: 320px;
+    height: 50px;
+    text-align: center;
+    margin: 0 auto;
+    color: #ccc;
+    display: none;
+    /*background-color: #194CA8;*/
+}
+
+.tags .tag{
+    width: 20%;
+    /*margin-left: 50px;*/
+    height: 50px;
+    line-height: 50px;
+    /*background-color: #199CA8;*/
+
+    float: left;
+}
+
+pre code {
+    padding: 0;
+}
+
+
+
+section h1 {
+    background: #1E9092;
+    font-size: 18px;
+    font-weight: 600;
+    z-index: 1;
+}
+
+section p {
+    line-height: 2em;
+    font-size: 16px;
+    text-align: justify;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+article .linkBtn {
+    height: 28px;
+    padding: 0 20px;
+    line-height: 28px;
+    border-radius: 5px;
+    text-decoration: none;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+article .linkBtn a{
+    color: #fff;
+}
+
+
+
+
+.itemDetail h1{
+    color: #ccc;
+    
+}
+
+
+.pageGrids{
+    position: relative;
+    width: 100%;
+    margin: 2em 0;
+    min-height: 50px;
+    /*background-color: #8F0D0D;*/
+    text-align: center;
+}
+.pageGrids h3{
+    line-height: 2em;
+}
+
+.pageGrids h4{
+    line-height: 2em;
+    text-align: left;
+}
+
+
+
+.pageGrid{
+    margin: 20px 0;
+}
+
+
+
+/*.pageGrid :nth-child(odd){
+    background-color: #9F1DB4;
+}
+.pageGrid :nth-child(even){
+    background-color: #1D52B4;
+}
+
+*/
+
+
+
+
+.pageGrids ul li{
+    display: inline-block;
+    margin-bottom: 2em;
+        /*float: left;*/
+}
+
+
+
+.pageGrids ul li img{
+    width: 80%;
+}
+
+
+.pageGrids ul .imgCicle{
+    border-radius: 50%;
+}
+
+
+
+.shares{
+    position: absolute;
+    width: 100%;
+    max-width: 320px;
+    height: 32px;
+    left: 0;
+    right: 0;
+    top: 288px;
+    margin: 0 auto;
+    /*background-color: #517E96;*/
+}
+
+.shareBtn{
+    width: 19%;
+    display: inline-block;
+    /*background-color: #748803;*/
+}
+
+.shareBtn .shareLink {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 14px;
+    margin: 0 auto;
+    border-radius: 50%;
+    display: inline-block;
+    float: none;
+    position: relative;
+    color: #ccc;
+    display: block;
+    text-indent: 0;
+    background-color: rgba(0,0,0,0.3);
+    background-image: none;
+}
+
+.shareBtn .shareLink:hover {
+    background-color: rgba(255,255,255,0.7);
+    transition: 0.8s;
+}
+
+
+
+
+.pageGrids .gridW25{
+    width: 24.5%;
+}
+.pageGrids .gridW33{
+    width: 33%;
+}
+
+.pageGrids .gridW50{
+    width: 49.5%;
+}
+.pageGrids .gridW100{
+    width: 100%;
+}
+
+
+.pageGrids .gridW50 ul li{
+    float: left;
+}

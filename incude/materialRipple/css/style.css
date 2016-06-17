@@ -1,0 +1,20 @@
+.ripple{
+  position:absolute;
+  width:100vmax;
+  height:100vmax;
+  top:-50vmax;
+  left:-50vmax;
+  border-radius:50%;
+}
+body{
+  overflow:hidden;
+}
+.pad{
+  position:absolute;
+  left:0;
+  right:0;
+  
+  top:0;
+  bottom:0;
+  
+}
