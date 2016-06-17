@@ -3,6 +3,29 @@ var wURL = window.location.href.split("/");
 var wURLADD = wURL[wURL.length - 1];
 
 
+var firstBlog = 1;
+
+window.onload = function() {
+
+    var winUrl = window.location.href.split("/");
+
+    var winUrlLength = winUrl.length ;
+
+    var winUrlName = winUrl[winUrlLength - 1] ;
+
+    // alert(winUrlName)
+
+    sliderPage(winUrlName, -1);
+
+    if (winUrlName === "blog" && firstBlog == 1) {
+        mixConf();
+        firstBlog = 0;
+    }
+
+} 
+
+
+
 
 
 $(window).on('hashchange', function(e){
@@ -22,17 +45,28 @@ $(window).on('hashchange', function(e){
 
 
     GURLNAME = curUrlName;
+
+
+    console.log(curUrlName);
+
     sliderPage(curUrlName, -1);
+
+
+
+
     if (oldUrlName == "detail") {
         closeDetail();
     }
+
+    
     var hash = new String(document.location).indexOf("#");
 });
 
 
 
 
-var firstBlog = 1;
+
+
 $(".navItem").click(function() {
 
     var pageData = $(this).data("page");
