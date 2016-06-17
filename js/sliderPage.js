@@ -15,7 +15,7 @@ window.onload = function() {
 
     // alert(winUrlName)
 
-    sliderPage(winUrlName, -1);
+    sliderPage(winUrlName, 1);
 
     if (winUrlName === "blog" && firstBlog == 1) {
         mixConf();
