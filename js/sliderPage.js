@@ -58,7 +58,7 @@ $(window).on('hashchange', function(e){
         closeDetail();
     }
 
-    
+
     var hash = new String(document.location).indexOf("#");
 });
 
