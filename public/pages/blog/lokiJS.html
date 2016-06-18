@@ -1,0 +1,226 @@
+<!doctype html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="网上三维产品展示">
+    <meta name="description" content="网上三维产品展示 联系:13640566324">
+    <title> LokiJS：纯JavaScript实现的轻量级数据库 </title>
+    <link rel="stylesheet" href="../../lib/css/pages.css" />
+    <script src="../../lib/js/jquery-2.2.3.min.js"></script>
+    <script src="../common/js/page.conf.js"></script>
+</head>
+
+<body>
+
+
+    <div class="pageTitle">
+        <img src="public/assets/img/logo/3dlogo.png" alt="webgl 3dlook">
+        <p class="date">2016-6-1</p>
+        <p class="author">3dlook</p>
+        <p class="category">case</p>
+        <ul class="tags">
+            <li class="tag"> javascript </li>
+            <li class="tag"> database </li>
+        </ul>
+        <h3 class="title"> LokiJS：纯JavaScript实现的轻量级数据库 </h3>
+    </div>
+
+
+    <div class="btnCicle goHome">
+        <a class="btnCicleMore" href="http://3dlook.net/#!/blog"> <i class='fa fa-home' aria-hidden='true'></i> </a>
+    </div>
+    <div class="pageCont lokiJS">
+        <article>
+            <section>
+                <div class="title">
+                    <h1> 摘要 </h1>
+                </div>
+                <div class="titleCont summary">
+                    <div class="pageGrids">
+                        <div class="pageGrid gridW100" style="clear: both;">
+                            <p>
+                                <strong>
+                                    LokiJS一个轻量级的面向文档的数据库，由JavaScript实现，性能高于一切。支持字段索引来实现更快的文件访问，性能也相当好（近50万OPS/ s）。
+                                </strong></br>
+                                LokiJS一个轻量级的面向文档的数据库，由JavaScript实现，性能高于一切。目的是把JavaScript对象作为文档，然后再进行存储，并且以同样的方式来检索数据。 LokiJS可以运行于Node.js和所有支持JavaScript的浏览器、移动应用程序上。 </br>
+                                LokiJS支持字段索引来实现更快的文件访问，性能也相当好（近50万OPS/ s）。其内置的DynamicView类也能用于数据子集的索引，达到更快的性能。 </br>LokiJS支持集合，很像MongoDB，并将数据以JSON格式保存到硬盘上（根据会话来恢复状态），所以你的数据是可移植的。</br>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="title">
+                    <h1> 采用LokiJS的最理想情景： </h1>
+                </div>
+                <div class="titleCont">
+
+                    <ul>
+                        <li> <p>  移动应用程序——尤其是基于HTML5的（例如：Cordova，Phonegap等等）</p></li>
+
+                        <li> <p> 基于Node.js的小——中型应用程序的数据存储 </p></li>
+
+                        <li> <p> 采用Node-Webkit的桌面应用程序 </p></li>
+
+                        <li> <p> <strong>LokiJS目前还处在alpha阶段。源码托管在Github上。</strong> </p> </li>
+                    </ul>
+
+                </div>
+            </section>
+
+
+
+
+
+            <section>
+                <div class="title">
+                    <h1> 使用lokiJS </h1>
+                </div>
+                <div class="titleCont">
+
+                    <h3>快速安装：</h3>
+                    <pre><code class="javascript">
+npm install lokijs
+
+bower install lokijs
+                    </code></pre>
+
+
+            </section>
+
+
+            <section>
+                <div class="title">
+                    <h1> 使用lokiJS </h1>
+                </div>
+                <div class="titleCont">
+
+                    <h3>快速安装：</h3>
+                    <pre><code class="javascript">
+
+// 创建一个数据库，你需要给他一个文件（supermarket.json）以便通过文件名保存数据。
+var db = new loki('supermarket.json');
+
+// 然后你可以开始创建一个集合了，假如你不太方便理解集合的概念的话，你可以把数据库想象成一个超市，
+// 那么， 集合就是商品的分类了。 如果还没懂， 我就要骂人了， 或者继续往下看。
+
+var fruit = db.addCollection('fruit');
+
+// 因为我们搞的是无本生意，水果架上还没有东西，先从果农哪里进点便宜水果，赚大钱。
+
+
+
+fruit.insert({ name: 'apple', place: 'xian', num: '520', pice: '38' });
+fruit.insert({ name: 'banana', place: 'hainan', num: '200', pice: '25' });
+fruit.insert({ name: 'pear', place: 'chongqing', num: '350', pice: '18' });
+
+
+console.log(fruit.data);
+
+
+// 这里我们搞到了三种水果，苹果、香蕉、梨，这三种东西相当于三篇文档。
+
+// 至此，把概念强化一下，不然今后搞数据库容易昏脑壳。
+// 数据库（超市）里面放集合（水果），一个数据库可以放N个集合。一个集合可以放N篇文档（苹果、香蕉、梨），文档就存放在集合里。
+// 现在我们的生意可以开张了。
+
+// 从实战出发，今天小习有空来我们的超市
+// 买苹果，5斤
+
+
+var findApple = fruit.findOne({ 'name': 'apple' });
+
+// write some function
+
+function bill(name, num) {
+
+    var name = name;
+    var num = num;
+
+    var findCommodity = fruit.findOne({ 'name': name });
+
+    if (findCommodity) {
+
+        console.log("yes");
+
+        var commodityName = findCommodity.name;
+        var commodityNum  = findCommodity.num;
+        var commodityPice = findCommodity.pice;
+
+        var count;
+        if ( commodityNum < num ) {
+            alert("商品卖完了哦")
+        } else {
+
+            $(".buyCont").children().remove();
+
+            count = num * commodityPice;
+
+            var buyCont = "<h3>请确认你的账单信息：</h3>" + " " + "<h5>你卖的商品是：</h5>" + " " + commodityName + "<h5>价格是：</h5>" + " " + count + "<h3>感谢你的光顾</h3>"
+
+            $(".buyCont").append(buyCont);
+        }
+    }
+
+
+    if (findCommodity === null) {
+
+        alert("没有这个商品")
+
+        console.log("no");
+
+    } else {
+
+    }
+}
+
+new Vue({
+
+  el: '#buy',
+  data: {
+    message: '商品名'
+  },
+  methods: {
+
+
+    buy: function () {
+
+
+        console.log(this.message)
+
+        if (this.message) {
+
+            bill(this.message, 10);
+
+        }
+    }
+  }
+
+})
+                    </code></pre>
+
+
+            </section>
+
+
+
+            <section>
+                <div class="title">
+                    <h1>LokiJS相关资料：</h1> </div>
+                <div class="titleCont">
+                    <ul>
+                        <li> <a href="http://lokijs.org">lokijs官网</a></li>
+                        <li> <a href="https://github.com/techfort/LokiJS">github托管地址</a></li>
+                    </ul>
+                </div>
+            </section>
+
+
+        </article>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,253 @@
+<!doctype html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="网上三维产品展示">
+    <meta name="description" content="网上三维产品展示 联系:13640566324">
+    <title>波浪加载器 Three.js Blend4Web LoadingManager </title>
+    <link rel="stylesheet" href="../../lib/css/pages.css" />
+    <script src="../../lib/js/jquery-2.2.3.min.js"></script>
+    <script src="../common/js/page.conf.js"></script>
+</head>
+
+<body>
+
+
+    <div class="pageTitle">
+        <img src="public/assets/img/logo/3dlogo.png" alt="webgl 3dlook">
+        <p class="date">2016-6-5</p>
+        <p class="author">3dlook</p>
+        <p class="category">article</p>
+        <ul class="tags">
+            <li class="tag"> javascript </li>
+            <li class="tag"> 加载器 </li>
+        </ul>
+        <h3 class="title"> Three.js Blend4Web LoadingManager 波浪加载器 </h3>
+    </div>
+
+    <div class="btnCicle goHome">
+        <a class="btnCicleMore" href="http://3dlook.net/#!/blog"> <i class='fa fa-home' aria-hidden='true'></i> </a>
+    </div>
+
+    <div class="pageCont waveLoader">
+        <article>
+            <section>
+                <div class="title">
+                    <h1>摘要</h1>
+                </div>
+                <div class="titleCont summary">
+                    <p>
+                        <strong>通常一个页面加载进度不是太理想的时候，加载器可以说是一个比较折中的办法</strong></br>
+                        <p>当然加载器有很多，样式也各不相同，我个人喜欢这种比较性感的波浪加载器 wave loader</p>
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <div class="title">
+                    <h1>javascript 部分</h1>
+                </div>
+                <div class="titleCont">
+                    <pre><code class="javascript">
+
+(function() {
+    var lastTime = 0;
+    var vendors = ['ms', 'moz', 'webkit', 'o'];
+    for (var x = 0; x < vendors.length && !window.requestAnimationFrame; ++x) {
+        window.requestAnimationFrame = window[vendors[x] + 'RequestAnimationFrame'];
+        window.cancelAnimationFrame = window[vendors[x] + 'CancelAnimationFrame'] || window[vendors[x] + 'CancelRequestAnimationFrame'];
+    }
+
+    if (!window.requestAnimationFrame)
+        window.requestAnimationFrame = function(callback, element) {
+            var currTime = new Date().getTime();
+            var timeToCall = Math.max(0, 16 - (currTime - lastTime));
+            var id = window.setTimeout(function() { callback(currTime + timeToCall); },
+                timeToCall);
+            lastTime = currTime + timeToCall;
+            return id;
+        };
+
+    if (!window.cancelAnimationFrame)
+        window.cancelAnimationFrame = function(id) {
+            clearTimeout(id);
+        };
+}());
+
+(function($, _) {
+    var waveLoader,
+        drawWave;
+
+    $.fn.waveLoader = function() {
+        var args = arguments;
+        if (typeof args[0] === 'string') {
+            $(this).each(function() {
+                var ldr = $(this).data('waveLoader');
+                ldr[args[0]].call(ldr, Array.prototype.slice.call(args, [1]));
+            });
+        } else {
+            var options = _.extend({
+                amp: 6,
+                len: 10,
+                color: 'rgba(255,255,255,0.8)'
+            }, args[1] || {});
+            $(this).each(function() {
+                var $el = $(this);
+                $el.data('waveLoader', waveLoader($el, args[0], options.color, options.amp, options.len));
+            });
+        }
+    };
+
+    drawWave = function(t) {
+        var ctx = this.ctx;
+
+        if (this.loop > 2) this.loop = 0;
+
+        if (this.progress < 100) {
+            window.requestAnimationFrame(drawWave.bind(this));
+        }
+
+        ctx.clearRect(0, 0, this.width, this.height);
+        ctx.drawImage(this.img, 0, 0, this.width, this.height);
+
+        if (this.progress >= 100) {
+            return;
+        }
+
+        ctx.beginPath();
+        ctx.fillStyle = this.color;
+        ctx.moveTo(0, this.height / 2);
+        for (var i = 0; i <= this.width; i += 1) {
+            ctx.lineTo(
+                i,
+                Math.sin(i / (this.len / 2) * Math.PI - this.loop * Math.PI) * (this.amp / 2) + (this.height - this.progress * (this.height / 100))
+            );
+        }
+        ctx.lineTo(this.width, 0);
+        ctx.lineTo(0, 0);
+        ctx.fill();
+        this.loop += 0.08;
+    };
+
+    waveLoader = function($progressWaveCanvas, img, color, amp, len) {
+        var that;
+
+        that = {
+            $progressWaveCanvas: $progressWaveCanvas,
+            img: img,
+            ctx: null,
+            width: 0,
+            height: 0,
+            loop: 0,
+            amp: amp,
+            len: len,
+            color: color,
+            progress: 0,
+            init: function() {
+                this.ctx = this.$progressWaveCanvas[0].getContext('2d');
+                this.width = this.$progressWaveCanvas.width();
+                this.height = this.$progressWaveCanvas.height();
+                drawWave.call(this);
+            },
+            setProgress: function(newProgr) {
+                this.progress = Math.min(Math.max(0, newProgr), 1000);
+            }
+        };
+
+        that.init();
+
+        return that;
+    };
+})(jQuery, _);
+
+
+var img = new Image();
+img.src = 'img/lf-logo.jpg';
+img.onload = function() {
+    $('#progressWaveCanvas').waveLoader(img, {
+        amp: 20,
+        len: 256
+    });
+
+
+    var progress = 50;
+    var progressTime = 130000;
+
+    $('#progressWaveCanvas').waveLoader('setProgress', progress);
+
+
+    setInterval(function() {
+        $('#progressWaveCanvas').waveLoader('setProgress', progress);
+        progress += Math.floor(Math.random() * 2) + 1;
+    }, progressTime);
+
+};
+                    </code></pre>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="title">
+                    <h1>注意</h1>
+                </div>
+                <div class="titleCont">
+                </div>
+                <p> 加载器如果要跟踪加载三维数据，还需要一些额外的设置，比如在B4像这样做： </p>
+
+                    <pre><code class="javascript">
+
+function stageload_cb(percentage, load_time) {
+    var progressWave = document.getElementById("progressWave");
+    progressWaveCanvas.waveLoader('setProgress', percentage);
+    if (percentage == 100) {
+        progressWave.style.display = "none";
+    }
+
+}
+                    </code></pre>
+
+                <p>
+                    three.js 可以使用 
+                    <a href="http://threejs.org/docs/index.html#Reference/Loaders/LoadingManager">
+                    <strong>LoadingManager</strong></a> 达到目的，只要懂得这个道理就可以了。需要说明的是：three.js 在使用THREE.BinaryLoader( manager )好像无效，测试中OBJ模型没有问题。
+                </p>
+
+            </section>
+
+            <section>
+                <div class="title">
+                    <h1>codepen link</h1>
+                </div>
+                <div class="titleCont">
+                    <iframe height='720' scrolling='no' src='//codepen.io/laishi/embed/qNboYg/?height=720&theme-id=0&default-tab=js,result&embed-version=2' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>See the Pen <a href='http://codepen.io/laishi/pen/qNboYg/'>webgl wave loader</a> by 刘建 (<a href='http://codepen.io/laishi'>@laishi</a>) on <a href='http://codepen.io'>CodePen</a>.
+            </section>
+
+            <section>
+                <div class="title">
+                    <h1>最终如何把他发布到网上，并且实现三维交互的呢</h1>
+                </div>
+                <div class="titleCont">
+                    <img src="img/workimg/x50-end.png" alt="Blend4WEB三维产品展示">
+                </div>
+                <p>
+                    如果点一个命令就可以把模型输出到互联网上去，你会不会用呢？反正我会，道理很简单，因为简单嘛，这就是Blend4WEB，请立马记住他的名字，然后再花点时间去网上了解一下。
+                </p>
+                <p>
+                    <a href="https://www.blend4web.com/"> Blend4WEB官网 </a>
+                </p>
+                <p>
+                    需要说明清楚的是：你如果需要实现更的的交互控制，官方的API你是必须要看的，当然我们需要javascript的知识才能看明白。
+                </p>
+                <p>
+                    如果你不太喜欢Blend4WEB，也可以考虑其他的框架或者库来达到你的目的，比如ThreeJS、PlayCanvas、OSG.JS等等。
+                </p>
+                <p>
+                    在有，如果你认为你牛的不行了，你也可以用原生的WEBGL来写。
+                </p>
+            </section>
+        </article>
+    </div>
+</body>
+
+</html>
