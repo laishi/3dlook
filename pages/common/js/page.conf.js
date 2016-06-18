@@ -4,12 +4,10 @@ var csspath = [
 "../../incude/mixitup/css/mixitup.css",
 "../../incude/highlight/css/default.css",
 "../../incude/stickyHeader/css/header.css",
-"../../css/pages.css"
 ]
 
 
 var jspath = [
-"../../js/jquery-2.2.3.min.js",
 "../../js/rd-smoothscroll.min.js",
 "../../incude/greensock/TweenMax.min.js",
 "../../incude/highlight/js/highlight.pack.js",
@@ -21,17 +19,46 @@ var slinkyJS = [
 ]
 
 
-for (var i = 0; i < csspath.length; i++) {   
-
-    loadjscssfile(csspath[i], "css", "head");
-};
+$(document).ready(function() {
 
 
 
-for (var i = 0; i < jspath.length; i++) {  
+    for (var i = 0; i < csspath.length; i++) {   
+        loadjscssfile(csspath[i], "css", "head");
+    };
 
-    loadjscssfile(jspath[i], "js", "head");
-};
+    for (var i = 0; i < jspath.length; i++) {  
+        loadjscssfile(jspath[i], "js", "body");
+    };
+
+
+    console.log($("body").html)
+
+    
+
+
+
+    var host = location.host;
+    // FIX IMG PATH
+    var findImg = $(".pageCont").find("img");
+
+
+
+
+     findImg.each(function(index,img){
+
+        var sourPath = $(img).attr('src');
+
+        var fixPath = "http://" + host + "/" + sourPath;
+
+        console.log(fixPath)
+        $(img).attr("src",fixPath);  
+      });
+});
+
+
+
+
 
 
 
@@ -62,31 +89,35 @@ function loadjscssfile(filename, filetype, pos) {
 
 window.onload = function() {
 
+
+
+
+    TweenMax.to($(".pageTitle"),0.5,{"height":"320px", ease: Power3.easeOut, onComplete: loadSlinky});
+
+
+
+
+    // $(".pageTitle").css({"height":"320px"})
+
     $('pre code')
     $('pre code').each(function(i, block) {
         hljs.highlightBlock(block);
     });
 
+
+    function loadSlinky() {
+
+        for (var i = 0; i < slinkyJS.length; i++) {  
+
+            loadjscssfile(slinkyJS[i], "js", "head");
+        };
+
+        TweenMax.fromTo($(".pageCont"),2.3,{"opacity":0},{"opacity":1});
+        TweenMax.fromTo($(".goHome"),0.3,{"opacity":0},{"opacity":1});
+    }
     
-    // FIX IMG PATH
-    var findImg = $(".pageCont").find("img");
-
-     findImg.each(function(index,img){
-
-        var sourPath = $(img).attr('src');
-
-        var fixPath = "../../" + sourPath;
 
 
-        $(img).attr("src",fixPath);  
-      });
-
-
-
-    for (var i = 0; i < slinkyJS.length; i++) {  
-
-        loadjscssfile(slinkyJS[i], "js", "head");
-    };
 
 
 
