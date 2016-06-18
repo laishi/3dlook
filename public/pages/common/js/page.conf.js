@@ -6,7 +6,6 @@ var csspath = [
 "../../incude/stickyHeader/css/header.css",
 ]
 
-
 var jspath = [
 "../../lib/js/rd-smoothscroll.min.js",
 "../../incude/greensock/TweenMax.min.js",
@@ -32,26 +31,21 @@ $(document).ready(function() {
     };
 
 
-    console.log($("body").html)
+    var pageLoader =
+    "<div class='pageLoader'>" +
+        "<div class='loaderWrap'>" +
+            "<div class='loader'></div>" +
+            "<div class='loader'></div>" +
+            "<div class='loader'></div>" +
+            "<div class='loader'></div>" +
+        "</div>" +
+    "</div>";
 
-    
 
+    $(".pageTitle").append(pageLoader);
 
 
     var host = window.location.host;
-
-
-    // $(".btnCicleHome").attr("href",host + "/#!/" + "blog");  s
-
-    // alert(host + "/blog")
-
-
-    // FIX IMG PATH
-
-
-        console.log(host)
-
-
 
      $("body").find("img").each(function(index,img){
 
@@ -101,6 +95,8 @@ window.onload = function() {
 
     TweenMax.to($(".pageTitle"),0.5,{"height":"320px", ease: Power3.easeOut, onComplete: loadSlinky});
 
+    TweenMax.to($(".pageLoader"),0.3,{"scale":0, ease: Power3.easeOut});
+
 
 
 
@@ -113,6 +109,8 @@ window.onload = function() {
 
 
     function loadSlinky() {
+
+        $(".pageLoader").css({"display":"none"});
 
         for (var i = 0; i < slinkyJS.length; i++) {  
 

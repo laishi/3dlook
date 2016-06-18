@@ -1,0 +1,105 @@
+@import "lesshat";
+
+@blue:#1d83f8;
+@red:#e2453c;
+@yellow:#ffd444;
+@green:#15ad65;
+@dur: 2s;
+
+html, body {height:100%;font-size: 14px;}
+html {display:table;width:100%;background:#f1f1f1;}
+body {position:relative;display:table-cell; text-align:center; vertical-align:middle;}
+
+.Wrap {
+  max-width: 9em;
+  margin: 0 auto;
+}
+
+.loaderWrap {
+  position: relative;
+  width:100%;
+  padding-top: 100%;
+  overflow: hidden;
+  background: @blue;
+  .border-radius(50%);
+  .box-shadow(0 1px 5px rgba(0,0,0,0.5));
+  .transform(translate3d(0.0.0));
+  .animation(bgAnim @dur steps(1) infinite);
+  z-index:1;
+}
+
+.loader {
+  position: absolute;
+  width: 10%;
+  height: 10%;
+  .border-radius(50%);
+  .animation(insideAnim @dur ease-in infinite forwards);
+  &:nth-child(1) {
+    background: @red;
+    top: -10%;
+    left: 50%;
+    margin-left: -5%;
+  }
+  &:nth-child(2) {
+    background: @yellow;
+    top: 50%;
+    margin-top: -5%;
+    right: -10%;
+    .animation-delay(@dur/4);
+  }
+  &:nth-child(3) {
+    background: @green;
+    bottom: -10%;
+    left: 50%;
+    margin-left: -5%;
+    .animation-delay(@dur/2);
+  }
+  &:nth-child(4) {
+    background: @blue;
+    top: 50%;
+    margin-top: -5%;
+    left: -10%;
+   .animation-delay(@dur/1.3333333333333333);
+  }
+}
+
+.keyframes(~'insideAnim, 0% {transform: scale3d(1,1,1)} 26% {transform: scale3d(24,24,1)} 26.001%, 100% {transform: scale3d(1,1,1)}');
+
+.keyframes(~'bgAnim, 0%,100% {background: @{blue}} 25% {background: @{red}} 50% {background: @{yellow}} 75% {background: @{green}}');
+
+.text {
+  display: none;
+  position: absolute;
+	font-size: 1em;
+  line-height: 1.5em;
+	color: #000;
+  bottom: 1em;
+  left: 0; right: 0;
+  text-align: center;
+}
+
+.text-link {
+	position: relative;
+	color: #000;
+	font-weight: 600;
+	text-decoration: none;
+
+	&:after {
+		content: "";
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 0;
+		height: 1px;
+
+		background-color: #000;
+
+		.transition(width 0.2s ease-out);
+	}
+
+	&:hover {
+		&:after {
+			width: 100%;
+		}
+	}
+}
