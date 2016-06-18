@@ -47,14 +47,24 @@ $(document).ready(function() {
 
     var host = window.location.host;
 
-     $("body").find("img").each(function(index,img){
+    $("body").find("img").each(function(index,img){
 
         var sourPath = $(img).attr('src');
 
         var fixPath = "http://" + host + "/" + sourPath;
 
         $(img).attr("src",fixPath);  
-      });
+    });
+
+
+
+    $('script').load(function () {
+
+        TweenMax.to($(".pageTitle"), 0.5, {"height":"320px", ease: Power3.easeOut, onComplete: loadAfter});
+        TweenMax.to($(".pageLoader"),0.3,{"scale":0, ease: Power3.easeOut});
+
+    }); 
+
 });
 
 
@@ -90,41 +100,22 @@ function loadjscssfile(filename, filetype, pos) {
 
 window.onload = function() {
 
-
-
-
-    TweenMax.to($(".pageTitle"),0.5,{"height":"320px", ease: Power3.easeOut, onComplete: loadSlinky});
-
-    TweenMax.to($(".pageLoader"),0.3,{"scale":0, ease: Power3.easeOut});
-
-
-
-
-    // $(".pageTitle").css({"height":"320px"})
-
     $('pre code')
     $('pre code').each(function(i, block) {
         hljs.highlightBlock(block);
     });
-
-
-    function loadSlinky() {
-
-        $(".pageLoader").css({"display":"none"});
-
-        for (var i = 0; i < slinkyJS.length; i++) {  
-
-            loadjscssfile(slinkyJS[i], "js", "head");
-        };
-
-        TweenMax.fromTo($(".pageCont"),2.3,{"opacity":0},{"opacity":1});
-        TweenMax.fromTo($(".goHome"),0.3,{"opacity":0},{"opacity":1});
-    }
-    
-
-
-
-
-
+ 
+    for (var i = 0; i < slinkyJS.length; i++) {  
+        loadjscssfile(slinkyJS[i], "js", "head");
+    };
 } 
 
+
+
+
+function loadAfter() {
+
+    $(".pageLoader").css({"display":"none"});
+    TweenMax.fromTo($(".pageCont"),2.3,{"opacity":0},{"opacity":1});
+    TweenMax.fromTo($(".goHome"),0.3,{"opacity":0},{"opacity":1});
+}

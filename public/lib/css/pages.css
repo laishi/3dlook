@@ -458,7 +458,9 @@ lesshat-selector {
 @-o-keyframes bgAnim{ 0%,100% {background: #1d83f8} 25% {background: #e2453c} 50% {background: #ffd444} 75% {background: #15ad65}}
 @keyframes bgAnim{ 0%,100% {background: #1d83f8} 25% {background: #e2453c} 50% {background: #ffd444} 75% {background: #15ad65};
 }
-.text {
+
+
+.loader .text {
   display: none;
   position: absolute;
   font-size: 1em;
@@ -469,13 +471,13 @@ lesshat-selector {
   right: 0;
   text-align: center;
 }
-.text-link {
+.loader .text-link {
   position: relative;
   color: #000;
   font-weight: 600;
   text-decoration: none;
 }
-.text-link:after {
+.loader .text-link:after {
   content: "";
   position: absolute;
   bottom: 0;
@@ -488,6 +490,6 @@ lesshat-selector {
   -o-transition: width 0.2s ease-out;
   transition: width 0.2s ease-out;
 }
-.text-link:hover:after {
+.loader .text-link:hover:after {
   width: 100%;
 }
