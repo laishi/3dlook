@@ -61,40 +61,6 @@ $(document).ready(function() {
 
         $(img).attr("src",fixPath);  
       });
-});
-
-
-
-
-
-
-
-
-
-
-
-function loadjscssfile(filename, filetype, pos) {
-    var fileref;
-
-    if (filetype === "js") { //if filename is a external JavaScript file
-        fileref = document.createElement("script");
-        fileref.setAttribute("type", "text/javascript");
-        fileref.setAttribute("src", filename);
-    }
-    else if (filetype === "css") { //if filename is an external CSS file
-        fileref = document.createElement("link");
-        fileref.setAttribute("rel", "stylesheet");
-        fileref.setAttribute("type", "text/css");
-        fileref.setAttribute("href", filename);
-    }
-
-    if (fileref) {
-        document.getElementsByTagName(pos)[0].appendChild(fileref);
-    }
-}
-
-
-window.onload = function() {
 
 
 
@@ -128,5 +94,46 @@ window.onload = function() {
 
 
 
-} 
+
+
+
+
+
+
+});
+
+
+
+
+
+
+
+
+
+
+
+function loadjscssfile(filename, filetype, pos) {
+    var fileref;
+
+    if (filetype === "js") { //if filename is a external JavaScript file
+        fileref = document.createElement("script");
+        fileref.setAttribute("type", "text/javascript");
+        fileref.setAttribute("src", filename);
+    }
+    else if (filetype === "css") { //if filename is an external CSS file
+        fileref = document.createElement("link");
+        fileref.setAttribute("rel", "stylesheet");
+        fileref.setAttribute("type", "text/css");
+        fileref.setAttribute("href", filename);
+    }
+
+    if (fileref) {
+        document.getElementsByTagName(pos)[0].appendChild(fileref);
+    }
+}
+
+
+// window.onload = function() {
+
+// } 
 
