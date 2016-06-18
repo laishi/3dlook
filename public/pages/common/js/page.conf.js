@@ -61,45 +61,6 @@ $(document).ready(function() {
 
         $(img).attr("src",fixPath);  
       });
-
-
-
-
-    TweenMax.to($(".pageTitle"),0.5,{"height":"320px", ease: Power3.easeOut, onComplete: loadSlinky});
-
-
-
-
-    // $(".pageTitle").css({"height":"320px"})
-
-    $('pre code')
-    $('pre code').each(function(i, block) {
-        hljs.highlightBlock(block);
-    });
-
-
-    function loadSlinky() {
-
-        for (var i = 0; i < slinkyJS.length; i++) {  
-
-            loadjscssfile(slinkyJS[i], "js", "head");
-        };
-
-        TweenMax.fromTo($(".pageCont"),2.3,{"opacity":0},{"opacity":1});
-        TweenMax.fromTo($(".goHome"),0.3,{"opacity":0},{"opacity":1});
-    }
-    
-
-
-
-
-
-
-
-
-
-
-
 });
 
 
@@ -133,7 +94,39 @@ function loadjscssfile(filename, filetype, pos) {
 }
 
 
-// window.onload = function() {
+window.onload = function() {
 
-// } 
+
+
+
+    TweenMax.to($(".pageTitle"),0.5,{"height":"320px", ease: Power3.easeOut, onComplete: loadSlinky});
+
+
+
+
+    // $(".pageTitle").css({"height":"320px"})
+
+    $('pre code')
+    $('pre code').each(function(i, block) {
+        hljs.highlightBlock(block);
+    });
+
+
+    function loadSlinky() {
+
+        for (var i = 0; i < slinkyJS.length; i++) {  
+
+            loadjscssfile(slinkyJS[i], "js", "head");
+        };
+
+        TweenMax.fromTo($(".pageCont"),2.3,{"opacity":0},{"opacity":1});
+        TweenMax.fromTo($(".goHome"),0.3,{"opacity":0},{"opacity":1});
+    }
+    
+
+
+
+
+
+} 
 
