@@ -1,15 +1,58 @@
 
+
+
 var getSrollPos;
 
 $(".itemImg").on("click",function(){
     var item = $(this);
     openDetail(item);
     getSrollPos = $(window).scrollTop();
+
+
+    // var detailName = $.trim($(this).siblings().find(".pageName").text());
+    // var detailUrl;
+
+
+    // var urlName =  window.location.href;
+    // var urlSplit   = urlName.split("/");
+    // var urlLenght  = urlSplit.length;
+    // var curUrlName = urlSplit[urlLenght-1];
+
+
+    // if ( $(this).parents(".page").hasClass("work") ) {
+    //     var pageName = "work/"
+    // }
+
+
+    // if (curUrlName === "") {
+    //     var detailUrl = window.location.href + pageName + detailName;
+    // } else {
+
+    //     var detailUrl = window.location.href + "/" + detailName;
+    // }
+
+    // console.log(window.location.href);
+    
+    // var stateUrl = {
+    //     title: detailName,
+    //     url: detailUrl,
+    // };
+
+    // window.history.pushState(stateUrl, detailName, detailUrl);
+
 });
 
 
+
+
 $(".barInfo").click(openInfo);
+
+
 $(".backCicle").click(closeDetail);
+
+
+
+
 
 
  // = that.parents(".item").find(".itemTitle").text()
@@ -59,7 +102,6 @@ function openDetail(item) {
     $(".detailTitle").append(getTitle);
     $(".detailAdditional").append(getAdditional);
 
-    var iframego = "<iframe src= " + getLink + " " + "frameBorder=0 scrolling=no width='100%' height='100%'></iframe>"
 
     //USE PAGES DATA
 

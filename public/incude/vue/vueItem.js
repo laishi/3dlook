@@ -11,7 +11,7 @@ var db = new loki('workDB.json');
 var workCol = db.addCollection('workCol');
 
 
-var workNames = ["x50", "glmg", "ring", "iwatch", "moto", "edge", "i8", "nike", "shave", "house"];
+var workNames = ["x50", "glmg", "ring", "iwatch", "moto", "edge", "shave", "house"];
 var workWebglFolder = "public/webgl/case/";
 var workHtmlFolder = "public/pages/work/";
 var workImgFolder = "public/assets/img/workImg/";
@@ -64,7 +64,7 @@ var db = new loki('blogDB.json');
 var blogCol = db.addCollection('blogCol');
 
 
-var blogNames = ["waveLoader", "playcanvas-introduce", "modoSoft", "lokiJS", ];
+var blogNames = ["waveLoader", "playcanvas-introduce", "modoSoft", "lokiJS", "nodemongo" ];
 var blogHtmlFolder = "public/pages/blog/";
 var blogImgFolder = "public/assets/img/blogImg/";
 
@@ -149,15 +149,9 @@ var lookVue = new Vue({
     },
     methods: {
 
-        // ImgOpen: function(event) {
-        //     var targetImg = $(event.target).parent();
-        //     openDetail(targetImg);
-        // },
-
-        // onOffInfo: function () {
-        //     // var targetImg = $(event.target).parent().parent();
-        //     openInfo();
-        // }
+      showDetail:function (index) {
+        console.log(index)
+      }
 
 
     }
@@ -180,37 +174,24 @@ var notFound = Vue.extend({
 })
 
 var workComponent = Vue.extend({
-    template:
-            '<h1>Work</h1>' +
-            '<router-view></router-view>'
+
 })
 
 var blogComponent = Vue.extend({
-   template:
-            '<h1>Blog</h1>' +
-            '<router-view></router-view>'
+
 })
 
 var aboutComponent = Vue.extend({
-   template:
-            '<h1> aboutComponent </h1>' +
-            '<a v-link="{ path: \'/subroute\' }" class="btn btn-lg btn-primary" role="button">View SubRoute</a>' +
-            '<router-view></router-view>'
+
 })
 
 var contactComponent = Vue.extend({
-   template:
-            '<h1> 联系 </h1>' +
-            '<router-view></router-view>'
+
 })
 
 
-
 var detail = Vue.extend({
-   template:
-               '<h1>Navbar example</h1>' +
-               '<p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>' +
-               '<p>To see the difference between static and fixed top navbars, just scroll.</p>'
+
 })
 
 
@@ -250,6 +231,9 @@ Vue.component('newtemp', {
 })
 
 
+// router.alias({
+//     '/': '/work'
+// })
 
 
 
@@ -258,43 +242,17 @@ router.map({
    //    component: notFound
    // },
 
-   '/': {
-      component: workComponent,
-
-      subRoutes: {
-      '/detail': {
-           component: detail
-         }
-      }
-   },
 
    '/work': {
       component: workComponent,
-
-      subRoutes: {
-      '/detail': {
-           component: detail
-         }
-      }
    },
 
    '/blog': {
       component: blogComponent,
-
-      subRoutes: {
-      '/detail': {
-           component: detail
-         }
-      }
    },
 
    '/about': {
       component: aboutComponent,
-      subRoutes: {
-      '/detail': {
-           component: detail
-         }
-      }
    },
 
    '/contact': {

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Vue Router | Components data</title>
+    
+    
+    
+    <link rel='stylesheet prefetch' href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+
+    
+    
+    
+    
+  </head>
+
+  <body>
+
+    <div id="app">
+
+  <div class="container">
+    <h1>{{ AppName }}</h1>
+
+    <div class="panel panel-default">
+      <div class="panel-body">
+        <ul class="nav nav-tabs">
+          <li role="presentation"><a v-link="/" href="#">Home</a></li>
+          <li role="presentation"><a v-link="/message/foo" href="#">Message Foo</a></li>
+          <li role="presentation"><a v-link="/message/bar" href="#">Message Bar</a></li>
+        </ul>
+        <br />
+        <router-view class="test" v-transition="test" transition-mode="out-in"></router-view>
+      </div>
+    </div>
+
+  </div>
+</div>
+    <script src='http://cdn.rawgit.com/yyx990803/vue/0.12.1/dist/vue.js'></script>
+<script src='http://cdn.rawgit.com/vuejs/vue-router/master/dist/vue-router.js'></script>
+
+        <script src="js/index.js"></script>
+
+    
+    
+    
+  </body>
+</html>

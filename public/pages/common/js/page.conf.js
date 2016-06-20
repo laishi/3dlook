@@ -7,8 +7,8 @@ var csspath = [
 ]
 
 var jspath = [
-"../../lib/js/rd-smoothscroll.min.js",
 "../../incude/greensock/TweenMax.min.js",
+"../../lib/js/rd-smoothscroll.min.js",
 "../../incude/highlight/js/highlight.pack.js",
 ]
 
@@ -62,7 +62,6 @@ $(document).ready(function() {
 
         TweenMax.to($(".pageTitle"), 0.5, {"height":"320px", ease: Power3.easeOut, onComplete: loadAfter});
         TweenMax.to($(".pageLoader"),0.3,{"scale":0, ease: Power3.easeOut});
-
     }); 
 
 });
@@ -105,9 +104,11 @@ window.onload = function() {
         hljs.highlightBlock(block);
     });
  
+
     for (var i = 0; i < slinkyJS.length; i++) {  
-        loadjscssfile(slinkyJS[i], "js", "head");
+        loadjscssfile(slinkyJS[i], "js", "body");
     };
+
 } 
 
 
@@ -118,4 +119,5 @@ function loadAfter() {
     $(".pageLoader").css({"display":"none"});
     TweenMax.fromTo($(".pageCont"),2.3,{"opacity":0},{"opacity":1});
     TweenMax.fromTo($(".goHome"),0.3,{"opacity":0},{"opacity":1});
+
 }

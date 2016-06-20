@@ -15,17 +15,28 @@ window.onload = function() {
 
     // alert(winUrlName)
 
-    sliderPage(winUrlName, 1);
 
-    if (winUrlName === "blog" && firstBlog == 1) {
-        mixConf();
-        firstBlog = 0;
-    }
+
+    setTimeout(function(){
+
+        sliderPage(winUrlName, 0.3, 1);
+
+    },300); 
+
+    setTimeout(function(){
+
+        if (winUrlName === "blog" && firstBlog == 1) {
+            mixConf();
+            firstBlog = 0;
+        }
+
+    },300); 
+
+
+
+
 
 } 
-
-
-
 
 
 $(window).on('hashchange', function(e){
@@ -46,22 +57,18 @@ $(window).on('hashchange', function(e){
 
     GURLNAME = curUrlName;
 
+    // console.log(oldUrlName + " " + "oldUrlName");
+    // console.log(curUrlName + " " + "curUrlName");
 
-    console.log(curUrlName);
-
-    sliderPage(curUrlName, -1);
-
-
-
+    sliderPage(curUrlName, 0.5, -1);
 
     if (oldUrlName == "detail") {
         closeDetail();
     }
 
 
-    var hash = new String(document.location).indexOf("#");
-});
 
+});
 
 
 
@@ -76,7 +83,7 @@ $(".navItem").click(function() {
 
     CURPAGE = curPage;
 
-    sliderPage(pageData,index);
+    sliderPage(pageData, 0.5, index);
 
     $(".work .gridItems").css({"height":0, "overflow": "hidden"});
 
@@ -105,7 +112,7 @@ var homePage = $(".pages").children().first();
 homePage.addClass("curPage");
 homePage.css({ "display": "block" });
 
-function sliderPage(pageName,index) {
+function sliderPage(pageName,speed,index) {
 
 
     var pageData = pageName;
@@ -130,7 +137,7 @@ function sliderPage(pageName,index) {
         curPage = $(".curPage");
 
 
-        var speed = 0.5;
+
         if (pageIndex < index) {
             goRight();
         } else {

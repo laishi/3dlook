@@ -1,33 +1,29 @@
 $(document).ready(function() {
 
 
-    var homejs = [
+    // var homejs = [
 
-        'public/incude/vue/vue-router.min.js',
-        'public/incude/vue/vue.min.js',
-        'public/incude/vue/vueItem.js',
+    //     'public/incude/greensock/TweenMax.min.js',
+    //     'public/lib/js/expandItem.js',
 
-        'public/incude/greensock/TweenMax.min.js',
-        'public/lib/js/expandItem.js',
+    //     'public/lib/js/scrollheader.js',
+    //     'public/lib/js/sliderPage.js',
+    //     'public/lib/js/usedetail.js',
+    //     'public/lib/js/scrollgrid.js',
 
-        'public/lib/js/scrollheader.js',
-        'public/lib/js/sliderPage.js',
-        'public/lib/js/usedetail.js',
-        'public/lib/js/scrollgrid.js',
+    //     'public/incude/mixitup/js/jquery.mixitup.min.js',
+    //     'public/incude/slinky/js/slinkyHome.js',
+    //     'public/incude/highlight/js/highlight.pack.js',
 
-        'public/incude/mixitup/js/jquery.mixitup.min.js',
-        'public/incude/slinky/js/slinkyHome.js',
-        'public/incude/highlight/js/highlight.pack.js',
-
-    ]
+    // ]
 
 
 
 
 
-    for (var i = 0; i < homejs.length; i++) {  
-        loadjscssfile(homejs[i], "js", "body");
-    };
+    // for (var i = 0; i < homejs.length; i++) {  
+    //     loadjscssfile(homejs[i], "js", "body");
+    // };
 
 
 function loadjscssfile(filename, filetype, pos) {

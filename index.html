@@ -28,9 +28,9 @@
                 <img class="wxewm" src="public/assets/img/logo/3dlook-wx.png">
                 <!-- <iframe src="http://lmv.rocks/viewer/?url=http://lmv.rocks/data/racecar/Design.svf" frameBorder=0 scrolling=no width="100%" height="100%"></iframe> -->
                 <!-- <iframe src="assets/webgl/ring/index.html" frameBorder=0 scrolling=no width="100%" height="100%"></iframe> -->
-                <iframe src="public/webgl/case/eyes/index.html" frameBorder=0 scrolling=no width="100%" height="100%"></iframe>
+                <!-- <iframe src="public/webgl/case/eyes/index.html" frameBorder=0 scrolling=no width="100%" height="100%"></iframe> -->
                 <!-- <router-view></router-view> -->
-                <!-- <img src="public/assets/img/logo/3dlogo.png"> -->
+                <img src="public/assets/img/logo/3dlogo.png">
                 <!-- <h1>3dLook</h1> -->
             </div>
 
@@ -97,14 +97,17 @@
 
             <div class="gridItems w80">
 
-                <template v-for="data in work" id="workVUE">
+
+                <template v-for="data in work " id="workVUE">
+
 
                     <div class="item scrollItem">
 
+
                         <!-- <a v-link="{ name: 'new', params: { name: user.name }}"> -->
+                        <!-- v-link="{path: 'lannisters/' + person.name, params: { detail: person.name }}" -->
 
-                        <div v-link="'/detail/' + 'work' " class="itemImg">
-
+                        <div v-on:click="showDetail" class="itemImg">
                             <div class="gridImg workImg">
                                 <img v-bind:src="data.image" />
                             </div>
@@ -194,7 +197,7 @@
                     <div class="{{data.category}} item mix mixItem mdl-js-button  mdl-js-ripple-effect">
 
 
-                        <div v-link="'/detail/' + 'blog'" class="itemImg">
+                        <div v-link="'/detail' + '/blog'" class="itemImg">
                             <div class="gridImg blogImg">
                                 <img v-bind:src="data.image" />
                             </div>
@@ -284,7 +287,7 @@
                 </div>
 
                 <div class="item">
-                    <h3>技能:</h3>
+                    <h3>基本技能:</h3>
                     <ul>
                         <li> <p>Maya/Blender/Houdini</p> </li>
                         <li> <p>Gimp/PS/AI/Inkscape</p> </li>
@@ -296,10 +299,9 @@
                     <h3>擅长领域:</h3>
                     <ul>
                         <li> <p>三维交互设计</p> </li>
-                        <li> <p>三维模型</p> </li>
-                        <li> <p>网站开发</p> </li>
+                        <li> <p>三维网站开发</p> </li>
                         <li> <p>3D网站应用</p> </li>
-                        <li> <p>交互设计</p> </li>
+                        <li> <p>虚拟实现</p> </li>
                     </ul>
                 </div>
 
@@ -307,8 +309,8 @@
                     <h3>研究方向:</h3>
                     <ul>
                         <li> <p>三维可视化设计</p> </li>
-                        <li> <p>虚拟实现</p> </li>
                         <li> <p>3D产品展示</p> </li>
+                        <li> <p>虚拟实现及现实增强</p> </li>
                     </ul>
                 </div>
 
@@ -353,7 +355,43 @@
 
 
 <script src="public/lib/js/jquery-2.2.3.min.js"></script>
+
+
+
 <script src="public/incude/LokiJS/lokijs.min.js"></script>
+<script src="public/incude/vue/vue-router.min.js"></script>
+<script src="public/incude/vue/vue.min.js"></script>
+<script src="public/incude/vue/vueItem.js"></script>
+
+
+
+
+
+
+<script src="public/incude/greensock/TweenMax.min.js"></script>
+<script src="public/lib/js/expandItem.js"></script>
+
+
+
+
+
+
+<script src="public/lib/js/scrollheader.js"></script>
+<script src="public/lib/js/sliderPage.js"></script>
+<script src="public/lib/js/usedetail.js"></script>
+<script src="public/lib/js/scrollgrid.js"></script>
+
+
+
+<script src="public/incude/mixitup/js/jquery.mixitup.min.js"></script>
+<script src="public/incude/slinky/js/slinkyHome.js"></script>
+<script src="public/incude/highlight/js/highlight.pack.js"></script>
+
+
+
+
+
+
 <script src="public/lib/js/look.conf.js"></script>
 
 

@@ -1,0 +1,243 @@
+<!doctype html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="webgl web3d 三维网站开发">
+    <meta name="description" content="webgl web3d 三维网站开发 联系:13640566324">
+    <title> NodeJS MongoDB 搭建手迹 </title>
+    <!-- <link rel="stylesheet" href="../../lib/css.pageloader.css" /> -->
+    <link rel="stylesheet" href="../../lib/css/pages.css" />
+    <script src="../../lib/js/jquery-2.2.3.min.js"></script>
+    <script src="../common/js/page.conf.js"></script>
+
+</head>
+
+<body>
+
+
+    <div class="pageTitle">
+        <img src="public/assets/img/logo/3dlogo.png" alt="webgl 3dlook">
+        <p class="date">2016-6-13</p>
+        <p class="author">3dlook</p>
+        <p class="category">article</p>
+        <ul class="tags">
+            <li class="tag"> PBR </li>
+            <li class="tag"> webgl </li>
+            <li class="tag"> web3d </li>
+        </ul>
+        <h3 class="title">PlayCanvas 搞webgl三维前端网站开发的好朋友 </h3>
+    </div>
+    <div class="btnCicle goHome">
+        <a class="btnCicleHome" href="http://3dlook.net/#!/blog"> <i class='fa fa-home' aria-hidden='true'></i> </a>
+    </div>
+    <div class="pageCont nodemongo">
+        <article>
+            <section>
+                <div class="title">
+                    <h1> 起因 </h1>
+                </div>
+                <div class="titleCont summary">
+                    <div class="pageGrids">
+                        <div class="pageGrid gridW100" style="clear: both;">
+                            <p> Autodesk View And Data Api 有一个例子：Viewer and MongoDb Integration 可谓3d在网上的应用赚足了大把面子。 </p>
+                            <a href="http://mongo.autodesk.io/"> <button class="linkBtn"> View & Data API-MongoDB </button></a>
+                        </div>
+                        <div class="pageGrid gridW100"> <img src="public/assets/img/blogImg/nodemongo/ViewAndDataAPI-MongoDB.jpg" > </div>
+                        <p> 虽然感觉确实不错，仍然可以找到一些理由去拒绝使用他，但是，如果在你有时间而有愿意继续深入的情况下，还是有必要了解以下长的像树叶的MongoDB。 </p>
+                    </div>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="title">
+                    <h1> 安装NodeJS&MongoDB </h1>
+                </div>
+                <div class="titleCont">
+
+                  <div class="pageGrids">
+                        <div class="pageGrid gridW100">
+                          <h4> NodeJS&MongoDB安装是很简单和愉快的,直接到官网去解决。 </h4>
+                        </div>
+                        <a href="https://nodejs.org/en/"> <button class="linkBtn"> NodeJS </button></a>
+                        <a href="https://nodejs.org/en/"> <button class="linkBtn"> MongoDB </button></a>
+                  </div>
+            </section>
+
+            <section>
+                <div class="title">
+                    <h1> 环境搭建 </h1>
+                </div>
+                <div class="titleCont">
+
+                  <div class="pageGrids">
+                        <div class="pageGrid gridW100">
+                          <h4> 这个时候我打算采用ExpressJS去完成这件事情 </h4>
+                          <pre><code class="javascript">
+npm init //初始化过程中会问一些必要问题，老实回答就可以了
+npm install express mongoose --save //使用npm安装express和mongoose模块
+                          </code></pre>
+                        </div>
+                  </div>
+            </section>
+
+            <section>
+                <div class="title">
+                    <h1> 搞定Mongodb </h1>
+                </div>
+                <div class="titleCont">
+
+                  <div class="pageGrids">
+                        <div class="pageGrid gridW100">
+                          <p> 在启动mongodb之前我们做一些基础的配置工作 </p>
+                          <p> 我习惯这样干:先去创建一个文件夹，取个稍微有意义的名字，然后在这个文件夹里建四个文件夹（bin conf data log）</p>
+
+                          <div class="pageGrid gridW100"> <img src="public/assets/img/blogImg/nodemongo/folder.png" > </div>
+
+                          <p> 把mongo和mongod文件copy到bin文件夹下面，方便调用执行。</p>
+
+                          <pre><code class="javascript">
+//conf下面建立一个名唤 mongod.conf的文件，参考输入如下内容：
+port = 3001
+dbpath = data
+logpath = log/mongod.log
+fork = true
+                          </code></pre>
+
+                          <p> data目录是今后创建的数据库仓库</p>
+                          <p> log下面建一个空的mongod.log就可以了，mongodb的日志会自己写进去</p>
+                          <p> 做好这些工作之后，我们就可以试着通过下面的命令来启动我们的mongodb服务 </p>
+                          <pre><code class="javascript">
+./bin/mongod -f conf/mongod.conf
+                          </code></pre>
+                          <p> 这时候终端会返回一些信息给你，正常的话应该告诉你数据库在3030端口等待连接。那多不好意思，怎么能让他老人家等呢，我们马上就去连接： </p>
+                          <p> mongo是一个客户端工具，他就可以免费帮助我们干连接数据库这些工作 </p>
+                          <pre><code class="javascript">
+./bin/mongo 127.0.0.1：3001/test  //test是我假想的数据库名称，如果你不往里面插入数据，他就等于不存在，所以我们凭高兴取名字。
+                          </code></pre>
+                          <p> 接下来你就可以通过mongodb的增删改查命令操作数据库了，不过现在我们什么也不干。 </p>
+                        </div>
+                  </div>
+            </section>
+
+
+            <section>
+                <div class="title">
+                    <h1> 利用expree搭建应用 </h1>
+                </div>
+                <div class="titleCont">
+
+                  <div class="pageGrids">
+                        <div class="pageGrid gridW100">
+                          <h4> 采用Express快速地完成这件事情 </h4>
+                          <pre><code class="javascript">
+npm init //初始化过程中会问一些必要问题，老实回答就可以了
+npm install express mongoose --save //使用npm安装express和mongoose模块
+                          </code></pre>
+
+                          <p> 接下来就可去创建一个名字为app.js的应用了：</p>
+
+                          <pre><code class="javascript">
+var express = require('express');
+var app = express();
+
+var mongoose = require("mongoose");
+
+var movies = require('./product');
+
+
+app.listen(3000, function () {
+  console.log('Example app listening on port 3000!');
+});
+
+
+
+// respond with "hello world" when a GET request is made to the homepage
+app.get('/', function(req, res) {
+  res.send('hello world');
+});
+                          </code></pre>
+
+                          <p> 以上利用express创建了一个简单的服务器，接下来我们要动真格的了，使用mongoose模块连接到mongodb服务器 </p>
+                          <pre><code class="javascript">
+var mongoose = require("mongoose");
+
+//这个Schema有点像工厂里产品的模具。
+var Schema = mongoose.Schema;
+
+// 连接字符串格式为mongodb://主机/数据库名
+
+var url = 'mongodb://localhost:3001/3dlook';
+
+// mongoose发起连接
+mongoose.connect(url);
+
+//为productSchema配置字段。
+var productSchema = new Schema({
+    id      : { type: String, unique: true },
+    code    : { type: String, required: true, unique: true },
+    name    : { type: String, required: true, unique: true },
+    size    : { type: String, required: true },
+    weight  : { type: String, required: true },
+    price   : { type: Number, required: true },
+    date    : { type: String, required: true },
+    summary : { type: String, required: true },
+    image   : { type: String, required: true },
+    place   : { type: String, required: true },
+})
+
+// 模型
+
+var Product = mongoose.model('Product', productSchema);
+
+//有了模具马上就开始造产品了,并打上'中国造'
+
+var Product = new Product({
+    id      : 002,
+    code    : 'SY-LED-THD002',
+    name    : 'LED天花灯',
+    size    : '12cmx12cmx12cm',
+    weight  : 0.25,
+    price   : 52,
+    date    : '2016-6-21',
+    summary : 'LED天花灯采用导热性极高的铝合金及专利结构技术设计生产的新型天花灯。 LED天花灯在商业照明领域使用较广,家居照明领域还在慢慢渗透。',
+    image   : 'http://c.hiphotos.baidu.com/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign:f6ee7ba3d488d43fe4a499a01c77b97e/4afbfbedab64034f721d1ed0adc379310b551d17.jpg',
+    place   : '中国.中山',
+})
+
+//保存数据到数据库,注意product将作为集合保存，且会变成products，现在就可以通过 db.products.find()查看文档了。
+Product.save(function(err) {
+    if (err) {
+        console.log('err')
+        return;
+    }
+    console.log('LED天花灯');
+});
+
+//上面提到的数据库、集合、文档需要透彻理解。
+//如果你不方便理解请按照我的方式来，数据库就相当于一个堆放各种产品的仓库，那么不同的产品名称就是不同的集合名称，产品的属性就相当于文档。
+                          </code></pre>
+
+                        </div>
+                  </div>
+            </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </article>
+    </div>
+</body>
+
+</html>

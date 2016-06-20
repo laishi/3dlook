@@ -312,7 +312,9 @@ article .linkBtn a{
 }
 
 
-
+.hljs {
+    text-align: left;
+}
 
 .pageGrids .gridW25{
     width: 24.5%;
