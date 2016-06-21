@@ -64,7 +64,7 @@ var db = new loki('blogDB.json');
 var blogCol = db.addCollection('blogCol');
 
 
-var blogNames = ["waveLoader", "playcanvas-introduce", "modoSoft", "lokiJS", "nodemongo" ];
+var blogNames = ["waveLoader", "playcanvas-introduce","playcanvas-pbr", "modoSoft", "lokiJS", "nodemongo" ];
 var blogHtmlFolder = "public/pages/blog/";
 var blogImgFolder = "public/assets/img/blogImg/";
 

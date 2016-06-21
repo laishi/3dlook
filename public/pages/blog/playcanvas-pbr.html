@@ -1,3 +1,63 @@
+<!doctype html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="keywords" content="webgl web3d 三维网站开发">
+    <meta name="description" content="webgl web3d 三维网站开发 联系:13640566324">
+    <title>PlayCanvas pbr代码演示 </title>
+    <!-- <link rel="stylesheet" href="../../lib/css.pageloader.css" /> -->
+    <link rel="stylesheet" href="../../lib/css/pages.css" />
+    <script src="../../lib/js/jquery-2.2.3.min.js"></script>
+    <script src="../common/js/page.conf.js"></script>
+
+</head>
+
+<body>
+
+
+    <div class="pageTitle">
+        <img src="public/assets/img/logo/3dlogo.png" alt="webgl 3dlook">
+        <p class="date">2016-6-13</p>
+        <p class="author">3dlook</p>
+        <p class="category">article</p>
+        <ul class="tags">
+            <li class="tag"> PBR </li>
+            <li class="tag"> webgl </li>
+            <li class="tag"> web3d </li>
+        </ul>
+        <h3 class="title"> PlayCanvas pbr代码演示 </h3>
+    </div>
+    <div class="btnCicle goHome">
+        <a class="btnCicleHome" href="http://3dlook.net/#!/blog"> <i class='fa fa-home' aria-hidden='true'></i> </a>
+    </div>
+    <div class="pageCont playcanvas-pbr">
+        <article>
+
+
+            <section>
+                <div class="title">
+                    <h1> pbr测试效果 </h1>
+                </div>
+                <div class="titleCont summary">
+                    <p>
+                      记得当初playcanvas的CEO在宣布PlayCanvas引擎开始支持PBR的时候成了头条新闻，说：引擎的图形能力确实带来了了一个质的飞跃。在官方的博客上有详细的说明。
+                    </p>
+                    <button class="linkBtn"> <a href="http://blog.playcanvas.com/seemore-physically-based-rendering-in-webgl/"> Physically Based Rendering in WebGL </a> </button>
+
+                    <iframe src="../../../public/demo/playcanvas-pbr/index.html" frameBorder=0 scrolling=no width="100%" height="520px"></iframe>
+                </div>
+            </section>
+
+
+            <section>
+                <div class="title">
+                    <h1> PlayCanvas pbr代码片段 </h1>
+                </div>
+                <div class="titleCont summary">
+                    <div class="pageGrids">
+
+
+                      <pre><code class="javascript">
 var app, canvas;
 
 // 获取天空盒子6个级别的图片地址
@@ -72,19 +132,12 @@ function createMaterial(d, s, g, n) {
     return mat;
 }
 
-
-
-
 loadImages();
-
-
 
 function initialize() {
 
-
     // ***********    Initialize application   *******************
     var canvas = document.getElementById("application-canvas");
-
 
     // focus the canvas for keyboard input
     canvas.focus();
@@ -153,28 +206,18 @@ function initialize() {
 
         ]
     })
-    
+
     app.root.addChild(camera);
-
     camera.translate(0, 0, 2);
-
-
-
 
     var light = new pc.Entity();
     light.addComponent('light', { type: 'point' });
     light.setPosition(2, 2, 2);
     app.root.addChild(light);
-
-
     var light = new pc.Entity();
     light.addComponent('light', { type: 'point' });
     light.setPosition(-2, -2, -2);
     app.root.addChild(light);
-
-
-
-
 
     var loadFilename = "obj/shaveblender.json";
 
@@ -243,5 +286,13 @@ function initialize() {
     });
 
 }
+                      </code></pre>
+                    </div>
+                </div>
+            </section>
 
+        </article>
+    </div>
+</body>
 
+</html>
