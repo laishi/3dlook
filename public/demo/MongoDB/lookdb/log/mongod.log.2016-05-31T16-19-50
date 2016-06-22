@@ -1,0 +1,33 @@
+2016-06-01T00:18:30.430+0800 I CONTROL  [initandlisten] MongoDB starting : pid=2731 port=3001 dbpath=/home/laishi/APP/MongoDB/lookdb/data 64-bit host=fedora
+2016-06-01T00:18:30.430+0800 I CONTROL  [initandlisten] db version v3.2.6
+2016-06-01T00:18:30.430+0800 I CONTROL  [initandlisten] git version: 05552b562c7a0b3143a729aaa0838e558dc49b25
+2016-06-01T00:18:30.430+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e-fips 11 Feb 2013
+2016-06-01T00:18:30.430+0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-06-01T00:18:30.430+0800 I CONTROL  [initandlisten] modules: none
+2016-06-01T00:18:30.430+0800 I CONTROL  [initandlisten] build environment:
+2016-06-01T00:18:30.430+0800 I CONTROL  [initandlisten]     distmod: rhel70
+2016-06-01T00:18:30.430+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2016-06-01T00:18:30.430+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-06-01T00:18:30.430+0800 I CONTROL  [initandlisten] options: { config: "conf/mongod.conf", net: { port: 3001 }, processManagement: { fork: true }, storage: { dbPath: "data" }, systemLog: { destination: "file", path: "log/mongod.log" } }
+2016-06-01T00:18:30.456+0800 I -        [initandlisten] Detected data files in /home/laishi/APP/MongoDB/lookdb/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2016-06-01T00:18:30.456+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-06-01T00:18:31.540+0800 I CONTROL  [initandlisten] 
+2016-06-01T00:18:31.540+0800 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2016-06-01T00:18:31.540+0800 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2016-06-01T00:18:31.540+0800 I CONTROL  [initandlisten] 
+2016-06-01T00:18:31.648+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/laishi/APP/MongoDB/lookdb/data/diagnostic.data'
+2016-06-01T00:18:31.649+0800 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-06-01T00:18:31.745+0800 I NETWORK  [initandlisten] waiting for connections on port 3001
+2016-06-01T00:20:51.000+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:47100 #1 (1 connection now open)
+2016-06-01T00:21:56.068+0800 I COMMAND  [conn1] terminating, shutdown command received
+2016-06-01T00:21:56.068+0800 I FTDC     [conn1] Shutting down full-time diagnostic data capture
+2016-06-01T00:21:56.070+0800 I CONTROL  [conn1] now exiting
+2016-06-01T00:21:56.070+0800 I NETWORK  [conn1] shutdown: going to close listening sockets...
+2016-06-01T00:21:56.070+0800 I NETWORK  [conn1] closing listening socket: 6
+2016-06-01T00:21:56.070+0800 I NETWORK  [conn1] closing listening socket: 7
+2016-06-01T00:21:56.070+0800 I NETWORK  [conn1] removing socket file: /tmp/mongodb-3001.sock
+2016-06-01T00:21:56.070+0800 I NETWORK  [conn1] shutdown: going to flush diaglog...
+2016-06-01T00:21:56.070+0800 I NETWORK  [conn1] shutdown: going to close sockets...
+2016-06-01T00:21:56.070+0800 I STORAGE  [conn1] WiredTigerKVEngine shutting down
+2016-06-01T00:21:56.389+0800 I STORAGE  [conn1] shutdown: removing fs lock...
+2016-06-01T00:21:56.389+0800 I CONTROL  [conn1] dbexit:  rc: 0

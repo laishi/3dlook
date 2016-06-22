@@ -1,0 +1,38 @@
+2016-06-01T00:35:14.132+0800 I CONTROL  [initandlisten] MongoDB starting : pid=4135 port=3001 dbpath=/home/laishi/APP/MongoDB/lookdb/data 64-bit host=fedora
+2016-06-01T00:35:14.132+0800 I CONTROL  [initandlisten] db version v3.2.6
+2016-06-01T00:35:14.132+0800 I CONTROL  [initandlisten] git version: 05552b562c7a0b3143a729aaa0838e558dc49b25
+2016-06-01T00:35:14.132+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e-fips 11 Feb 2013
+2016-06-01T00:35:14.132+0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-06-01T00:35:14.132+0800 I CONTROL  [initandlisten] modules: none
+2016-06-01T00:35:14.132+0800 I CONTROL  [initandlisten] build environment:
+2016-06-01T00:35:14.132+0800 I CONTROL  [initandlisten]     distmod: rhel70
+2016-06-01T00:35:14.132+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2016-06-01T00:35:14.132+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-06-01T00:35:14.132+0800 I CONTROL  [initandlisten] options: { config: "conf/mongod.conf", net: { port: 3001 }, processManagement: { fork: true }, storage: { dbPath: "data" }, systemLog: { destination: "file", path: "log/mongod.log" } }
+2016-06-01T00:35:14.148+0800 I -        [initandlisten] Detected data files in /home/laishi/APP/MongoDB/lookdb/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2016-06-01T00:35:14.148+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-06-01T00:35:14.989+0800 I CONTROL  [initandlisten] 
+2016-06-01T00:35:14.989+0800 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2016-06-01T00:35:14.989+0800 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2016-06-01T00:35:14.990+0800 I CONTROL  [initandlisten] 
+2016-06-01T00:35:15.016+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/laishi/APP/MongoDB/lookdb/data/diagnostic.data'
+2016-06-01T00:35:15.017+0800 I NETWORK  [initandlisten] waiting for connections on port 3001
+2016-06-01T00:35:15.017+0800 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-06-01T05:30:22.953+0800 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 1698ms
+2016-06-01T05:30:23.137+0800 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 110, after asserts: 140, after connections: 150, after extra_info: 540, after globalLock: 750, after locks: 750, after network: 750, after opcounters: 750, after opcountersRepl: 750, after storageEngine: 1050, after tcmalloc: 1050, after wiredTiger: 1190, at end: 1500 }
+2016-06-01T05:30:56.044+0800 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 1730, after globalLock: 1730, after locks: 1730, after network: 1730, after opcounters: 1730, after opcountersRepl: 1730, after storageEngine: 1730, after tcmalloc: 1730, after wiredTiger: 1730, at end: 1730 }
+2016-06-01T05:31:24.192+0800 I COMMAND  [PeriodicTaskRunner] task: DBConnectionPool-cleaner took: 233ms
+2016-06-01T05:32:27.458+0800 I COMMAND  [PeriodicTaskRunner] task: DBConnectionPool-cleaner took: 2993ms
+2016-06-01T05:32:27.458+0800 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 1530, after globalLock: 1530, after locks: 1530, after network: 1530, after opcounters: 1530, after opcountersRepl: 1530, after storageEngine: 1530, after tcmalloc: 1530, after wiredTiger: 1530, at end: 1530 }
+2016-06-01T09:05:01.402+0800 I CONTROL  [signalProcessingThread] got signal 15 (Terminated), will terminate after current cmd ends
+2016-06-01T09:05:06.337+0800 I FTDC     [signalProcessingThread] Shutting down full-time diagnostic data capture
+2016-06-01T09:05:18.393+0800 I CONTROL  [signalProcessingThread] now exiting
+2016-06-01T09:05:18.393+0800 I NETWORK  [signalProcessingThread] shutdown: going to close listening sockets...
+2016-06-01T09:05:18.393+0800 I NETWORK  [signalProcessingThread] closing listening socket: 6
+2016-06-01T09:05:18.393+0800 I NETWORK  [signalProcessingThread] closing listening socket: 7
+2016-06-01T09:05:18.394+0800 I NETWORK  [signalProcessingThread] removing socket file: /tmp/mongodb-3001.sock
+2016-06-01T09:05:18.394+0800 I NETWORK  [signalProcessingThread] shutdown: going to flush diaglog...
+2016-06-01T09:05:18.394+0800 I NETWORK  [signalProcessingThread] shutdown: going to close sockets...
+2016-06-01T09:05:19.610+0800 I STORAGE  [signalProcessingThread] WiredTigerKVEngine shutting down
+2016-06-01T09:05:44.138+0800 I STORAGE  [signalProcessingThread] shutdown: removing fs lock...
+2016-06-01T09:05:44.151+0800 I CONTROL  [signalProcessingThread] dbexit:  rc: 0

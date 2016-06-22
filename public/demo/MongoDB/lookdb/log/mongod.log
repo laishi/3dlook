@@ -1,0 +1,211 @@
+2016-06-20T09:19:32.326+0800 I CONTROL  [initandlisten] MongoDB starting : pid=8707 port=3001 dbpath=/home/laishi/APP/MongoDB/lookdb/data 64-bit host=fedora
+2016-06-20T09:19:32.326+0800 I CONTROL  [initandlisten] db version v3.2.6
+2016-06-20T09:19:32.326+0800 I CONTROL  [initandlisten] git version: 05552b562c7a0b3143a729aaa0838e558dc49b25
+2016-06-20T09:19:32.326+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e-fips 11 Feb 2013
+2016-06-20T09:19:32.326+0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-06-20T09:19:32.326+0800 I CONTROL  [initandlisten] modules: none
+2016-06-20T09:19:32.326+0800 I CONTROL  [initandlisten] build environment:
+2016-06-20T09:19:32.326+0800 I CONTROL  [initandlisten]     distmod: rhel70
+2016-06-20T09:19:32.326+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2016-06-20T09:19:32.326+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-06-20T09:19:32.326+0800 I CONTROL  [initandlisten] options: { config: "conf/mongod.conf", net: { port: 3001 }, processManagement: { fork: true }, storage: { dbPath: "data" }, systemLog: { destination: "file", path: "log/mongod.log" } }
+2016-06-20T09:19:32.343+0800 I -        [initandlisten] Detected data files in /home/laishi/APP/MongoDB/lookdb/data created by the 'wiredTiger' storage engine, so setting the active storage engine to 'wiredTiger'.
+2016-06-20T09:19:32.343+0800 I STORAGE  [initandlisten] wiredtiger_open config: create,cache_size=1G,session_max=20000,eviction=(threads_max=4),config_base=false,statistics=(fast),log=(enabled=true,archive=true,path=journal,compressor=snappy),file_manager=(close_idle_time=100000),checkpoint=(wait=60,log_size=2GB),statistics_log=(wait=0),
+2016-06-20T09:19:33.480+0800 I CONTROL  [initandlisten] 
+2016-06-20T09:19:33.480+0800 I CONTROL  [initandlisten] ** WARNING: /sys/kernel/mm/transparent_hugepage/defrag is 'always'.
+2016-06-20T09:19:33.480+0800 I CONTROL  [initandlisten] **        We suggest setting it to 'never'
+2016-06-20T09:19:33.480+0800 I CONTROL  [initandlisten] 
+2016-06-20T09:19:33.486+0800 I FTDC     [initandlisten] Initializing full-time diagnostic data capture with directory '/home/laishi/APP/MongoDB/lookdb/data/diagnostic.data'
+2016-06-20T09:19:33.486+0800 I NETWORK  [HostnameCanonicalizationWorker] Starting hostname canonicalization worker
+2016-06-20T09:19:33.487+0800 I NETWORK  [initandlisten] waiting for connections on port 3001
+2016-06-20T09:20:03.200+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:38088 #1 (1 connection now open)
+2016-06-20T09:23:04.323+0800 I COMMAND  [conn1] dropDatabase book starting
+2016-06-20T09:23:04.384+0800 I COMMAND  [conn1] dropDatabase book finished
+2016-06-20T09:23:28.934+0800 I COMMAND  [conn1] dropDatabase lookuser starting
+2016-06-20T09:23:29.069+0800 I COMMAND  [conn1] dropDatabase lookuser finished
+2016-06-20T09:23:29.070+0800 I COMMAND  [conn1] command lookuser command: dropDatabase { dropDatabase: 1.0 } keyUpdates:0 writeConflicts:0 numYields:0 reslen:44 locks:{ Global: { acquireCount: { r: 2, w: 1, W: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_command 135ms
+2016-06-20T09:26:12.431+0800 I COMMAND  [conn1] command 3dlook.lookuser command: insert { insert: "lookuser", documents: [ { _id: ObjectId('576746345237ccf874498dc3'), name: "laishi" } ], ordered: true } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:25 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { W: 1 } } } protocol:op_command 198ms
+2016-06-20T10:23:21.857+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51920 #2 (2 connections now open)
+2016-06-20T10:23:21.875+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:51922 #3 (3 connections now open)
+2016-06-20T10:23:21.927+0800 I NETWORK  [conn2] end connection 127.0.0.1:51920 (2 connections now open)
+2016-06-20T10:23:21.927+0800 I NETWORK  [conn3] end connection 127.0.0.1:51922 (2 connections now open)
+2016-06-20T10:23:42.243+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52290 #4 (2 connections now open)
+2016-06-20T10:23:42.255+0800 I NETWORK  [conn4] end connection 127.0.0.1:52290 (1 connection now open)
+2016-06-20T10:23:42.260+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52292 #5 (2 connections now open)
+2016-06-20T10:23:42.263+0800 I NETWORK  [conn5] end connection 127.0.0.1:52292 (1 connection now open)
+2016-06-20T10:24:08.424+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52766 #6 (2 connections now open)
+2016-06-20T10:24:08.436+0800 I NETWORK  [conn6] end connection 127.0.0.1:52766 (1 connection now open)
+2016-06-20T10:24:08.441+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52768 #7 (2 connections now open)
+2016-06-20T10:24:08.444+0800 I NETWORK  [conn7] end connection 127.0.0.1:52768 (1 connection now open)
+2016-06-20T10:24:20.012+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52994 #8 (2 connections now open)
+2016-06-20T10:24:20.025+0800 I NETWORK  [conn8] end connection 127.0.0.1:52994 (1 connection now open)
+2016-06-20T10:24:20.030+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:52998 #9 (2 connections now open)
+2016-06-20T10:24:20.033+0800 I NETWORK  [conn9] end connection 127.0.0.1:52998 (1 connection now open)
+2016-06-20T10:24:23.143+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53052 #10 (2 connections now open)
+2016-06-20T10:24:23.156+0800 I NETWORK  [conn10] end connection 127.0.0.1:53052 (1 connection now open)
+2016-06-20T10:24:23.161+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:53056 #11 (2 connections now open)
+2016-06-20T10:24:23.164+0800 I NETWORK  [conn11] end connection 127.0.0.1:53056 (1 connection now open)
+2016-06-20T10:32:08.751+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:33532 #12 (2 connections now open)
+2016-06-20T10:32:08.763+0800 I NETWORK  [conn12] end connection 127.0.0.1:33532 (1 connection now open)
+2016-06-20T10:32:08.768+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:33536 #13 (2 connections now open)
+2016-06-20T10:32:08.771+0800 I NETWORK  [conn13] end connection 127.0.0.1:33536 (1 connection now open)
+2016-06-20T10:33:07.196+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:34606 #14 (2 connections now open)
+2016-06-20T10:33:07.209+0800 I NETWORK  [conn14] end connection 127.0.0.1:34606 (1 connection now open)
+2016-06-20T10:33:07.214+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:34608 #15 (2 connections now open)
+2016-06-20T10:33:07.223+0800 I NETWORK  [conn15] end connection 127.0.0.1:34608 (1 connection now open)
+2016-06-20T10:33:54.502+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:35460 #16 (2 connections now open)
+2016-06-20T10:33:54.514+0800 I NETWORK  [conn16] end connection 127.0.0.1:35460 (1 connection now open)
+2016-06-20T10:33:54.519+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:35462 #17 (2 connections now open)
+2016-06-20T10:33:54.528+0800 I NETWORK  [conn17] end connection 127.0.0.1:35462 (1 connection now open)
+2016-06-20T10:34:35.554+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:36200 #18 (2 connections now open)
+2016-06-20T10:34:35.566+0800 I NETWORK  [conn18] end connection 127.0.0.1:36200 (1 connection now open)
+2016-06-20T10:34:35.571+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:36202 #19 (2 connections now open)
+2016-06-20T10:34:35.620+0800 I NETWORK  [conn19] end connection 127.0.0.1:36202 (1 connection now open)
+2016-06-20T10:35:45.268+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:37468 #20 (2 connections now open)
+2016-06-20T10:35:45.280+0800 I NETWORK  [conn20] end connection 127.0.0.1:37468 (1 connection now open)
+2016-06-20T10:35:45.285+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:37470 #21 (2 connections now open)
+2016-06-20T10:35:45.334+0800 I NETWORK  [conn21] end connection 127.0.0.1:37470 (1 connection now open)
+2016-06-20T10:36:44.192+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:38548 #22 (2 connections now open)
+2016-06-20T10:36:44.204+0800 I NETWORK  [conn22] end connection 127.0.0.1:38548 (1 connection now open)
+2016-06-20T10:36:44.209+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:38550 #23 (2 connections now open)
+2016-06-20T10:36:44.234+0800 I NETWORK  [conn23] end connection 127.0.0.1:38550 (1 connection now open)
+2016-06-20T10:38:25.906+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:40428 #24 (2 connections now open)
+2016-06-20T10:38:25.918+0800 I NETWORK  [conn24] end connection 127.0.0.1:40428 (1 connection now open)
+2016-06-20T10:38:25.923+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:40430 #25 (2 connections now open)
+2016-06-20T10:38:25.946+0800 I NETWORK  [conn25] end connection 127.0.0.1:40430 (1 connection now open)
+2016-06-20T10:41:21.310+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:43898 #26 (2 connections now open)
+2016-06-20T10:41:21.323+0800 I NETWORK  [conn26] end connection 127.0.0.1:43898 (1 connection now open)
+2016-06-20T10:41:21.328+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:43900 #27 (2 connections now open)
+2016-06-20T10:41:21.339+0800 I NETWORK  [conn27] end connection 127.0.0.1:43900 (1 connection now open)
+2016-06-20T10:42:05.160+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:44704 #28 (2 connections now open)
+2016-06-20T10:42:05.172+0800 I NETWORK  [conn28] end connection 127.0.0.1:44704 (1 connection now open)
+2016-06-20T10:42:05.177+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:44706 #29 (2 connections now open)
+2016-06-20T10:42:05.195+0800 I NETWORK  [conn29] end connection 127.0.0.1:44706 (1 connection now open)
+2016-06-20T10:52:38.804+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56906 #30 (2 connections now open)
+2016-06-20T10:52:38.816+0800 I NETWORK  [conn30] end connection 127.0.0.1:56906 (1 connection now open)
+2016-06-20T10:52:38.821+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:56908 #31 (2 connections now open)
+2016-06-20T10:52:38.846+0800 I NETWORK  [conn31] end connection 127.0.0.1:56908 (1 connection now open)
+2016-06-20T10:52:47.288+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57056 #32 (2 connections now open)
+2016-06-20T10:52:47.290+0800 I NETWORK  [conn32] end connection 127.0.0.1:57056 (1 connection now open)
+2016-06-20T10:52:47.292+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57058 #33 (2 connections now open)
+2016-06-20T10:52:47.297+0800 I NETWORK  [conn33] end connection 127.0.0.1:57058 (1 connection now open)
+2016-06-20T10:52:51.488+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57146 #34 (2 connections now open)
+2016-06-20T10:52:51.489+0800 I NETWORK  [conn34] end connection 127.0.0.1:57146 (1 connection now open)
+2016-06-20T10:52:51.490+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57148 #35 (2 connections now open)
+2016-06-20T10:52:51.504+0800 I NETWORK  [conn35] end connection 127.0.0.1:57148 (1 connection now open)
+2016-06-20T10:53:15.253+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57592 #36 (2 connections now open)
+2016-06-20T10:53:15.264+0800 I NETWORK  [conn36] end connection 127.0.0.1:57592 (1 connection now open)
+2016-06-20T10:53:15.269+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57594 #37 (2 connections now open)
+2016-06-20T10:53:15.286+0800 I NETWORK  [conn37] end connection 127.0.0.1:57594 (1 connection now open)
+2016-06-20T10:53:17.884+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57630 #38 (2 connections now open)
+2016-06-20T10:53:17.885+0800 I NETWORK  [conn38] end connection 127.0.0.1:57630 (1 connection now open)
+2016-06-20T10:53:17.887+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57632 #39 (2 connections now open)
+2016-06-20T10:53:17.892+0800 I NETWORK  [conn39] end connection 127.0.0.1:57632 (1 connection now open)
+2016-06-20T10:53:30.056+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57860 #40 (2 connections now open)
+2016-06-20T10:53:30.068+0800 I NETWORK  [conn40] end connection 127.0.0.1:57860 (1 connection now open)
+2016-06-20T10:53:30.073+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:57862 #41 (2 connections now open)
+2016-06-20T10:53:30.089+0800 I NETWORK  [conn41] end connection 127.0.0.1:57862 (1 connection now open)
+2016-06-20T15:36:45.049+0800 I NETWORK  [conn1] end connection 127.0.0.1:38088 (0 connections now open)
+2016-06-20T15:36:46.131+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:43066 #42 (1 connection now open)
+2016-06-20T15:36:46.679+0800 I NETWORK  [conn42] end connection 127.0.0.1:43066 (0 connections now open)
+2016-06-20T15:51:04.949+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:58532 #43 (1 connection now open)
+2016-06-20T15:53:36.484+0800 I COMMAND  [conn43] command 3dlook.lookuser command: find { find: "lookuser", filter: {} } planSummary: COLLSCAN keysExamined:0 docsExamined:99 cursorExhausted:1 keyUpdates:0 writeConflicts:0 numYields:3 nreturned:99 reslen:6983 locks:{ Global: { acquireCount: { r: 8 } }, Database: { acquireCount: { r: 4 } }, Collection: { acquireCount: { r: 4 } } } protocol:op_command 187ms
+2016-06-20T17:06:34.989+0800 I NETWORK  [conn43] end connection 127.0.0.1:58532 (0 connections now open)
+2016-06-20T17:24:53.283+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:48688 #44 (1 connection now open)
+2016-06-20T17:34:46.552+0800 I NETWORK  [conn44] end connection 127.0.0.1:48688 (0 connections now open)
+2016-06-20T17:35:20.171+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:60994 #45 (1 connection now open)
+2016-06-20T17:35:25.469+0800 I NETWORK  [conn45] end connection 127.0.0.1:60994 (0 connections now open)
+2016-06-20T17:37:58.998+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:35650 #46 (1 connection now open)
+2016-06-20T17:38:53.853+0800 I NETWORK  [conn46] end connection 127.0.0.1:35650 (0 connections now open)
+2016-06-20T17:45:45.457+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:44240 #47 (1 connection now open)
+2016-06-20T17:46:48.863+0800 I NETWORK  [conn47] end connection 127.0.0.1:44240 (0 connections now open)
+2016-06-20T17:46:51.678+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:45438 #48 (1 connection now open)
+2016-06-20T17:46:52.947+0800 I COMMAND  [conn48] command 3dlook.products command: insert { insert: "products", documents: [ { id: 1, code: "SY-LED-THD001", name: "LED天花灯", size: "12cmx12cmx12cm", weight: "0.2", price: 86, date: "2016-6-20", summary: "LED天花灯采用导热性极高的铝合金及专利结构技术设计生产的新型天花灯。 LED天花灯在商业照明领域使用较广,家�...", image: "http://c.hiphotos.baidu.com/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign:f6ee7ba3d488d43fe4a499a01c77b97e/4afbfbedab64034f721d1ed0adc379310b551d17.jpg", place: "中国.中山", _id: ObjectId('5767bb8b15ee5f18691c27c3'), __v: 0 } ], ordered: false, writeConcern: { w: 1 } } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:40 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { w: 1, W: 1 } } } protocol:op_query 1142ms
+2016-06-20T17:47:23.610+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:46038 #49 (2 connections now open)
+2016-06-20T17:48:18.483+0800 I NETWORK  [conn49] end connection 127.0.0.1:46038 (1 connection now open)
+2016-06-20T17:48:55.645+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:47692 #50 (2 connections now open)
+2016-06-20T17:55:32.470+0800 I NETWORK  [conn48] end connection 127.0.0.1:45438 (1 connection now open)
+2016-06-20T18:04:38.636+0800 I NETWORK  [conn50] end connection 127.0.0.1:47692 (0 connections now open)
+2016-06-20T18:05:06.134+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:37946 #51 (1 connection now open)
+2016-06-20T18:08:02.208+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41138 #52 (2 connections now open)
+2016-06-20T18:08:02.237+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41142 #53 (3 connections now open)
+2016-06-20T18:08:02.470+0800 I INDEX    [conn53] build index on: 3dlook.products properties: { v: 1, unique: true, key: { id: 1 }, name: "id_1", ns: "3dlook.products", background: true }
+2016-06-20T18:08:02.495+0800 I INDEX    [conn53] build index done.  scanned 2 total records. 0 secs
+2016-06-20T18:08:02.496+0800 I COMMAND  [conn53] command 3dlook.$cmd command: createIndexes { createIndexes: "products", indexes: [ { name: "id_1", key: { id: 1 }, unique: true, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 214ms
+2016-06-20T18:08:02.663+0800 I INDEX    [conn53] build index on: 3dlook.products properties: { v: 1, unique: true, key: { code: 1 }, name: "code_1", ns: "3dlook.products", background: true }
+2016-06-20T18:08:02.663+0800 I INDEX    [conn53] build index done.  scanned 2 total records. 0 secs
+2016-06-20T18:08:02.663+0800 I COMMAND  [conn53] command 3dlook.$cmd command: createIndexes { createIndexes: "products", indexes: [ { name: "code_1", key: { code: 1 }, unique: true, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 161ms
+2016-06-20T18:08:02.814+0800 I INDEX    [conn53] build index on: 3dlook.products properties: { v: 1, unique: true, key: { name: 1 }, name: "name_1", ns: "3dlook.products", background: true }
+2016-06-20T18:08:02.995+0800 I COMMAND  [conn53] command 3dlook.$cmd command: createIndexes { createIndexes: "products", indexes: [ { name: "name_1", key: { name: 1 }, unique: true, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 exception: E11000 duplicate key error collection: 3dlook.products index: name_1 dup key: { : "LED天花灯" } code:11000 numYields:0 reslen:158 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 311ms
+2016-06-20T18:08:46.628+0800 I NETWORK  [conn52] end connection 127.0.0.1:41138 (2 connections now open)
+2016-06-20T18:08:46.628+0800 I NETWORK  [conn53] end connection 127.0.0.1:41142 (2 connections now open)
+2016-06-20T18:08:48.136+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41986 #54 (2 connections now open)
+2016-06-20T18:08:48.158+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:41988 #55 (3 connections now open)
+2016-06-20T18:08:48.369+0800 I INDEX    [conn54] build index on: 3dlook.products properties: { v: 1, unique: true, key: { name: 1 }, name: "name_1", ns: "3dlook.products", background: true }
+2016-06-20T18:08:48.386+0800 I COMMAND  [conn54] command 3dlook.$cmd command: createIndexes { createIndexes: "products", indexes: [ { name: "name_1", key: { name: 1 }, unique: true, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 exception: E11000 duplicate key error collection: 3dlook.products index: name_1 dup key: { : "LED天花灯" } code:11000 numYields:0 reslen:158 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 12083 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 204ms
+2016-06-20T18:08:57.502+0800 I NETWORK  [conn55] end connection 127.0.0.1:41988 (2 connections now open)
+2016-06-20T18:08:57.503+0800 I NETWORK  [conn54] end connection 127.0.0.1:41986 (2 connections now open)
+2016-06-20T18:09:00.107+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42208 #56 (2 connections now open)
+2016-06-20T18:09:00.132+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42210 #57 (3 connections now open)
+2016-06-20T18:09:00.198+0800 I INDEX    [conn56] build index on: 3dlook.products properties: { v: 1, unique: true, key: { name: 1 }, name: "name_1", ns: "3dlook.products", background: true }
+2016-06-20T18:09:02.310+0800 I NETWORK  [conn56] end connection 127.0.0.1:42208 (2 connections now open)
+2016-06-20T18:09:02.310+0800 I NETWORK  [conn57] end connection 127.0.0.1:42210 (2 connections now open)
+2016-06-20T18:09:03.594+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42262 #58 (2 connections now open)
+2016-06-20T18:09:03.620+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42264 #59 (3 connections now open)
+2016-06-20T18:09:03.781+0800 I INDEX    [conn58] build index on: 3dlook.products properties: { v: 1, unique: true, key: { name: 1 }, name: "name_1", ns: "3dlook.products", background: true }
+2016-06-20T18:09:03.782+0800 I COMMAND  [conn58] command 3dlook.$cmd command: createIndexes { createIndexes: "products", indexes: [ { name: "name_1", key: { name: 1 }, unique: true, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 exception: E11000 duplicate key error collection: 3dlook.products index: name_1 dup key: { : "LED天花灯" } code:11000 numYields:0 reslen:158 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 156ms
+2016-06-20T18:09:04.764+0800 I NETWORK  [conn59] end connection 127.0.0.1:42264 (2 connections now open)
+2016-06-20T18:09:04.764+0800 I NETWORK  [conn58] end connection 127.0.0.1:42262 (2 connections now open)
+2016-06-20T18:09:06.160+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42322 #60 (2 connections now open)
+2016-06-20T18:09:06.186+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:42324 #61 (3 connections now open)
+2016-06-20T18:09:06.318+0800 I INDEX    [conn60] build index on: 3dlook.products properties: { v: 1, unique: true, key: { name: 1 }, name: "name_1", ns: "3dlook.products", background: true }
+2016-06-20T18:09:06.319+0800 I COMMAND  [conn60] command 3dlook.$cmd command: createIndexes { createIndexes: "products", indexes: [ { name: "name_1", key: { name: 1 }, unique: true, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 exception: E11000 duplicate key error collection: 3dlook.products index: name_1 dup key: { : "LED天花灯" } code:11000 numYields:0 reslen:158 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 127ms
+2016-06-20T18:10:48.304+0800 I COMMAND  [conn51] CMD: drop 3dlook.products
+2016-06-20T18:10:49.888+0800 I COMMAND  [conn51] command 3dlook.products command: drop { drop: "products" } keyUpdates:0 writeConflicts:0 numYields:0 reslen:63 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { W: 1 } } } protocol:op_command 1648ms
+2016-06-20T18:11:10.780+0800 I NETWORK  [conn61] end connection 127.0.0.1:42324 (2 connections now open)
+2016-06-20T18:11:10.781+0800 I NETWORK  [conn60] end connection 127.0.0.1:42322 (2 connections now open)
+2016-06-20T18:11:17.132+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:44956 #62 (2 connections now open)
+2016-06-20T18:11:17.157+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:44958 #63 (3 connections now open)
+2016-06-20T18:11:17.913+0800 I INDEX    [conn63] build index on: 3dlook.products properties: { v: 1, unique: true, key: { id: 1 }, name: "id_1", ns: "3dlook.products", background: true }
+2016-06-20T18:11:17.925+0800 I INDEX    [conn63] build index done.  scanned 0 total records. 0 secs
+2016-06-20T18:11:17.953+0800 I COMMAND  [conn63] command 3dlook.$cmd command: createIndexes { createIndexes: "products", indexes: [ { name: "id_1", key: { id: 1 }, unique: true, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 28273 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 783ms
+2016-06-20T18:11:17.971+0800 I COMMAND  [conn62] command 3dlook.products command: insert { insert: "products", documents: [ { id: "2", code: "SY-LED-THD002", name: "LED天花灯", size: "12cmx12cmx12cm", weight: "0.25", price: 52, date: "2016-6-21", summary: "LED天花灯采用导热性极高的铝合金及专利结构技术设计生产的新型天花灯。 LED天花灯在商业照明领域使用较广,家�...", image: "http://c.hiphotos.baidu.com/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign:f6ee7ba3d488d43fe4a499a01c77b97e/4afbfbedab64034f721d1ed0adc379310b551d17.jpg", place: "中国.中山", _id: ObjectId('5767c1457c25841d6d262050'), __v: 0 } ], ordered: false, writeConcern: { w: 1 } } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:40 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1 }, acquireWaitCount: { w: 1 }, timeAcquiringMicros: { w: 585819 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 768ms
+2016-06-20T18:11:18.198+0800 I INDEX    [conn63] build index on: 3dlook.products properties: { v: 1, unique: true, key: { code: 1 }, name: "code_1", ns: "3dlook.products", background: true }
+2016-06-20T18:11:18.198+0800 I INDEX    [conn63] build index done.  scanned 1 total records. 0 secs
+2016-06-20T18:11:18.198+0800 I COMMAND  [conn63] command 3dlook.$cmd command: createIndexes { createIndexes: "products", indexes: [ { name: "code_1", key: { code: 1 }, unique: true, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 239ms
+2016-06-20T18:11:18.290+0800 I INDEX    [conn63] build index on: 3dlook.products properties: { v: 1, unique: true, key: { name: 1 }, name: "name_1", ns: "3dlook.products", background: true }
+2016-06-20T18:11:18.291+0800 I INDEX    [conn63] build index done.  scanned 1 total records. 0 secs
+2016-06-20T18:15:32.036+0800 I NETWORK  [conn63] end connection 127.0.0.1:44958 (2 connections now open)
+2016-06-20T18:15:32.036+0800 I NETWORK  [conn62] end connection 127.0.0.1:44956 (2 connections now open)
+2016-06-20T18:15:34.836+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49634 #64 (2 connections now open)
+2016-06-20T18:15:34.858+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:49636 #65 (3 connections now open)
+2016-06-20T18:15:35.092+0800 I COMMAND  [conn65] command 3dlook.users command: insert { insert: "users", documents: [ { id: "2", code: "SY-LED-THD002", name: "LED天花灯", size: "12cmx12cmx12cm", weight: "0.25", price: 52, date: "2016-6-21", summary: "LED天花灯采用导热性极高的铝合金及专利结构技术设计生产的新型天花灯。 LED天花灯在商业照明领域使用较广,家�...", image: "http://c.hiphotos.baidu.com/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign:f6ee7ba3d488d43fe4a499a01c77b97e/4afbfbedab64034f721d1ed0adc379310b551d17.jpg", place: "中国.中山", _id: ObjectId('5767c2461929dd576df7c0d7'), __v: 0 } ], ordered: false, writeConcern: { w: 1 } } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:40 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 1, W: 1 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 1750 } }, Collection: { acquireCount: { w: 1, W: 1 } } } protocol:op_query 233ms
+2016-06-20T18:15:35.251+0800 I INDEX    [conn64] build index on: 3dlook.users properties: { v: 1, unique: true, key: { id: 1 }, name: "id_1", ns: "3dlook.users", background: true }
+2016-06-20T18:15:35.251+0800 I INDEX    [conn64] build index done.  scanned 1 total records. 0 secs
+2016-06-20T18:15:35.252+0800 I COMMAND  [conn64] command 3dlook.$cmd command: createIndexes { createIndexes: "users", indexes: [ { name: "id_1", key: { id: 1 }, unique: true, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 228376 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 388ms
+2016-06-20T18:15:35.385+0800 I INDEX    [conn64] build index on: 3dlook.users properties: { v: 1, unique: true, key: { code: 1 }, name: "code_1", ns: "3dlook.users", background: true }
+2016-06-20T18:15:35.385+0800 I INDEX    [conn64] build index done.  scanned 1 total records. 0 secs
+2016-06-20T18:15:35.385+0800 I COMMAND  [conn64] command 3dlook.$cmd command: createIndexes { createIndexes: "users", indexes: [ { name: "code_1", key: { code: 1 }, unique: true, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 106ms
+2016-06-20T18:15:35.480+0800 I INDEX    [conn64] build index on: 3dlook.users properties: { v: 1, unique: true, key: { name: 1 }, name: "name_1", ns: "3dlook.users", background: true }
+2016-06-20T18:15:35.480+0800 I INDEX    [conn64] build index done.  scanned 1 total records. 0 secs
+2016-06-20T18:16:06.221+0800 I NETWORK  [conn51] end connection 127.0.0.1:37946 (2 connections now open)
+2016-06-20T18:16:11.654+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50296 #66 (3 connections now open)
+2016-06-20T18:16:22.257+0800 I NETWORK  [conn65] end connection 127.0.0.1:49636 (2 connections now open)
+2016-06-20T18:16:22.257+0800 I NETWORK  [conn64] end connection 127.0.0.1:49634 (2 connections now open)
+2016-06-20T18:16:24.337+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50524 #67 (2 connections now open)
+2016-06-20T18:16:24.362+0800 I NETWORK  [initandlisten] connection accepted from 127.0.0.1:50526 #68 (3 connections now open)
+2016-06-20T18:16:24.575+0800 I COMMAND  [conn67] command 3dlook.cps command: insert { insert: "cps", documents: [ { id: "2", code: "SY-LED-THD002", name: "LED天花灯", size: "12cmx12cmx12cm", weight: "0.25", price: 52, date: "2016-6-21", summary: "LED天花灯采用导热性极高的铝合金及专利结构技术设计生产的新型天花灯。 LED天花灯在商业照明领域使用较广,家�...", image: "http://c.hiphotos.baidu.com/baike/c0%3Dbaike150%2C5%2C5%2C150%2C50/sign:f6ee7ba3d488d43fe4a499a01c77b97e/4afbfbedab64034f721d1ed0adc379310b551d17.jpg", place: "中国.中山", _id: ObjectId('5767c2787fb9a4826d617e25'), __v: 0 } ], ordered: false, writeConcern: { w: 1 } } ninserted:1 keyUpdates:0 writeConflicts:0 numYields:0 reslen:40 locks:{ Global: { acquireCount: { r: 2, w: 2 } }, Database: { acquireCount: { w: 1, W: 1 } }, Collection: { acquireCount: { w: 1, W: 1 } } } protocol:op_query 215ms
+2016-06-20T18:16:24.634+0800 I INDEX    [conn68] build index on: 3dlook.cps properties: { v: 1, unique: true, key: { id: 1 }, name: "id_1", ns: "3dlook.cps", background: true }
+2016-06-20T18:16:24.634+0800 I INDEX    [conn68] build index done.  scanned 1 total records. 0 secs
+2016-06-20T18:16:24.635+0800 I COMMAND  [conn68] command 3dlook.$cmd command: createIndexes { createIndexes: "cps", indexes: [ { name: "id_1", key: { id: 1 }, unique: true, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 }, acquireWaitCount: { W: 1 }, timeAcquiringMicros: { W: 205692 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 265ms
+2016-06-20T18:16:24.775+0800 I INDEX    [conn68] build index on: 3dlook.cps properties: { v: 1, unique: true, key: { code: 1 }, name: "code_1", ns: "3dlook.cps", background: true }
+2016-06-20T18:16:24.775+0800 I INDEX    [conn68] build index done.  scanned 1 total records. 0 secs
+2016-06-20T18:16:24.775+0800 I COMMAND  [conn68] command 3dlook.$cmd command: createIndexes { createIndexes: "cps", indexes: [ { name: "code_1", key: { code: 1 }, unique: true, background: true } ], writeConcern: { w: 1 } } keyUpdates:0 writeConflicts:0 numYields:0 reslen:113 locks:{ Global: { acquireCount: { r: 1, w: 1 } }, Database: { acquireCount: { w: 1, W: 2 } }, Collection: { acquireCount: { w: 1 } } } protocol:op_query 133ms
+2016-06-20T18:16:24.837+0800 I INDEX    [conn68] build index on: 3dlook.cps properties: { v: 1, unique: true, key: { name: 1 }, name: "name_1", ns: "3dlook.cps", background: true }
+2016-06-20T18:16:24.838+0800 I INDEX    [conn68] build index done.  scanned 1 total records. 0 secs
+2016-06-20T20:59:33.990+0800 I COMMAND  [PeriodicTaskRunner] task: DBConnectionPool-cleaner took: 362ms
+2016-06-20T20:59:34.451+0800 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 296ms
+2016-06-21T03:17:07.768+0800 I COMMAND  [PeriodicTaskRunner] task: UnusedLockCleaner took: 115ms
+2016-06-21T03:17:31.725+0800 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 350, after asserts: 870, after connections: 1390, after extra_info: 1710, after globalLock: 1930, after locks: 1980, after network: 1980, after opcounters: 1980, after opcountersRepl: 1980, after storageEngine: 4390, after tcmalloc: 4730, after wiredTiger: 7050, at end: 19190 }
+2016-06-21T03:17:37.326+0800 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 770, after asserts: 1210, after connections: 1360, after extra_info: 1680, after globalLock: 1720, after locks: 1760, after network: 1760, after opcounters: 1760, after opcountersRepl: 1760, after storageEngine: 1800, after tcmalloc: 1860, after wiredTiger: 2230, at end: 2250 }
+2016-06-21T03:18:41.296+0800 I COMMAND  [ftdc] serverStatus was very slow: { after basic: 0, after asserts: 0, after connections: 0, after extra_info: 1190, after globalLock: 1190, after locks: 1190, after network: 1190, after opcounters: 1190, after opcountersRepl: 1190, after storageEngine: 1190, after tcmalloc: 1190, after wiredTiger: 1190, at end: 1190 }

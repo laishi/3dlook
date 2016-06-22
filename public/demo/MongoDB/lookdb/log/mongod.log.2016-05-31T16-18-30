@@ -1,0 +1,15 @@
+2016-06-01T00:08:41.826+0800 I CONTROL  [initandlisten] MongoDB starting : pid=2244 port=3001 dbpath=/home/laishi/APP/MongoDB/lookdb/data 64-bit host=fedora
+2016-06-01T00:08:41.826+0800 I CONTROL  [initandlisten] db version v3.2.6
+2016-06-01T00:08:41.826+0800 I CONTROL  [initandlisten] git version: 05552b562c7a0b3143a729aaa0838e558dc49b25
+2016-06-01T00:08:41.826+0800 I CONTROL  [initandlisten] OpenSSL version: OpenSSL 1.0.1e-fips 11 Feb 2013
+2016-06-01T00:08:41.826+0800 I CONTROL  [initandlisten] allocator: tcmalloc
+2016-06-01T00:08:41.826+0800 I CONTROL  [initandlisten] modules: none
+2016-06-01T00:08:41.826+0800 I CONTROL  [initandlisten] build environment:
+2016-06-01T00:08:41.826+0800 I CONTROL  [initandlisten]     distmod: rhel70
+2016-06-01T00:08:41.826+0800 I CONTROL  [initandlisten]     distarch: x86_64
+2016-06-01T00:08:41.826+0800 I CONTROL  [initandlisten]     target_arch: x86_64
+2016-06-01T00:08:41.826+0800 I CONTROL  [initandlisten] options: { config: "conf/mongod.conf", net: { port: 3001 }, processManagement: { fork: true }, storage: { dbPath: "data" }, systemLog: { destination: "file", path: "log/mongod.log" } }
+2016-06-01T00:08:41.842+0800 E NETWORK  [initandlisten] listen(): bind() failed errno:98 Address already in use for socket: 0.0.0.0:3001
+2016-06-01T00:08:41.842+0800 E NETWORK  [initandlisten]   addr already in use
+2016-06-01T00:08:41.843+0800 E STORAGE  [initandlisten] Failed to set up sockets during startup.
+2016-06-01T00:08:41.843+0800 I CONTROL  [initandlisten] dbexit:  rc: 48
