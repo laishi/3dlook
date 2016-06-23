@@ -30,11 +30,13 @@ var y_max = SCREEN_HEIGHT = window.innerHeight;
 
 
 
-
-
-
 init();
 animate();
+
+
+
+
+
 
 function init() {
 

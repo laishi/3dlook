@@ -134,28 +134,47 @@ function init() {
 
     manager.onProgress = function ( item, loaded, total ) {
 
-        console.log( item, loaded, total );
+        // console.log( item, loaded, total );
 
     };
 
     manager.onLoad = function ( ) {
 
-        var T2V = scene.children[4].geometry.vertices;
-        var LogoV = scene.children[5].geometry.vertices;
-
-        LogoV = T2V;
+        var T2V, LogoV;
 
 
+        for (i = 0; i < scene.children.length; i++) {
+
+            var object = scene.children[i];
+
+            if (object instanceof THREE.Points) {
+
+                if (object.name === "pointLogo") {
+                    LogoV = object.geometry.vertices;
+                }
+
+                if (object.name === "pointT2") {
+                    T2V = object.geometry.vertices;
+                }
+            }
+        }
 
 
-        // var array = [{a:1},{a:2},{a:3},{a:1},{a:2}],
-        //     amount = array.length;
-            
-        // for(var i = 0; i < amount; i++)
-        // {
-        //     var element = array[i];
-        //     TweenMax.to(element, 1, {a:0});
-        // }
+        var pointC = LogoV.clone;
+
+        console.log(pointC);
+
+
+        for (var i = 0; i < LogoV.length; i++) {
+
+
+            LogoV[i].x = LogoV[i].x + Math.random();
+            LogoV[i].y = LogoV[i].y + Math.random();
+            LogoV[i].z = LogoV[i].z + Math.random();
+
+
+
+        }
 
 
 
@@ -164,10 +183,72 @@ function init() {
 
 
 
-        scene.children[4].geometry.verticesNeedUpdate = true;
 
-        console.log(typeof  LogoV );
-        // console.log( T2V );
+
+        // var a = [1,2,3,4];
+        // var b = [0,0,0,10];
+
+        // b.onUpdate = function() {
+
+        //     console.log(a[0], a[1], a[2], a[3]);
+        // };
+
+
+        // TweenLite.to(a, 2, b); //tween the values of a to those of b over 2 seconds, and log them to the console.
+
+
+
+
+
+
+
+
+
+        // var lineSizePosS = [lineWS,lineHS,lineDS];
+        // var lineSizePosT = [lineWT,lineHT,lineDT];        
+
+
+        // lineSizePosT.onUpdate = function() {
+
+        //     var lineW = lineSizePosS[0]
+        //     var lineH = lineSizePosS[1]
+        //     var lineD = lineSizePosS[2]
+
+        //     m_geom.draw_line(CubeLine01, new Float32Array([0.0,0.0,0.0, 0.0,-lineH,0.0, 0.0,0.0,0.0, -lineD,0,0.0, 0.0,0,0.0, 0.0,0.0,-lineW, ]), false);
+        //     m_geom.draw_line(CubeLine02, new Float32Array([0.0,0.0,0.0, 0.0,lineH,0.0, 0.0,0.0,0.0, lineD,0.0,0.0, 0.0,0.0,0.0, 0.0,0.0,-lineW, ]), false);
+        //     m_geom.draw_line(CubeLine03, new Float32Array([0.0,0.0,0.0, 0.0,lineH,0.0, 0.0,0.0,0.0, -lineD,0.0,0.0, 0.0,0.0,0.0, 0.0,0.0,lineW, ]), false);
+        //     m_geom.draw_line(CubeLine04, new Float32Array([0.0,0.0,0.0, 0.0,-lineH,0.0, 0.0,0.0,0.0, lineD,0,0, 0.0,0.0,0.0, 0.0,0.0,lineW, ]), false); };
+                    
+
+        // TweenMax.to(lineSizePosS, lineTweenTime, lineSizePosT); 
+
+
+
+
+
+
+
+
+
+
+
+
+
+        // var a = [1,2,3,4];
+        // var b = [0,0,0,10];
+        // b.onUpdate = function() {
+        //     console.log(a[0], a[1], a[2], a[3]);
+        // };
+        // TweenLite.to(a, 2, b); //tween the values of a to those of b over 2 seconds, and log them to the console.
+
+
+
+
+
+        // scene.children[4].geometry.verticesNeedUpdate = true;
+
+        // console.log(typeof  LogoV );
+        // // console.log( T2V );
 
     };
 
@@ -206,6 +287,10 @@ function init() {
         var material = new THREE.PointsMaterial( { size: 0.1, color: Math.random() * 0x181818 } );
 
         var pointOBJ = new THREE.Points( geometry, material );
+
+        console.log(geometry.vertices.length)
+
+
 
         pointOBJ.name = name;
         pointOBJ.visible = visible;
@@ -278,6 +363,13 @@ function render() {
 
 
 
+
+
+    // console.log(LogoV)
+
+
+
+    // scene.children[5].geometry.verticesNeedUpdate = true;
 
 
     camera.lookAt(new THREE.Vector3(0, 0, 0));
