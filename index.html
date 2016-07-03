@@ -107,7 +107,7 @@
                         <!-- <a v-link="{ name: 'new', params: { name: user.name }}"> -->
                         <!-- v-link="{path: 'lannisters/' + person.name, params: { detail: person.name }}" -->
 
-                        <div v-on:click="showDetail" class="itemImg">
+                        <div v-link="'/detail' + '/work'" class="itemImg">
                             <div class="gridImg workImg">
                                 <img v-bind:src="data.image" />
                             </div>

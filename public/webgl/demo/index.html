@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Sample Three.js</title>
+    <style>
+    #container {
+        background: #000;
+        width: 400px;
+        height: 300px;
+    }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+    </div>
+</body>
+<!-- Shaders -->
+<script type="x-shader/x-vertex" id="vertexshader">
+    #ifdef GL_ES precision highp float; #endif void main() { gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.0); }
+</script>
+<script type="x-shader/x-fragment" id="fragmentshader">
+    #ifdef GL_ES precision highp float; #endif void main() { gl_FragColor = vec4(1.0,0.0,1.0,1.0); }
+</script>
+<!-- End Shaders -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script src="js/Three.js"></script>
+<script type="text/javascript">
+var WIDTH = 400,
+    HEIGHT = 300;
+
+var VIEW_ANGLE = 45,
+    ASPECT = WIDTH / HEIGHT,
+    NEAR = 1,
+    FAR = 1000;
+
+var $container = $('#container');
+
+var renderer = new THREE.WebGLRenderer();
+var camera = new THREE.PerspectiveCamera(
+    VIEW_ANGLE,
+    ASPECT,
+    NEAR,
+    FAR);
+var scene = new THREE.Scene();
+
+camera.position.z = 300;
+
+renderer.setSize(WIDTH, HEIGHT);
+
+$container.append(renderer.domElement);
+
+var shaderMaterial = new THREE.ShaderMaterial({
+    vertexShader: $('#vertexshader').text(),
+    fragmentShader: $('#fragmentshader').text()
+});
+
+var radius = 50,
+    segments = 16,
+    rings = 16;
+
+var sphere = new THREE.Mesh(
+    new THREE.SphereGeometry(radius, segments, rings),
+    shaderMaterial);
+
+scene.add(sphere);
+scene.add(camera);
+
+renderer.render(scene, camera);
+</script>
+
+</html>
