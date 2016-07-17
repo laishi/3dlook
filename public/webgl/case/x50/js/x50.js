@@ -680,9 +680,11 @@ b4w.register("x50Render", function(exports, require) {
 
 
     cubeShooter.onclick = function () {
-        m_camera_anim.auto_rotate(0.5);
+        // m_camera_anim.auto_rotate(0.5);
+        m_shooter.shot();
 
     }
+
 
     cubeHome.onclick = function () {
 
