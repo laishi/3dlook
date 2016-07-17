@@ -1,0 +1,90 @@
+body {
+    margin: 0px ;
+    padding: 0px ;
+}
+
+#b4wiwatch{
+	padding: 0 10%;
+}
+
+.ip-main .wrapper {
+	position: absolute;
+	z-index: 1;
+}
+
+.color {
+	width: 28px;
+	height: 28px;
+	border: 2px solid rgba(255,255,255,.3);
+	border-radius: 100px;
+	margin: 20px;
+	text-align: center;
+	padding:0.1em;
+	color: rgba(0,0,0,.7);
+	font-weight: bold;
+	text-shadow: 1px 1px rgba(200,200,200,.7), -1px -1px rgba(200,200,200,.7), 1px -1px rgba(200,200,200,.7), -1px 1px rgba(200,200,200,.7);
+}
+
+.c1 {background-color: red;}
+.c2 {background-color: green;}
+.c3 {background-color: blue;}
+.c4 {background-color: #A55;}
+.c5 {background-color: #AFECE5;}
+.c6 {background-color: #F1AC1D;}
+.c7 {background-color: #D1ED1E;}
+.c8 {background-color: red;}
+.c9 {background-color: green;}
+
+.c1:hover {
+	width: 28px;
+  	height: 28px;
+  	border-radius: 5px;
+}
+
+.c2:hover {
+	width: 28px;
+  	height: 28px;
+  	border-radius: 5px;
+}
+
+.c3:hover {
+	width: 28px;
+  	height: 28px;
+  	border-radius: 5px;
+}
+
+.c4:hover {
+	width: 28px;
+  	height: 28px;
+  	border-radius: 5px;
+}
+
+.c5:hover {
+	width: 28px;
+  	height: 28px;
+  	border-radius: 5px;
+}
+
+.c6:hover {
+	width: 28px;
+  	height: 28px;
+  	border-radius: 5px;
+}
+
+.c7:hover {
+	width: 28px;
+  	height: 28px;
+  	border-radius: 5px;
+}
+
+.c8:hover {
+	width: 28px;
+  	height: 28px;
+  	border-radius: 5px;
+}
+
+.c9:hover {
+	width: 28px;
+  	height: 28px;
+  	border-radius: 5px;
+}

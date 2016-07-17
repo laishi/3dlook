@@ -1,0 +1,655 @@
+/*----------------------------- 
+/ Generic Styles & Classes 
+-----------------------------*/
+body{
+	background:url(../images/template/black-texture.jpg) black;	
+	font-family: 'Droid Sans', sans-serif;
+	line-height: 1.5em;	
+}
+a{
+	color: #2d4688;
+	text-decoration: none;	
+}
+h1,h2,h3,h4,h5,h6{
+	clear: both;
+	color: #2d4688;
+	font-weight:bold;
+	line-height: 1.2em;
+	margin-bottom: .5em;
+	text-transform:uppercase;
+}
+h1{
+	font-size: 2em;	
+}
+img, input, textarea, iframe{
+	max-width: 100%;	
+}
+blockquote{
+	margin: 0 1em;
+	font-style:italic;
+}
+	blockquote em{
+		padding-top: .5em;
+		padding-left: .5em;
+	}
+.button{
+	-webkit-border-radius: .75em;
+	-moz-border-radius: .75em;
+	border-radius: .75em;
+	padding: .5em;
+	text-align:center;
+	text-transform:uppercase;
+}
+	.button.grey{
+		background-color: #292929;
+		border-top:1px solid #999;
+		border-left:1px solid #999;
+		border-right:1px solid #333;
+		border-bottom:1px solid #333;
+		-webkit-box-shadow: 1px 1px 1px 1px #333;
+		-moz-box-shadow: 1px 1px 1px 1px #333;
+		box-shadow: 1px 1px 1px 1px #333;
+	}
+::-moz-selection{ background: #9FA8BE; color:#fff; text-shadow: none; }
+::selection { background:#9FA8BE; color:#fff; text-shadow: none; }
+.tabletPlus{
+	display: none;	
+}
+img.afg-img { /*need this to overwrite the default flickr gallery plugin settings where the images would but up against each other*/
+	max-width: 90%;
+}
+.ngg-gallery-thumbnail {width:105px;padding-right:10px;} /*need this fix for IE8*/
+.alignleft, .alignright, .aligncenter{
+	border: 1px solid black;
+	display: block;	
+	margin: auto;	
+}
+.wp-caption{
+	background-color: #333;
+	color: white;
+	padding: .2em;	
+}
+iframe{
+	margin: auto;	
+}
+.screen-reader-text{
+	display: none;	
+}
+
+
+/*----------------------------- 
+/ Header 
+-----------------------------*/
+#header{
+	margin: auto;
+	position:relative;
+	width: 94%;	
+}
+	#headerMenus{
+		clear: both;
+		display: none;	
+	}
+		#enstromBug{
+			display: none;	
+		}
+	#logo{
+		float: left;
+		width: 75%;	
+	}
+	#headerMenuJumpLink{
+		float: right;
+		width: 25%;	
+	}
+		#headerMenuJumpLink .spacing{
+			padding: .5em;
+		}
+			#headerMenuJumpLink a{
+				color: white;
+				display: block;
+				font-size: 1.2em;
+			}
+	#headerSearchBarWrapper{
+		display: none;	
+	}
+			
+
+
+/*----------------------------- 
+/ Content 
+-----------------------------*/
+.bubble{
+	margin: 0 auto 1em auto;
+	overflow:hidden;
+	width: 94%;	
+}
+	.bubbleBorder{
+		background:url(../images/template/purple-texture.jpg) #9FA8BE;
+		border: solid .5em #2f2f2f;
+		-webkit-border-radius: 2em;
+		-moz-border-radius: 2em;
+		border-radius: 2em;
+		overflow:hidden;
+		padding: 1em .75em 1em .75em;
+	}
+		.bubbleBorder > section > :first-child, .bubbleBorder > section > a:first-child > *, .bubbleBorder > article > header > :first-child{
+			margin-top: 0px;
+		}
+		.bubbleBorder.letterbox{
+			-webkit-border-radius: 0em;
+			-moz-border-radius: 0em;
+			border-radius: 0em;
+			padding: 0;
+		}
+.helicopterDecoration{
+	display: none;	
+}
+
+
+/*----------------------------- 
+/ Footer 
+-----------------------------*/
+#footer{
+	color: white;
+	padding-bottom: 1em;
+}
+	#footer a{
+		color: white;
+	}
+	#footerMenus{
+	}
+		#footerMenus nav{
+			padding: .75em 0;
+		}
+	#footerContent{
+		width: 94%;
+		margin: auto;
+	}
+		#footerContent .socialMedia{
+			float: left;
+			width: 10%;	
+		}
+		#footerCopyRight{
+			float: left;
+			width: 80%;
+		}
+			#footerCopyRight p{
+				margin: 0;	
+			}
+	#footerSearchBarWrapper{
+		font-size: .8em;
+		margin: 1em 0;
+		text-align:center;
+	}
+	
+	
+/*----------------------------- 
+/ Navigation 
+-----------------------------*/
+nav{
+	text-align: center;
+}
+	nav ul{
+		list-style:none;
+	}
+		nav ul li{
+			float: left;
+			padding: 1%;
+			width: 48%;	
+		}
+			nav ul li a{
+				-webkit-border-radius: .75em;
+				-moz-border-radius: .75em;
+				border-radius: .75em;
+				-webkit-box-shadow: 1px 1px 1px 1px #333;
+				-moz-box-shadow: 1px 1px 1px 1px #333;
+				box-shadow: 1px 1px 1px 1px #333;
+				display: block;
+				font-weight: bold;
+				padding: .25em;
+				text-transform:uppercase;
+			}
+	nav.menu-markets-container{
+		background: #999;	
+	}
+		nav.menu-markets-container ul{
+		}
+			nav.menu-markets-container ul li{
+			}
+				nav.menu-markets-container ul li a{
+					background-color: #a4a2ac;
+					border-top:1px solid #999;
+					border-left:1px solid #999;
+					border-right:1px solid #333;
+					border-bottom:1px solid #333;
+					color: #2d4688;
+				}
+	nav.menu-main-container{	
+	}
+		nav.menu-main-container ul{
+		}
+			nav.menu-main-container ul li{
+				position: relative;
+			}
+				nav.menu-main-container ul li a{
+					background-color: black;
+					border-top:1px solid #666;
+					border-left:1px solid #666;
+					border-right:1px solid #333;
+					border-bottom:1px solid #333;
+					color: white;
+				}
+				nav.menu-main-container ul li ul{
+					display: none;
+				}
+	#sidebar nav{
+		background-color: transparent;
+	}
+		#sidebar nav ul.subpageNav{
+		}
+			#sidebar nav ul.subpageNav li{
+				padding: .5em 0;
+				width: 100%;
+			}
+				#sidebar nav ul.subpageNav li a{
+					-webkit-border-radius: .75em;
+					-moz-border-radius: .75em;
+					border-radius: .75em;
+					-webkit-box-shadow: 1px 1px 1px 1px #333;
+					-moz-box-shadow: 1px 1px 1px 1px #333;
+					box-shadow: 1px 1px 1px 1px #333;
+					color: #2d4688;
+					height: auto;
+					padding: .25em;
+				}
+					#sidebar nav ul.subpageNav li a:hover{
+						color: #6f7f92;
+					}
+					#sidebar nav ul.subpageNav li.current-menu-item a{
+						color: white;
+						text-shadow: 1px 1px 2px #333333;
+					}
+	#sidebar .bubble h2{
+		margin-top: 0;	
+	}
+		
+
+
+/*----------------------------- 
+/ Social Media 
+-----------------------------*/
+.socialMedia ul{
+	list-style: none;	
+	margin: 0;
+	padding: 0;
+}
+	.socialMedia ul li{
+		float: left;
+		margin: 0;
+		margin-right: .5em;
+		padding: 0;
+	}
+		.socialMedia .socialMediaIcon a{
+			background:url(../images/template/icons/facebook-icon.png) no-repeat 0 -20px;
+			display: block;
+			height: 20px;
+			text-indent:-1000px;
+			width: 20px;	
+		}
+			.socialMedia .socialMediaIcon:hover a{
+				background-position: 0px 0px;	
+			}
+			.socialMedia .facebookIcon a{
+				background-image:url(../images/template/icons/facebook-icon.png);	
+			}
+			.socialMedia .youtubeIcon a{
+				background-image:url(../images/template/icons/youtube-icon.png);	
+			}
+	
+
+/*----------------------------- 
+/ Media Query 768px+
+-----------------------------*/
+@media screen and (min-width: 768px) {
+	.alignleft{
+		display:inline-block;
+		float: left;
+		margin-right: 1.5em;
+		margin-bottom: 1.5em;	
+		max-width: 50%;
+	}
+	.alignright{
+		display:inline-block;
+		float: right;	
+		margin-left: 2em;
+		margin-bottom: 2em;
+		max-width: 50%;
+	}
+	.mobileOnly{
+		display: none;	
+	}
+	.tabletPlus{
+		display: block;	
+	}
+	.logo{
+		display: none;	
+	}
+	#header{
+		background:url(../images/template/grey-texture.jpg) repeat-x;
+		background-position-y: -20px;
+		position:relative;
+		width: 100%;	
+		z-index: 20;
+	}
+		#headerSearchBarWrapper{
+			background:url(../images/template/black-texture.jpg) repeat-x;
+			display: block;
+			padding: .5em 0;
+		}
+			#headerSearchBar{
+				color: white;
+				font-size: .7em;
+				margin: auto;
+				max-width: 985px;
+				text-align:right;
+			}
+		#headerMenus{
+			display: block;	
+		}
+			#marketsNavWrapper{
+				position: relative;
+			}
+				nav.menu-markets-container{
+					background: none;	
+				}
+					nav.menu-markets-container ul{
+					}
+						nav.menu-markets-container ul li{
+							width: 25%;
+							padding: 0;
+						}
+							nav.menu-markets-container ul li a{
+								background: none;
+								border: none;
+								-webkit-border-radius: 0;
+								-moz-border-radius: 0;
+								border-radius: 0;
+								-webkit-box-shadow: none;
+								-moz-box-shadow: none;
+								box-shadow: none;
+								height:73px;
+								padding: 0;
+								position:relative;
+							}
+								nav.menu-markets-container ul li a .text{
+									background: #b5b3bc;
+									-webkit-border-radius: .75em;
+									-moz-border-radius: .75em;
+									border-radius: .75em;
+									-webkit-box-shadow: 1px 1px 1px 1px #333;
+									-moz-box-shadow: 1px 1px 1px 1px #333;
+									box-shadow: 1px 1px 1px 1px #333;
+									display: block;
+									padding: .25em;
+									position: absolute;
+										top: 10px;
+										left: 0px;
+									width: 140px;
+									z-index: 10;
+								}
+								nav.menu-markets-container ul li a .helicopter{
+									background-repeat:no-repeat;
+									display: block;
+									height: 79px;
+									position: absolute;
+										top: 0px;
+										right: 0px;
+									width: 182px;
+									z-index: 20;
+								}
+									nav.menu-markets-container ul li a:hover .helicopter{
+										-webkit-animation:moveNavHeli 8s linear infinite alternate;
+									}
+									nav.menu-markets-container ul li.menu-item-2457 a .helicopter{
+										background-image:url(../images/template/navigation-helicopters/police-helicopter.png);
+									}
+									nav.menu-markets-container ul li.menu-item-2456 a .helicopter{
+										background-image:url(../images/template/navigation-helicopters/military-helicopter.png);
+									}
+									nav.menu-markets-container ul li.menu-item-2455 a .helicopter{
+										background-image:url(../images/template/navigation-helicopters/commercial-helicopter.png);
+									}
+									nav.menu-markets-container ul li.menu-item-2454 a .helicopter{
+										background-image:url(../images/template/navigation-helicopters/private-helicopter.png);
+									}
+							nav.menu-main-container ul li:hover ul{
+								background: #333;
+								border: 1px solid #666;
+								display: block;
+								padding-top: 0;
+								position:absolute;
+									top:1.5em;
+									left:0px;
+								
+							}
+								nav.menu-main-container ul li ul li{
+									float: none;
+								}
+									nav.menu-main-container ul li ul li a{
+										color: white;
+										font-weight: normal;
+										text-align: left;
+										white-space:nowrap;
+									}
+			#mainNavWrapper{
+				margin: 0 auto 1em auto;
+				position: relative;
+				width: 94%;
+				max-width: 752px;
+			}
+				#mainNavWrapperInner{
+					background:url(../images/template/main-navigation-bg.png) repeat-x;
+					-moz-border-radius-topleft: 0px;
+					-moz-border-radius-topright: 0px;
+					-moz-border-radius-bottomright: .75em;
+					-moz-border-radius-bottomleft: .75em;
+					-webkit-border-radius: 0px 0px .75em .75em;
+					border-radius: 0px 0px .75em .75em;
+					height: 47px;
+					position: absolute;
+						top: 13px;
+					width: 100%;
+					z-index: 100;
+				}
+					nav.menu-main-container{
+						float: left;
+					}
+						nav.menu-main-container ul{
+							padding-top: 13px;
+						}
+							nav.menu-main-container ul li{
+								float: left;
+								padding: 0;
+								width: auto;
+							}
+								nav.menu-main-container ul li a{
+									background-color: transparent;
+									border: none;
+									-webkit-box-shadow: none;
+									-moz-box-shadow: none;
+									box-shadow: none;
+									display: block;
+									padding: 0 1.25em;
+								}
+									nav.menu-main-container ul li > a:hover{
+										color: #6f7f92;
+									}
+									nav.menu-main-container ul li.current_page_item > a, nav.menu-main-container ul li.current-page-ancestor > a{
+										color: #999;
+									}
+				#mainNavWrapper .logo{
+					display: block;
+					float: right;
+					padding-top: 3px;
+					padding-right: 1em;
+				}
+		#headerMenuJumpLink{
+			display: none;	
+		}
+	#main{
+		margin: auto;
+		max-width: 800px;
+		position:relative;
+		z-index:10;	
+	}
+	#splashImage{
+	}
+		#splashImage .tabletPlus{	
+		}
+			#splashImage .tabletPlus .background{
+				-webkit-animation:moveSplashImageBg 3s linear infinite alternate;
+			}
+	#footer{
+		margin: auto;
+		position:relative;
+		z-index:20;	
+		width: 800px;
+	}
+		#footerMenus{
+			display: none;	
+		}
+		#footerMenus .socialMedia{
+			width: 5em;
+		}
+		#footerCopyRight{
+			width:auto;
+		}
+		#footerSearchBarWrapper{
+			display: none;	
+		}
+	#content{
+		float: right;
+		padding-left: 20%;
+		width: 79%;	
+	}
+	#contentPane{
+		margin: 0 auto 1em auto;
+		position:relative;
+		width: 94%;	
+		z-index: 10;
+	}
+		#contentPane .bubble{
+			width: 100%;
+			margin: 0;	
+		}
+		#content{
+			float: right;
+			padding-left: 1%;
+			position:relative;
+			width: 74%;	
+			z-index: 30;
+		}
+			#content .bubbleBorder{
+				padding-left: 2em;
+				padding-right: 2em;
+			}
+		#sidebar{
+			float: left;
+			position:relative;
+			width: 25%;	
+			z-index: 20;
+		}
+			#sidebar .bubble + .bubble{
+				margin-top: 1em;
+				position: relative;
+				z-index:20;	
+			}
+			.helicopterDecoration{
+				display: block;
+				position: relative;
+					top: 20px;
+					left: -95px;
+				z-index:1;	
+			}
+				.helicopterDecoration img{
+					max-width:none;
+				}
+		#contentPane.threeCol{
+		}
+			#contentPane.threeCol #contentAndSidebarWrapper{
+				float: right;
+				padding-left: 1%;
+				width: 74%;
+			}
+			#contentPane.threeCol #content{
+				float: left;
+				width: 58%;
+			}	
+			#contentPane.threeCol #rightSidebar{
+				float: right;
+				padding-left: 1%;
+				width: 40%;
+			}	
+			
+}
+
+
+/*----------------------------- 
+/ Media Query 1024px+
+-----------------------------*/
+@media screen and (min-width: 1024px) {
+	#headerMenus{
+		margin: auto;
+		width: 985px;
+	}
+		#mainNavWrapper{
+			width: 753px;	
+		}
+		#marketsNavWrapper{
+		}
+			nav.menu-markets-container{
+			}
+				nav.menu-markets-container ul{
+				}
+					nav.menu-markets-container ul li{
+						width: 20%;
+					}
+						nav.menu-markets-container ul li#menu-item-2457{
+							margin-left: 5%;
+						}
+						nav.menu-markets-container ul li#menu-item-2455{
+							margin-left: 14%;
+						}
+			#enstromBug{
+				display:block;
+				position: absolute;
+				top:0;
+				left: 45%;	
+			}		
+	#main{
+		margin: auto;
+		width: 800px;
+	}
+}
+
+
+/*----------------------------- 
+/ Animations
+-----------------------------*/
+@-webkit-keyframes moveNavHeli /*Safari and Chrome */
+{
+	0%   {top: 0px; right: 0px;}
+	25%  {top: -20px; right: -10px;}
+	50%  {top: -30px; right: 0px;}
+	75%  {top: -15px; right: 15px;}
+	100% {top: 0px; right: 0px;}
+}
+
+@-webkit-keyframes moveSplashImageBg /*Safari and Chrome */
+{
+	0%   {background-position: 0px 0px;}
+	20%  {background-position: -2px -1px;}
+	40%  {background-position: -5px -2px;}
+	60%  {background-position: -7px 0px;}
+	80%  {background-position: -4px -4px;}
+	100% {background-position: 0px 0px;}
+}

@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>three.js webgl - materials - cube reflection [camaro]</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		<link rel="stylesheet" href="css/lable.css">
+		<style>
+			body {
+				background:#495E97;
+				color:#fff;
+				padding:0;
+				margin:0;
+				overflow:hidden;
+				font-family:georgia;
+				text-align:center;
+			}
+
+			.pace {
+			  -webkit-pointer-events: none;
+			  pointer-events: none;
+			  -webkit-user-select: none;
+			  -moz-user-select: none;
+			  user-select: none;
+			}
+			.pace-inactive {
+			  display: none;
+			}
+			.pace .pace-progress {
+			  background-color: rgba(0, 0, 0, 0.2);
+			  position: fixed;
+			  z-index: -1;
+			  top: 0;
+			  right: 100%;
+			  bottom: 0;
+			  width: 100%;
+			}
+
+			.color{
+				width: 100%;
+				height: 120px;
+				background-color: rgba(0,0,0,0.2);
+				position: absolute;
+			}
+
+			.color li{
+				width: 32px;
+				height: 32px;
+				background-color: red;
+				list-style: none;
+				border-radius: 50%;
+				cursor: pointer;
+			}
+
+
+
+		</style>
+
+		<script src="../../../incude/common/threejs/three.min.js"></script>
+
+		<script src="../../../incude/common/threejs/BinaryLoader.js"></script>
+
+		<script src="../../../incude/common/threejs/TrackballControls.js"></script>
+
+		<script src="../../../incude/common/pace.min.js"></script>
+
+
+	</head>
+
+	<body>
+
+		<div class="lable" id="sm" >
+			<a id="one" href="myidisone">
+			<span> 照明设计分为数量化设计和质量化设计。照明设计可分为室外照明设计和室内灯光设计。照明设计也是灯光设计。
+			</span>
+			
+			</a>
+		</div> 
+
+		<div class="lable" id="shuoming" >		
+			<a id="one" href="myidisone"><span>Apple Watch 是苹果公司于2014年9月公布的一款智能手表，有Apple Watch、Apple Watch Sport 和Apple Watch </span></a>
+		</div> 
+
+
+
+		<script>
+
+
+			var SCREEN_WIDTH = window.innerWidth;
+			var SCREEN_HEIGHT = window.innerHeight;
+
+			var container;
+
+			var camera, scene, renderer, controls;
+
+			var video, videoImage, videoImageContext, videoTexture;
+
+			var directionalLight, pointLight;
+
+			var iwatchgroup;
+			var ccolor = 0x128CC4;
+
+			var mouseX = 0, mouseY = 0;
+
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+
+			var x_max = window.innerWidth;
+			var y_max = window.innerHeight;
+
+			var x_mid = window.innerWidth / 2;
+			var y_mid = window.innerHeight / 2;
+
+
+			var sm = document.getElementById('sm');
+			var shuoming = document.getElementById('shuoming');
+
+			init();
+			animate();
+
+			function init() {
+
+				container = document.createElement( 'div' );
+				document.body.appendChild( container );
+
+
+				// CAMERA
+
+				camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 1, 200000 );
+				camera.position.z = 200;
+
+				scene = new THREE.Scene();
+
+
+
+				// LIGHTS
+
+				var ambient = new THREE.AmbientLight( 0x020202 );
+				scene.add( ambient );
+
+				directionalLight = new THREE.DirectionalLight( 0xFFFFFF );
+				directionalLight.position.set( 300, 200, 300 ).normalize();
+				directionalLight.intensity = 0.6;
+				scene.add( directionalLight );
+
+				hemiLight = new THREE.HemisphereLight( 0xffffff, 0xffffff, 1);
+				hemiLight.color.setHSL( 0.6, 1, 0.6 );
+				hemiLight.groundColor.setHSL( 0.095, 1, 0.75 );
+				hemiLight.position.set( 0, 500, 0 );
+				scene.add( hemiLight );
+
+
+
+
+				/*ANIMATE POINT LIGHT*/
+				pointLight = new THREE.PointLight( 0xFFFFFF );
+				pointLight.intensity = 0.1;
+				pointLight.position.set( -1000, 0, 0 );
+				scene.add( pointLight );
+
+
+
+				pointLight1 = new THREE.PointLight( 0xFFFFFF );
+				pointLight1.position.set( 0, 1000, 0 );
+				pointLight1.intensity = 0.0;
+				scene.add( pointLight1 );
+
+
+
+
+
+				renderer = new THREE.WebGLRenderer({ alpha: true, antialias: true });
+				renderer.setSize( SCREEN_WIDTH, SCREEN_HEIGHT );
+				renderer.setFaceCulling( THREE.CullFaceNone );
+
+				container.appendChild( renderer.domElement );
+
+	
+
+				// create the video element
+				video = document.createElement( 'video' );
+				video.src = "video/jk.ogv";
+				video.loop = true;
+				video.load(); // must call after setting/changing source
+				video.play();
+				video.textContent = "||";
+				
+			
+				videoImage = document.createElement( 'canvas' );
+				videoImage.width = 799;
+				videoImage.height = 1000;
+
+
+				videoImageContext = videoImage.getContext( '2d' );
+				// background color if no video present
+				videoImageContext.fillStyle = '#DD0000';
+
+				videoImageContext.fillRect( 0, 0, videoImage.width, videoImage.height );
+
+				videoTexture = new THREE.Texture( videoImage );
+				videoTexture.minFilter = THREE.LinearFilter;
+				videoTexture.magFilter = THREE.LinearFilter;
+
+
+
+				/*ENV CUBE*/
+				var path = "../../img/env/studio-bw/";
+				var format = '.jpg';
+				var urls = [
+					path + 'px' + format, path + 'nx' + format,
+					path + 'py' + format, path + 'ny' + format,
+					path + 'pz' + format, path + 'nz' + format,
+				];
+
+				var textureCube = THREE.ImageUtils.loadTextureCube( urls );
+
+
+
+				//NOTE P
+				var geometry = new THREE.Geometry();
+				geometry.vertices.push(
+					new THREE.Vector3( 110, 110, 110),
+					new THREE.Vector3( 0, 10, 0 ),
+					new THREE.Vector3( 0, 24, 30 )
+				);
+
+				mynote = new THREE.Mesh( geometry );
+				scene.add( mynote );
+
+
+				/*IWATCH OBJ*/
+
+				iwatchgroup = new THREE.Object3D(); //END MUST ADD TO SCENCE
+				
+				
+				var iwatchCoverMat = new THREE.MeshPhongMaterial( {
+					color: 0xFFFFFF,
+					side: THREE.DoubleSide,
+					map: videoTexture,
+					//specular: 0x111111,
+					shininess: 100,
+
+					envMap:textureCube,
+					combine:THREE.AddOperation,
+					refractionRatio:0.98,
+					reflectivity:0.1,
+					} )
+
+
+				var iwatchBodyMat = new THREE.MeshPhongMaterial( {
+					color: 0xE6E6E6 ,
+					side: THREE.DoubleSide,
+					//specular: 0x111111,
+					shininess: 100,
+					//emissive:0x000000,
+					envMap:textureCube,
+					combine:THREE.AddOperation,
+					refractionRatio:0.98,
+					reflectivity:0.3,
+					} ) 
+
+				var iwatchHandMat = new THREE.MeshPhongMaterial( {
+					color: ccolor ,
+					side: THREE.DoubleSide,
+					//specular: 0x111111,
+					shininess: 100,
+					//emissive:0x000000,
+					} )
+
+				
+
+
+				var loader = new THREE.BinaryLoader();
+				loader.load( 'obj/iwatch-blender1.js', function ( geometry ) {
+
+					iwatchCover = new THREE.Mesh( geometry, iwatchCoverMat );
+					size = 20;
+					iwatchCover.scale.set(size,size,size);
+					iwatchCover.position.set(0,0,0);
+					scene.add( iwatchCover );
+					iwatchgroup.add( iwatchCover );
+					}
+				)
+
+
+
+				loader.load( 'obj/iwatch-blender2.js', function ( geometry ) {
+
+					iwatchBody = new THREE.Mesh( geometry, iwatchBodyMat );
+					size = 20;
+					iwatchBody.scale.set(size,size,size);
+					iwatchBody.position.set(0,0,0);
+					scene.add( iwatchBody );
+					iwatchgroup.add( iwatchBody );
+					}
+				)
+
+				loader.load( 'obj/iwatch-blender3.js', function ( geometry ) {
+
+					iwatchHand = new THREE.Mesh( geometry, iwatchHandMat );
+					size = 20;
+					iwatchHand.scale.set(size,size,size);
+					iwatchHand.position.set(0,0,0);
+					scene.add( iwatchHand );
+					iwatchgroup.add( iwatchHand );
+					}
+				)
+
+				scene.add( iwatchgroup );
+
+
+			
+
+				/*EVENT*/
+				window.addEventListener( 'resize', onWindowResize, false );
+				document.addEventListener('mousemove', onDocumentMouseMove, false);
+
+			} /*INIT END*/
+
+
+
+			function onWindowResize() {
+
+				windowHalfX = window.innerWidth / 2;
+				windowHalfY = window.innerHeight / 2;
+
+				camera.aspect = window.innerWidth / window.innerHeight;
+				camera.updateProjectionMatrix();
+
+				renderer.setSize( window.innerWidth, window.innerHeight );
+
+			}
+
+
+
+			function onDocumentMouseMove(event) {
+				mouseX = ( event.clientX - windowHalfX );
+				mouseY = ( event.clientY - windowHalfY );
+			}
+
+
+
+
+
+			/*LABLE*/
+
+			function getpos1(){
+				var npone = mynote.geometry.vertices[0];
+				update_labels( npone, sm );
+
+			}
+
+			function getpos2(){
+				var nptwo = mynote.geometry.vertices[1];
+				update_labels( nptwo, shuoming );
+
+			}
+
+
+
+			function animate() {
+
+				requestAnimationFrame( animate );
+				render();
+
+				getpos1();
+				getpos2();
+
+			}
+
+
+
+			function render() {
+
+
+
+
+				if ( video.readyState === video.HAVE_ENOUGH_DATA ) 
+				{
+					videoImageContext.drawImage( video, 0, 0 );
+					if ( videoTexture ) 
+						videoTexture.needsUpdate = true;
+				}
+
+				
+
+				var timer = -0.002 * Date.now();
+
+				
+
+				var basespeed = 0.021;
+				var speed = basespeed * mouseX/100 ;
+
+
+				if ( speed < 0.005 & speed > -0.005 ) {
+					iwatchgroup.rotation.y = speed/100 ;
+				} else if( speed > 0.005 ){
+					iwatchgroup.rotation.y += -speed;
+				} else{
+					iwatchgroup.rotation.y -= speed;
+				};
+
+				var axsix = new THREE.Vector3
+
+
+
+
+				camera.position.x += ( mouseX - camera.position.x ) * .1;
+				camera.position.y += ( - mouseY - camera.position.y ) * .1;
+
+				camera.lookAt( scene.position );
+
+				pointLight.position.x = 1500 * Math.cos( timer );
+				pointLight.position.z = 1500 * Math.sin( timer );
+
+				renderer.render( scene, camera );
+
+			}
+
+
+
+
+
+			function update_labels( vpos, note ) {
+
+			    var pos = get_screen_xy( vpos, camera );
+
+			    if ( pos.x >= x_max ) {
+			        note.style.left = '';
+			        note.style.right = x_max - pos.x;
+			    } else {
+			        note.style.right = '';
+			        note.style.left = pos.x;
+			    }
+
+			    if ( pos.y == y_max ) {
+			        note.style.top = '';
+			        note.style.bottom = y_max - pos.y;
+			    } else {
+			        note.style.bottom = '';
+			        note.style.top = pos.y;
+			    }
+			}
+
+
+			function get_screen_xy( position, camera ) {
+				var pos = position.clone();
+				projScreenMat = new THREE.Matrix4();
+				projScreenMat.multiplyMatrices( camera.projectionMatrix, camera.matrixWorldInverse );
+				pos.applyProjection( projScreenMat );
+
+				return { x: ( pos.x + 1 ) * window.innerWidth / 2, y: ( - pos.y + 1 ) * window.innerHeight / 2 };
+			}
+
+
+
+
+
+
+		</script>
+
+	</body>
+</html>

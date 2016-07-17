@@ -1,0 +1,512 @@
+/* CSS Document */
+
+/* Clearing */
+.clear:before,
+.clear:after,
+[class*="content"]:before,
+[class*="content"]:after,
+[class*="site"]:before,
+[class*="site"]:after {
+	content: '';
+	display: table;
+}
+
+.clear:after,
+[class*="content"]:after,
+[class*="site"]:after {
+	clear: both;
+}
+
+
+img {
+	width:100%;	
+}
+
+
+/* =Print Logo
+----------------------------------------------- */
+#enstrom-print-logo {
+	display:none;
+	width:auto;	
+}
+
+
+/* =Copter Graphic
+----------------------------------------------- */
+#configurator-cont {
+	padding:10px 3%;	
+}
+
+/* =Copter Graphic
+----------------------------------------------- */
+.copter-container {
+	overflow:hidden;
+	position:relative;
+}
+
+	.copc-parts, .copc-highlights, .copc-shadows, .copc-sky, .copc-stripe {
+		background:url(../../images/transparency-square.png);
+		clear:none;
+		display:block;
+		height:100%;
+		width:100%;
+	}
+	
+		.copc-parts, .copc-highlights, .copc-shadows, .copc-stripe {
+			left:0;
+			position:absolute;
+			top:0;	
+		}
+		
+		.copc-color {
+			clear:none;
+			display:block;
+			height:100%;
+			left:0;
+			position:absolute;
+			top:0;
+			width:100%;	
+		}
+	
+		.copc-parts img, .copc-highlights img, .copc-shadows img, .copc-sky img, .copc-stripe img, .copc-color img {
+			display:block;
+		}
+	
+		.copc-parts {
+			z-index:14;	
+		}
+	
+		.copc-highlights {
+			z-index:13;	
+		}
+		
+		.copc-shadows {
+			z-index:12;
+		}
+		
+		.copc-stripe {
+			z-index:11;	
+		}
+		
+		.copc-sky {
+			left:0;
+			position:relative;
+			top:0;
+			z-index:10;
+		}
+		
+		.copc-color {
+			height:100%;
+			width:100%;
+		}
+
+/* =Copter URL
+----------------------------------------------- */
+#share-url {
+	margin:0 0 10px 0;
+	width:100%;
+}
+
+
+/* =Copter Choices and Info
+----------------------------------------------- */
+#copter-info {
+
+}
+
+	#ci-container {
+		
+	}
+		
+		#ci-title {
+			color:#FFFFFF;
+			margin:58px 3% 10px 3%;
+			font-size:1.8em;
+			line-height:0.9em;
+			width:auto;
+		}
+		
+		#ci-base-color, #ci-accent-color, #ci-btns {
+			float:left;	
+		}
+			
+			#ci-base-color {
+				color:#FFFFFF;
+				margin:0 1% 0 0;
+				width:49%;
+			}
+			
+			#ci-accent-color {
+				color:#FFFFFF;
+				margin:0 0 0 1%;
+				width:49%;
+			}
+			
+				#ci-base-color-block, #ci-accent-color-block {
+					border:1px solid #333;
+					cursor:pointer;
+					display:block;
+					height:60px;
+					overflow:hidden;
+					width:auto;	
+				}
+			
+			#ci-btns {
+				width:30%;
+			}
+			
+				#ci-submit-btn {
+					cursor:pointer;
+					margin-bottom:10px;
+				}
+			
+				#ci-share-url-btn {
+					
+				}
+				
+				#ci-print-btn {
+					cursor:pointer;
+				}
+
+
+/* =Lightbox Form Styles
+----------------------------------------------- */
+#lightbox-form {
+	background:url(../../images/transparent-black-pixel.png);
+	display:none;
+	height:100%;
+	margin:0 auto;
+	position:fixed;
+	right:0;
+	top:0;
+	width:100%;
+	z-index:1000;
+}
+
+	#lf-container {
+		background-color:#FFFFFF;
+		height:auto;
+		margin:10% auto 0 auto;
+		padding:20px;
+		position:relative;
+		width:50%;	
+	}
+	
+		#lf-container form {
+			
+		}
+		
+		#lfc-close {
+			background:url(../../images/close-btn.png) no-repeat;
+			height:20px;
+			position:absolute;
+			right:-10px;
+			top:-10px;
+			width:20px;
+		}
+
+
+/* =Color Choices
+----------------------------------------------- */
+#large-copter-container {
+	margin:0 3%;	
+}
+	
+/* =Key Metallic Color
+----------------------------------------------- */
+#key-metallic-color {
+	background:url(../../images/star-icon.png) 2px 5px no-repeat;
+	color:#FFFFFF;
+	margin:5px 0;
+	padding:0 0 0 15px;
+}
+		
+		
+/* =Color Choices
+----------------------------------------------- */
+#colors-container {
+	margin-bottom:10px;		
+}
+
+	#colors-container h3 {
+
+	}
+
+	#color-grid {
+		margin:0;
+		overflow:hidden;
+		padding:0;
+		text-align:center;
+		text-indent:-9999px;
+	}
+	
+		#color-grid li {
+			display:inline-block;
+			float:left;
+			margin:0 3px 3px 0;
+			position:relative;
+		}
+		
+			#color-grid li a {
+				display:block;
+				height:51px;
+				width:51px;
+			}
+		
+				.metal-star {
+					background-image:url(../../images/star-corners.png);
+					background-position:bottom left;
+					background-repeat:no-repeat;
+				}
+				
+				
+/* =Stripe Grid
+----------------------------------------------- */
+	#accent-patterns {
+		margin:0 3% 10px 3%;
+	}
+	
+		#accent-patterns h3 {
+			font-size:1em;
+		}
+	
+		#stripe-grid {
+			list-style:none;
+			margin:0;
+			padding:0;
+		}
+		
+			#stripe-grid li {
+				background-color:#FFFFFF;
+				border-right:1px solid #000000;
+				display:inline-block;
+				float:left;
+				margin:0 0 1px 0;
+				position:relative;
+				text-align:center;
+				width:33.2%;
+			}
+	
+/* =Disclaimer
+----------------------------------------------- */
+#configurator-disclaimer {
+	color:#dce5ff;
+	font-size:0.8em;
+	padding:0 10px;
+	text-align:center;
+	text-transform:uppercase;
+}
+
+/* =Archive Page Styles
+----------------------------------------------- */
+#copter-list-container-br {
+	margin-top:47px;
+	padding:10px;
+}
+
+	#copter-list-container-br p {
+		margin:0;	
+	}
+	
+	#copter-list-br {
+		list-style:none;
+		margin:0;
+		padding:0;	
+	}
+	
+		.copter-item-br {
+			float:left;
+			margin-bottom:2%;
+			position:relative;
+			width:100%;
+		}
+	
+			.copter-item-br a {
+				display:block;
+				margin:0;
+				width:100%;
+			}
+			
+				.copter-item-br a img {
+					display:block;	
+				}
+				
+			.copter-title-br {
+				bottom:20px;
+				font-size:1.2em;
+				position:absolute;
+				right:25px;	
+			}
+						
+
+/* =Copter Buttons
+----------------------------------------------- */
+#copter-buttons {
+	margin-bottom:10px;	
+}
+
+	#choose-copter-btn {
+		margin:0 2% 0 0;
+		width:32%;	
+	}
+	
+	#ci-submit-btn {
+		width:32%;	
+	}
+	
+	#ci-print-btn {
+		margin:0 0 0 2%;
+		width:32%;	
+	}
+
+/* =Configurator Btn
+----------------------------------------------- */
+.config-btn-br, .config-btn-br:visited {
+	background: #576688;
+	background: -webkit-linear-gradient(top, #3f4a63 0%, #576688 100%);
+	background: linear-gradient(to bottom, #3f4a63 0%, #576688 100%);
+	border: none;
+	border-bottom: 3px solid #57658b;
+	border-radius: 2px;
+	color: #FFFFFF;
+	display: block;
+	float:left;
+	padding: 11px 0 10px 0;
+	text-align:center;
+	text-decoration: none;
+}
+
+	.config-btn-br:active {
+		background: #576688;
+		background: -webkit-linear-gradient(top, #3f4a63 0%, #576688 100%);
+		background: linear-gradient(to bottom, #3f4a63 0%, #576688 100%);
+		border: none;
+		border-top: 3px solid #57658b;
+		color:#FFFFFF;
+	}
+
+	.config-btn-br:hover {
+		background: #b7b6ce;
+		background: -webkit-linear-gradient(top, #b7b6ce 0%, #576688 100%);
+		background: linear-gradient(to bottom, #b7b6ce 0%, #576688 100%);
+		color:#FFFFFF;
+		outline: none;
+		text-decoration:none;
+	}
+	
+/* =Notification Bar
+----------------------------------------------- */
+.notification-bar-br {	
+	background-color:#576688;
+	
+	/* Border Radius */
+	-webkit-border-top-left-radius: 10px;
+	-webkit-border-top-right-radius: 10px;
+	-moz-border-radius-topleft: 10px;
+	-moz-border-radius-topright: 10px;
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+	
+	color:#FFFFFF;
+	font-size:1.2em;
+	font-weight:bold;
+	margin:0;
+	padding:5px;
+	text-align:center;
+}
+
+/* =Email Form
+----------------------------------------------- */
+#email-form input {
+	width:96%;	
+}
+
+#email-form textarea {
+	height:30%;
+	width:96%;	
+}
+
+	/*	ERROR	*/
+	.error {
+		color:#F00;	
+	}
+
+@media screen and (max-width: 800px) {
+
+	#stripe-grid {
+		list-style:none;
+		margin:0;
+		padding:0;
+	}
+	
+		#stripe-grid li {
+			background-color:#FFFFFF;
+			border-right:1px solid #000000;
+			display:inline-block;
+			float:left;
+			margin:0 0 1px 0;
+			position:relative;
+			text-align:center;
+			width:49.8%;
+		}
+	
+}
+
+@media screen and (max-width:767px) {
+	
+	#copter-list-container-br, #ci-title {
+		margin-top:0;	
+	}
+		
+}
+
+@media screen and (max-width:660px) {
+	
+	#lf-container {
+		width:70%;
+	}
+	
+}
+
+@media screen and (max-width:580px) {
+	
+	#stripe-grid li {
+		width:49.7%;
+	}
+		
+}
+
+@media screen and (max-width:545px) {
+
+	#choose-copter-btn, #ci-submit-btn , #ci-print-btn {
+		margin:0 0 3% 0;
+		width:100%;
+	}
+	
+}
+
+@media screen and (max-width:415px) {
+	
+	#ci-base-color, #ci-accent-color {
+		margin:0 0 3% 0;
+		width:100%;	
+	}
+		
+}
+
+
+@media screen and (max-width:364px) {
+	
+	#stripe-grid li {
+		width:49.6%
+	}
+		
+}
+
+@media screen and (max-width:276px) {
+	
+	#stripe-grid li {
+		width:49.5%
+	}
+		
+}

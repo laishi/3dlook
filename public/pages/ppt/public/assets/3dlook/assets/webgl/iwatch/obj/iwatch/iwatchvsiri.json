@@ -1,0 +1,3694 @@
+{
+    "b4w_format_version": "5.05",
+    "b4w_filepath_blend": "../../../../../../../3DModel/Blender/iwatch.blend",
+    "actions": [],
+    "images": [{
+        "name": "studio05.jpg",
+        "uuid": "31630fbbb740d8cfa63eb9eca7476975",
+        "filepath": "4b67c3119f350fba9fecb59e8e84f64f.jpg",
+        "size": [272, 235],
+        "source": "FILE"
+    }],
+    "textures": [{
+        "name": "matcap-tex",
+        "uuid": "eda33f000126954fe172542e41252025",
+        "type": "IMAGE",
+        "b4w_source_type": "NONE",
+        "b4w_source_id": "",
+        "b4w_source_size": "128",
+        "b4w_enable_canvas_mipmapping": true,
+        "extension": "REPEAT",
+        "b4w_use_map_parallax": false,
+        "b4w_parallax_scale": 0.02,
+        "b4w_parallax_steps": 5,
+        "b4w_parallax_lod_dist": 5,
+        "b4w_water_foam": false,
+        "b4w_foam_uv_freq": [1, 1],
+        "b4w_foam_uv_magnitude": [1, 1],
+        "b4w_shore_dist_map": false,
+        "b4w_anisotropic_filtering": "DEFAULT",
+        "b4w_shore_boundings": [0, 0, 0, 0],
+        "b4w_max_shore_dist": 100,
+        "b4w_disable_compression": false,
+        "b4w_use_as_skydome": true,
+        "b4w_use_as_environment_lighting": false,
+        "image": {
+            "uuid": "31630fbbb740d8cfa63eb9eca7476975"
+        },
+        "frame_duration": 0,
+        "frame_offset": 0,
+        "frame_start": 0,
+        "use_auto_refresh": false,
+        "use_cyclic": false,
+        "movie_length": 0,
+        "noise_intensity": null,
+        "noise_scale": null,
+        "use_color_ramp": false,
+        "color_ramp": null
+    }, {
+        "name": "Texture",
+        "uuid": "e0b07b6636ade9755355b46a1b265878",
+        "type": "NONE",
+        "b4w_source_type": "CANVAS",
+        "b4w_source_id": "siri",
+        "b4w_source_size": "1024",
+        "b4w_enable_canvas_mipmapping": true,
+        "extension": "REPEAT",
+        "b4w_use_map_parallax": false,
+        "b4w_parallax_scale": 0.02,
+        "b4w_parallax_steps": 5,
+        "b4w_parallax_lod_dist": 5,
+        "b4w_water_foam": false,
+        "b4w_foam_uv_freq": [1, 1],
+        "b4w_foam_uv_magnitude": [1, 1],
+        "b4w_shore_dist_map": false,
+        "b4w_anisotropic_filtering": "DEFAULT",
+        "b4w_shore_boundings": [0, 0, 0, 0],
+        "b4w_max_shore_dist": 100,
+        "b4w_disable_compression": false,
+        "b4w_use_as_skydome": true,
+        "b4w_use_as_environment_lighting": false,
+        "image": null,
+        "frame_duration": 0,
+        "frame_offset": 0,
+        "frame_start": 0,
+        "use_auto_refresh": false,
+        "use_cyclic": false,
+        "movie_length": 0,
+        "noise_intensity": null,
+        "noise_scale": null,
+        "use_color_ramp": false,
+        "color_ramp": null
+    }],
+    "materials": [{
+        "use_orco_tex_coord": false,
+        "name": "Cover-Mat",
+        "uuid": "205101656500bc245d2911ec02731102",
+        "use_nodes": true,
+        "diffuse_color": [0.8, 0.8, 0.8],
+        "diffuse_shader": "LAMBERT",
+        "roughness": 0.5,
+        "diffuse_fresnel": 0.1,
+        "diffuse_fresnel_factor": 0.5,
+        "darkness": 1,
+        "diffuse_toon_size": 0.5,
+        "diffuse_toon_smooth": 0.1,
+        "diffuse_intensity": 0.8,
+        "alpha": 1,
+        "specular_alpha": 1,
+        "raytrace_transparency": {
+            "fresnel": 0,
+            "fresnel_factor": 1.25
+        },
+        "raytrace_mirror": {
+            "reflect_factor": 0,
+            "fresnel": 0,
+            "fresnel_factor": 1.25
+        },
+        "specular_color": [1, 1, 1],
+        "specular_intensity": 0.5,
+        "specular_shader": "COOKTORR",
+        "specular_hardness": 50,
+        "specular_ior": 4,
+        "specular_slope": 0.1,
+        "specular_toon_size": 0.5,
+        "specular_toon_smooth": 0.1,
+        "emit": 0,
+        "ambient": 1,
+        "use_vertex_color_paint": false,
+        "b4w_water": false,
+        "b4w_water_shore_smoothing": true,
+        "b4w_water_absorb_factor": 6,
+        "b4w_water_dynamic": false,
+        "b4w_waves_height": 1,
+        "b4w_waves_length": 10,
+        "b4w_generated_mesh": false,
+        "b4w_water_num_cascads": 5,
+        "b4w_water_subdivs": 64,
+        "b4w_water_detailed_dist": 1000,
+        "b4w_water_fog_color": [0.4, 0.6, 0.7],
+        "b4w_water_fog_density": 0.06,
+        "b4w_foam_factor": 0.5,
+        "b4w_shallow_water_col": [0, 0.8, 0.3],
+        "b4w_shore_water_col": [0, 0.9, 0.2],
+        "b4w_shallow_water_col_fac": 1,
+        "b4w_shore_water_col_fac": 0.5,
+        "b4w_water_dst_noise_scale0": 0.05,
+        "b4w_water_dst_noise_scale1": 0.03,
+        "b4w_water_dst_noise_freq0": 1.3,
+        "b4w_water_dst_noise_freq1": 1,
+        "b4w_water_dir_min_shore_fac": 0.4,
+        "b4w_water_dir_freq": 0.5,
+        "b4w_water_dir_noise_scale": 0.05,
+        "b4w_water_dir_noise_freq": 0.07,
+        "b4w_water_dir_min_noise_fac": 0.5,
+        "b4w_water_dst_min_fac": 0.2,
+        "b4w_water_waves_hor_fac": 5,
+        "b4w_water_sss_strength": 1,
+        "b4w_water_sss_width": 0.45,
+        "b4w_water_norm_uv_velocity": 0.05,
+        "b4w_water_enable_caust": false,
+        "b4w_water_caust_scale": 0.25,
+        "b4w_water_caust_brightness": 0.5,
+        "b4w_terrain": false,
+        "b4w_dynamic_grass_size": "",
+        "b4w_dynamic_grass_color": "",
+        "b4w_do_not_render": false,
+        "b4w_collision": false,
+        "b4w_use_ghost": false,
+        "b4w_collision_id": "",
+        "b4w_collision_margin": 0.03999999910593033,
+        "b4w_collision_group": 128,
+        "b4w_collision_mask": 65407,
+        "b4w_double_sided_lighting": false,
+        "b4w_wettable": false,
+        "b4w_refractive": false,
+        "b4w_refr_bump": 0.0010000000474974513,
+        "b4w_render_above_all": false,
+        "physics": {
+            "friction": 0.5,
+            "elasticity": 0
+        },
+        "type": "SURFACE",
+        "b4w_halo_sky_stars": false,
+        "b4w_halo_stars_blend_height": 10.0,
+        "b4w_halo_stars_min_height": 0.0,
+        "halo": {
+            "hardness": 50,
+            "size": 0.5,
+            "b4w_halo_rings_color": [1, 1, 1],
+            "b4w_halo_lines_color": [1, 1, 1],
+            "ring_count": 0,
+            "line_count": 0,
+            "star_tip_count": 0
+        },
+        "use_transparency": false,
+        "use_shadeless": true,
+        "offset_z": 0,
+        "game_settings": {
+            "alpha_blend": "OPAQUE",
+            "use_backface_culling": true
+        },
+        "node_tree": {
+            "nodes": [{
+                "name": "Group",
+                "type": "GROUP",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Input_1",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }, {
+                    "name": "Edge0",
+                    "identifier": "Input_5",
+                    "is_linked": false,
+                    "default_value": 0.1
+                }, {
+                    "name": "Edge1",
+                    "identifier": "Input_7",
+                    "is_linked": false,
+                    "default_value": 1
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Output_3",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "node_tree_name": "B4W_SMOOTHSTEP",
+                "node_group": {
+                    "uuid": "41d82356db83faffc98a7dda834ccfcc"
+                }
+            }, {
+                "name": "Material.001",
+                "type": "MATERIAL",
+                "inputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0.8, 0.8, 0.8, 1]
+                }, {
+                    "name": "Spec",
+                    "identifier": "Spec",
+                    "is_linked": false,
+                    "default_value": [1, 1, 1, 1]
+                }, {
+                    "name": "DiffuseIntensity",
+                    "identifier": "DiffuseIntensity",
+                    "is_linked": false,
+                    "default_value": 0.8
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 0]
+                }, {
+                    "name": "Alpha",
+                    "identifier": "Alpha",
+                    "is_linked": false,
+                    "default_value": 0
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }],
+                "material_name": "Body-Mat",
+                "specular_shader": "COOKTORR",
+                "specular_hardness": 50,
+                "specular_slope": 0.1,
+                "specular_toon_size": 0.5,
+                "specular_toon_smooth": 0.1,
+                "specular_intensity": 0.5,
+                "specular_ior": 4,
+                "diffuse_shader": "LAMBERT",
+                "use_shadeless": false,
+                "specular_alpha": 1.0,
+                "alpha": 1.0,
+                "diffuse_intensity": 0.800000011920929,
+                "roughness": 0.5,
+                "diffuse_fresnel": 0.1,
+                "diffuse_fresnel_factor": 0.5,
+                "darkness": 1,
+                "diffuse_toon_size": 0.5,
+                "diffuse_toon_smooth": 0.1,
+                "use_diffuse": true,
+                "use_specular": true,
+                "invert_normal": false
+            }, {
+                "name": "Output",
+                "type": "OUTPUT",
+                "inputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 1]
+                }, {
+                    "name": "Alpha",
+                    "identifier": "Alpha",
+                    "is_linked": false,
+                    "default_value": 1
+                }],
+                "outputs": []
+            }, {
+                "name": "Group.003",
+                "type": "GROUP",
+                "inputs": [{
+                    "name": "Vector",
+                    "identifier": "Input_1",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Vector",
+                    "identifier": "Input_9",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Vector",
+                    "identifier": "Output_3",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "node_tree_name": "B4W_REFLECT",
+                "node_group": {
+                    "uuid": "9545a4d46e2d2a44473916df20815a22"
+                }
+            }, {
+                "name": "Group.001",
+                "type": "GROUP",
+                "inputs": [{
+                    "name": "Vector",
+                    "identifier": "Input_1",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Vector",
+                    "identifier": "Output_3",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "node_tree_name": "B4W_VECTOR_VIEW",
+                "node_group": {
+                    "uuid": "1699bfce75444f3823e2652342c873e5"
+                }
+            }, {
+                "name": "Mix",
+                "type": "MIX_RGB",
+                "inputs": [{
+                    "name": "Fac",
+                    "identifier": "Fac",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }, {
+                    "name": "Color1",
+                    "identifier": "Color1",
+                    "is_linked": true,
+                    "default_value": [0.5, 0.5, 0.5, 1]
+                }, {
+                    "name": "Color2",
+                    "identifier": "Color2",
+                    "is_linked": true,
+                    "default_value": [0.5, 0.5, 0.5, 1]
+                }],
+                "outputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 0]
+                }],
+                "blend_type": "MIX",
+                "use_clamp": false
+            }, {
+                "name": "Material",
+                "type": "MATERIAL",
+                "inputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0.8, 0.8, 0.8, 1]
+                }, {
+                    "name": "Spec",
+                    "identifier": "Spec",
+                    "is_linked": false,
+                    "default_value": [1, 1, 1, 1]
+                }, {
+                    "name": "DiffuseIntensity",
+                    "identifier": "DiffuseIntensity",
+                    "is_linked": false,
+                    "default_value": 0.8
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 0]
+                }, {
+                    "name": "Alpha",
+                    "identifier": "Alpha",
+                    "is_linked": false,
+                    "default_value": 0
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }],
+                "material_name": "Cover-Mat",
+                "specular_shader": "COOKTORR",
+                "specular_hardness": 50,
+                "specular_slope": 0.1,
+                "specular_toon_size": 0.5,
+                "specular_toon_smooth": 0.1,
+                "specular_intensity": 0.5,
+                "specular_ior": 4,
+                "diffuse_shader": "LAMBERT",
+                "use_shadeless": true,
+                "specular_alpha": 1.0,
+                "alpha": 1.0,
+                "diffuse_intensity": 0.800000011920929,
+                "roughness": 0.5,
+                "diffuse_fresnel": 0.1,
+                "diffuse_fresnel_factor": 0.5,
+                "darkness": 1,
+                "diffuse_toon_size": 0.5,
+                "diffuse_toon_smooth": 0.1,
+                "use_diffuse": true,
+                "use_specular": true,
+                "invert_normal": false
+            }, {
+                "name": "Normal",
+                "type": "NORMAL",
+                "inputs": [{
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": false,
+                    "default_value": [0, 0, 1]
+                }, {
+                    "name": "Dot",
+                    "identifier": "Dot",
+                    "is_linked": true,
+                    "default_value": 0
+                }]
+            }, {
+                "name": "Texture",
+                "type": "TEXTURE",
+                "inputs": [{
+                    "name": "Vector",
+                    "identifier": "Vector",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": false,
+                    "default_value": 0
+                }, {
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 0]
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }],
+                "texture": {
+                    "uuid": "eda33f000126954fe172542e41252025"
+                }
+            }, {
+                "name": "Geometry",
+                "type": "GEOMETRY",
+                "inputs": [],
+                "outputs": [{
+                    "name": "Global",
+                    "identifier": "Global",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Local",
+                    "identifier": "Local",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "View",
+                    "identifier": "View",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Orco",
+                    "identifier": "Orco",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "UV",
+                    "identifier": "UV",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Vertex Color",
+                    "identifier": "Vertex Color",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0, 0]
+                }, {
+                    "name": "Vertex Alpha",
+                    "identifier": "Vertex Alpha",
+                    "is_linked": false,
+                    "default_value": 0
+                }, {
+                    "name": "Front/Back",
+                    "identifier": "Front/Back",
+                    "is_linked": false,
+                    "default_value": 0
+                }],
+                "uv_layer": "UVMap",
+                "color_layer": ""
+            }, {
+                "name": "Texture.001",
+                "type": "TEXTURE",
+                "inputs": [{
+                    "name": "Vector",
+                    "identifier": "Vector",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": false,
+                    "default_value": 0
+                }, {
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 0]
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }],
+                "texture": {
+                    "uuid": "e0b07b6636ade9755355b46a1b265878"
+                }
+            }],
+            "links": [{
+                "from_node": {
+                    "name": "Geometry"
+                },
+                "to_node": {
+                    "name": "Group.001"
+                },
+                "from_socket": {
+                    "identifier": "Normal"
+                },
+                "to_socket": {
+                    "identifier": "Input_1"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group.001"
+                },
+                "to_node": {
+                    "name": "Normal"
+                },
+                "from_socket": {
+                    "identifier": "Output_3"
+                },
+                "to_socket": {
+                    "identifier": "Normal"
+                }
+            }, {
+                "from_node": {
+                    "name": "Normal"
+                },
+                "to_node": {
+                    "name": "Group"
+                },
+                "from_socket": {
+                    "identifier": "Dot"
+                },
+                "to_socket": {
+                    "identifier": "Input_1"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group"
+                },
+                "to_node": {
+                    "name": "Mix"
+                },
+                "from_socket": {
+                    "identifier": "Output_3"
+                },
+                "to_socket": {
+                    "identifier": "Fac"
+                }
+            }, {
+                "from_node": {
+                    "name": "Mix"
+                },
+                "to_node": {
+                    "name": "Output"
+                },
+                "from_socket": {
+                    "identifier": "Color"
+                },
+                "to_socket": {
+                    "identifier": "Color"
+                }
+            }, {
+                "from_node": {
+                    "name": "Texture"
+                },
+                "to_node": {
+                    "name": "Material.001"
+                },
+                "from_socket": {
+                    "identifier": "Color"
+                },
+                "to_socket": {
+                    "identifier": "Color"
+                }
+            }, {
+                "from_node": {
+                    "name": "Geometry"
+                },
+                "to_node": {
+                    "name": "Group.003"
+                },
+                "from_socket": {
+                    "identifier": "View"
+                },
+                "to_socket": {
+                    "identifier": "Input_9"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group.001"
+                },
+                "to_node": {
+                    "name": "Group.003"
+                },
+                "from_socket": {
+                    "identifier": "Output_3"
+                },
+                "to_socket": {
+                    "identifier": "Input_1"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group.003"
+                },
+                "to_node": {
+                    "name": "Texture"
+                },
+                "from_socket": {
+                    "identifier": "Output_3"
+                },
+                "to_socket": {
+                    "identifier": "Vector"
+                }
+            }, {
+                "from_node": {
+                    "name": "Material"
+                },
+                "to_node": {
+                    "name": "Mix"
+                },
+                "from_socket": {
+                    "identifier": "Color"
+                },
+                "to_socket": {
+                    "identifier": "Color2"
+                }
+            }, {
+                "from_node": {
+                    "name": "Material.001"
+                },
+                "to_node": {
+                    "name": "Mix"
+                },
+                "from_socket": {
+                    "identifier": "Color"
+                },
+                "to_socket": {
+                    "identifier": "Color1"
+                }
+            }, {
+                "from_node": {
+                    "name": "Texture.001"
+                },
+                "to_node": {
+                    "name": "Material"
+                },
+                "from_socket": {
+                    "identifier": "Color"
+                },
+                "to_socket": {
+                    "identifier": "Color"
+                }
+            }, {
+                "from_node": {
+                    "name": "Geometry"
+                },
+                "to_node": {
+                    "name": "Texture.001"
+                },
+                "from_socket": {
+                    "identifier": "UV"
+                },
+                "to_socket": {
+                    "identifier": "Vector"
+                }
+            }],
+            "animation_data": null
+        },
+        "texture_slots": []
+    }, {
+        "use_orco_tex_coord": false,
+        "name": "Body-Mat",
+        "uuid": "b36828256bd734c6efef82df03b697fb",
+        "use_nodes": true,
+        "diffuse_color": [0.8, 0.8, 0.8],
+        "diffuse_shader": "LAMBERT",
+        "roughness": 0.5,
+        "diffuse_fresnel": 0.1,
+        "diffuse_fresnel_factor": 0.5,
+        "darkness": 1,
+        "diffuse_toon_size": 0.5,
+        "diffuse_toon_smooth": 0.1,
+        "diffuse_intensity": 0.8,
+        "alpha": 1,
+        "specular_alpha": 1,
+        "raytrace_transparency": {
+            "fresnel": 0,
+            "fresnel_factor": 1.25
+        },
+        "raytrace_mirror": {
+            "reflect_factor": 0,
+            "fresnel": 0,
+            "fresnel_factor": 1.25
+        },
+        "specular_color": [1, 1, 1],
+        "specular_intensity": 0.5,
+        "specular_shader": "COOKTORR",
+        "specular_hardness": 50,
+        "specular_ior": 4,
+        "specular_slope": 0.1,
+        "specular_toon_size": 0.5,
+        "specular_toon_smooth": 0.1,
+        "emit": 0,
+        "ambient": 1,
+        "use_vertex_color_paint": false,
+        "b4w_water": false,
+        "b4w_water_shore_smoothing": true,
+        "b4w_water_absorb_factor": 6,
+        "b4w_water_dynamic": false,
+        "b4w_waves_height": 1,
+        "b4w_waves_length": 10,
+        "b4w_generated_mesh": false,
+        "b4w_water_num_cascads": 5,
+        "b4w_water_subdivs": 64,
+        "b4w_water_detailed_dist": 1000,
+        "b4w_water_fog_color": [0.4, 0.6, 0.7],
+        "b4w_water_fog_density": 0.06,
+        "b4w_foam_factor": 0.5,
+        "b4w_shallow_water_col": [0, 0.8, 0.3],
+        "b4w_shore_water_col": [0, 0.9, 0.2],
+        "b4w_shallow_water_col_fac": 1,
+        "b4w_shore_water_col_fac": 0.5,
+        "b4w_water_dst_noise_scale0": 0.05,
+        "b4w_water_dst_noise_scale1": 0.03,
+        "b4w_water_dst_noise_freq0": 1.3,
+        "b4w_water_dst_noise_freq1": 1,
+        "b4w_water_dir_min_shore_fac": 0.4,
+        "b4w_water_dir_freq": 0.5,
+        "b4w_water_dir_noise_scale": 0.05,
+        "b4w_water_dir_noise_freq": 0.07,
+        "b4w_water_dir_min_noise_fac": 0.5,
+        "b4w_water_dst_min_fac": 0.2,
+        "b4w_water_waves_hor_fac": 5,
+        "b4w_water_sss_strength": 1,
+        "b4w_water_sss_width": 0.45,
+        "b4w_water_norm_uv_velocity": 0.05,
+        "b4w_water_enable_caust": false,
+        "b4w_water_caust_scale": 0.25,
+        "b4w_water_caust_brightness": 0.5,
+        "b4w_terrain": false,
+        "b4w_dynamic_grass_size": "",
+        "b4w_dynamic_grass_color": "",
+        "b4w_do_not_render": false,
+        "b4w_collision": false,
+        "b4w_use_ghost": false,
+        "b4w_collision_id": "",
+        "b4w_collision_margin": 0.03999999910593033,
+        "b4w_collision_group": 128,
+        "b4w_collision_mask": 65407,
+        "b4w_double_sided_lighting": false,
+        "b4w_wettable": false,
+        "b4w_refractive": false,
+        "b4w_refr_bump": 0.0010000000474974513,
+        "b4w_render_above_all": false,
+        "physics": {
+            "friction": 0.5,
+            "elasticity": 0
+        },
+        "type": "SURFACE",
+        "b4w_halo_sky_stars": false,
+        "b4w_halo_stars_blend_height": 10.0,
+        "b4w_halo_stars_min_height": 0.0,
+        "halo": {
+            "hardness": 50,
+            "size": 0.5,
+            "b4w_halo_rings_color": [1, 1, 1],
+            "b4w_halo_lines_color": [1, 1, 1],
+            "ring_count": 0,
+            "line_count": 0,
+            "star_tip_count": 0
+        },
+        "use_transparency": false,
+        "use_shadeless": false,
+        "offset_z": 0,
+        "game_settings": {
+            "alpha_blend": "OPAQUE",
+            "use_backface_culling": true
+        },
+        "node_tree": {
+            "nodes": [{
+                "name": "Geometry",
+                "type": "GEOMETRY",
+                "inputs": [],
+                "outputs": [{
+                    "name": "Global",
+                    "identifier": "Global",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Local",
+                    "identifier": "Local",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "View",
+                    "identifier": "View",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Orco",
+                    "identifier": "Orco",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "UV",
+                    "identifier": "UV",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Vertex Color",
+                    "identifier": "Vertex Color",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0, 0]
+                }, {
+                    "name": "Vertex Alpha",
+                    "identifier": "Vertex Alpha",
+                    "is_linked": false,
+                    "default_value": 0
+                }, {
+                    "name": "Front/Back",
+                    "identifier": "Front/Back",
+                    "is_linked": false,
+                    "default_value": 0
+                }],
+                "uv_layer": "",
+                "color_layer": ""
+            }, {
+                "name": "Group",
+                "type": "GROUP",
+                "inputs": [{
+                    "name": "Vector",
+                    "identifier": "Input_1",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Vector",
+                    "identifier": "Output_3",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "node_tree_name": "B4W_VECTOR_VIEW",
+                "node_group": {
+                    "uuid": "1699bfce75444f3823e2652342c873e5"
+                }
+            }, {
+                "name": "Group.001",
+                "type": "GROUP",
+                "inputs": [{
+                    "name": "Vector",
+                    "identifier": "Input_1",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Vector",
+                    "identifier": "Input_9",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Vector",
+                    "identifier": "Output_3",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "node_tree_name": "B4W_REFLECT",
+                "node_group": {
+                    "uuid": "9545a4d46e2d2a44473916df20815a22"
+                }
+            }, {
+                "name": "Material",
+                "type": "MATERIAL",
+                "inputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0.8, 0.8, 0.8, 1]
+                }, {
+                    "name": "Spec",
+                    "identifier": "Spec",
+                    "is_linked": false,
+                    "default_value": [1, 1, 1, 1]
+                }, {
+                    "name": "DiffuseIntensity",
+                    "identifier": "DiffuseIntensity",
+                    "is_linked": false,
+                    "default_value": 0.8
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 0]
+                }, {
+                    "name": "Alpha",
+                    "identifier": "Alpha",
+                    "is_linked": false,
+                    "default_value": 0
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }],
+                "material_name": "Body-Mat",
+                "specular_shader": "COOKTORR",
+                "specular_hardness": 50,
+                "specular_slope": 0.1,
+                "specular_toon_size": 0.5,
+                "specular_toon_smooth": 0.1,
+                "specular_intensity": 0.5,
+                "specular_ior": 4,
+                "diffuse_shader": "LAMBERT",
+                "use_shadeless": false,
+                "specular_alpha": 1.0,
+                "alpha": 1.0,
+                "diffuse_intensity": 0.800000011920929,
+                "roughness": 0.5,
+                "diffuse_fresnel": 0.1,
+                "diffuse_fresnel_factor": 0.5,
+                "darkness": 1,
+                "diffuse_toon_size": 0.5,
+                "diffuse_toon_smooth": 0.1,
+                "use_diffuse": true,
+                "use_specular": true,
+                "invert_normal": false
+            }, {
+                "name": "Output",
+                "type": "OUTPUT",
+                "inputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 1]
+                }, {
+                    "name": "Alpha",
+                    "identifier": "Alpha",
+                    "is_linked": false,
+                    "default_value": 1
+                }],
+                "outputs": []
+            }, {
+                "name": "Texture",
+                "type": "TEXTURE",
+                "inputs": [{
+                    "name": "Vector",
+                    "identifier": "Vector",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": false,
+                    "default_value": 0
+                }, {
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 0]
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }],
+                "texture": {
+                    "uuid": "eda33f000126954fe172542e41252025"
+                }
+            }],
+            "links": [{
+                "from_node": {
+                    "name": "Material"
+                },
+                "to_node": {
+                    "name": "Output"
+                },
+                "from_socket": {
+                    "identifier": "Color"
+                },
+                "to_socket": {
+                    "identifier": "Color"
+                }
+            }, {
+                "from_node": {
+                    "name": "Geometry"
+                },
+                "to_node": {
+                    "name": "Group"
+                },
+                "from_socket": {
+                    "identifier": "Normal"
+                },
+                "to_socket": {
+                    "identifier": "Input_1"
+                }
+            }, {
+                "from_node": {
+                    "name": "Geometry"
+                },
+                "to_node": {
+                    "name": "Group.001"
+                },
+                "from_socket": {
+                    "identifier": "View"
+                },
+                "to_socket": {
+                    "identifier": "Input_1"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group.001"
+                },
+                "to_node": {
+                    "name": "Texture"
+                },
+                "from_socket": {
+                    "identifier": "Output_3"
+                },
+                "to_socket": {
+                    "identifier": "Vector"
+                }
+            }, {
+                "from_node": {
+                    "name": "Texture"
+                },
+                "to_node": {
+                    "name": "Material"
+                },
+                "from_socket": {
+                    "identifier": "Color"
+                },
+                "to_socket": {
+                    "identifier": "Color"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group"
+                },
+                "to_node": {
+                    "name": "Group.001"
+                },
+                "from_socket": {
+                    "identifier": "Output_3"
+                },
+                "to_socket": {
+                    "identifier": "Input_9"
+                }
+            }],
+            "animation_data": null
+        },
+        "texture_slots": []
+    }, {
+        "use_orco_tex_coord": false,
+        "name": "Hander-Mat",
+        "uuid": "2b7407108a3a19fac41e74ff6b65b3ef",
+        "use_nodes": true,
+        "diffuse_color": [0.0812, 0.3226, 0.8],
+        "diffuse_shader": "LAMBERT",
+        "roughness": 0.5,
+        "diffuse_fresnel": 0.1,
+        "diffuse_fresnel_factor": 0.5,
+        "darkness": 1,
+        "diffuse_toon_size": 0.5,
+        "diffuse_toon_smooth": 0.1,
+        "diffuse_intensity": 0.8,
+        "alpha": 1,
+        "specular_alpha": 1,
+        "raytrace_transparency": {
+            "fresnel": 0,
+            "fresnel_factor": 1.25
+        },
+        "raytrace_mirror": {
+            "reflect_factor": 0,
+            "fresnel": 0,
+            "fresnel_factor": 1.25
+        },
+        "specular_color": [0.175, 0.6114, 1],
+        "specular_intensity": 0.6,
+        "specular_shader": "COOKTORR",
+        "specular_hardness": 5,
+        "specular_ior": 4,
+        "specular_slope": 0.1,
+        "specular_toon_size": 0.5,
+        "specular_toon_smooth": 0.1,
+        "emit": 0,
+        "ambient": 1,
+        "use_vertex_color_paint": false,
+        "b4w_water": false,
+        "b4w_water_shore_smoothing": true,
+        "b4w_water_absorb_factor": 6,
+        "b4w_water_dynamic": false,
+        "b4w_waves_height": 1,
+        "b4w_waves_length": 10,
+        "b4w_generated_mesh": false,
+        "b4w_water_num_cascads": 5,
+        "b4w_water_subdivs": 64,
+        "b4w_water_detailed_dist": 1000,
+        "b4w_water_fog_color": [0.4, 0.6, 0.7],
+        "b4w_water_fog_density": 0.06,
+        "b4w_foam_factor": 0.5,
+        "b4w_shallow_water_col": [0, 0.8, 0.3],
+        "b4w_shore_water_col": [0, 0.9, 0.2],
+        "b4w_shallow_water_col_fac": 1,
+        "b4w_shore_water_col_fac": 0.5,
+        "b4w_water_dst_noise_scale0": 0.05,
+        "b4w_water_dst_noise_scale1": 0.03,
+        "b4w_water_dst_noise_freq0": 1.3,
+        "b4w_water_dst_noise_freq1": 1,
+        "b4w_water_dir_min_shore_fac": 0.4,
+        "b4w_water_dir_freq": 0.5,
+        "b4w_water_dir_noise_scale": 0.05,
+        "b4w_water_dir_noise_freq": 0.07,
+        "b4w_water_dir_min_noise_fac": 0.5,
+        "b4w_water_dst_min_fac": 0.2,
+        "b4w_water_waves_hor_fac": 5,
+        "b4w_water_sss_strength": 1,
+        "b4w_water_sss_width": 0.45,
+        "b4w_water_norm_uv_velocity": 0.05,
+        "b4w_water_enable_caust": false,
+        "b4w_water_caust_scale": 0.25,
+        "b4w_water_caust_brightness": 0.5,
+        "b4w_terrain": false,
+        "b4w_dynamic_grass_size": "",
+        "b4w_dynamic_grass_color": "",
+        "b4w_do_not_render": false,
+        "b4w_collision": false,
+        "b4w_use_ghost": false,
+        "b4w_collision_id": "",
+        "b4w_collision_margin": 0.03999999910593033,
+        "b4w_collision_group": 128,
+        "b4w_collision_mask": 65407,
+        "b4w_double_sided_lighting": false,
+        "b4w_wettable": false,
+        "b4w_refractive": false,
+        "b4w_refr_bump": 0.0010000000474974513,
+        "b4w_render_above_all": false,
+        "physics": {
+            "friction": 0.5,
+            "elasticity": 0
+        },
+        "type": "SURFACE",
+        "b4w_halo_sky_stars": false,
+        "b4w_halo_stars_blend_height": 10.0,
+        "b4w_halo_stars_min_height": 0.0,
+        "halo": {
+            "hardness": 5,
+            "size": 0.5,
+            "b4w_halo_rings_color": [1, 1, 1],
+            "b4w_halo_lines_color": [0.175, 0.6114, 1],
+            "ring_count": 0,
+            "line_count": 0,
+            "star_tip_count": 0
+        },
+        "use_transparency": false,
+        "use_shadeless": false,
+        "offset_z": 0,
+        "game_settings": {
+            "alpha_blend": "OPAQUE",
+            "use_backface_culling": true
+        },
+        "node_tree": {
+            "nodes": [{
+                "name": "Gamma",
+                "type": "GAMMA",
+                "inputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [1, 1, 1, 1]
+                }, {
+                    "name": "Gamma",
+                    "identifier": "Gamma",
+                    "is_linked": false,
+                    "default_value": 0.1
+                }],
+                "outputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 0]
+                }]
+            }, {
+                "name": "Material",
+                "type": "MATERIAL",
+                "inputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0.081, 0.323, 0.8, 1]
+                }, {
+                    "name": "Spec",
+                    "identifier": "Spec",
+                    "is_linked": true,
+                    "default_value": [0.175, 0.611, 1, 1]
+                }, {
+                    "name": "DiffuseIntensity",
+                    "identifier": "DiffuseIntensity",
+                    "is_linked": false,
+                    "default_value": 0.8
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 0]
+                }, {
+                    "name": "Alpha",
+                    "identifier": "Alpha",
+                    "is_linked": false,
+                    "default_value": 0
+                }, {
+                    "name": "Normal",
+                    "identifier": "Normal",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }],
+                "material_name": "Hander-Mat",
+                "specular_shader": "COOKTORR",
+                "specular_hardness": 5,
+                "specular_slope": 0.1,
+                "specular_toon_size": 0.5,
+                "specular_toon_smooth": 0.1,
+                "specular_intensity": 0.6,
+                "specular_ior": 4,
+                "diffuse_shader": "LAMBERT",
+                "use_shadeless": false,
+                "specular_alpha": 1.0,
+                "alpha": 1.0,
+                "diffuse_intensity": 0.800000011920929,
+                "roughness": 0.5,
+                "diffuse_fresnel": 0.1,
+                "diffuse_fresnel_factor": 0.5,
+                "darkness": 1,
+                "diffuse_toon_size": 0.5,
+                "diffuse_toon_smooth": 0.1,
+                "use_diffuse": true,
+                "use_specular": true,
+                "invert_normal": false
+            }, {
+                "name": "Output",
+                "type": "OUTPUT",
+                "inputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 1]
+                }, {
+                    "name": "Alpha",
+                    "identifier": "Alpha",
+                    "is_linked": false,
+                    "default_value": 1
+                }],
+                "outputs": []
+            }, {
+                "name": "My_rgb_node",
+                "type": "RGB",
+                "inputs": [],
+                "outputs": [{
+                    "name": "Color",
+                    "identifier": "Color",
+                    "is_linked": true,
+                    "default_value": [0, 0.11, 0.477, 1]
+                }]
+            }],
+            "links": [{
+                "from_node": {
+                    "name": "My_rgb_node"
+                },
+                "to_node": {
+                    "name": "Material"
+                },
+                "from_socket": {
+                    "identifier": "Color"
+                },
+                "to_socket": {
+                    "identifier": "Color"
+                }
+            }, {
+                "from_node": {
+                    "name": "My_rgb_node"
+                },
+                "to_node": {
+                    "name": "Gamma"
+                },
+                "from_socket": {
+                    "identifier": "Color"
+                },
+                "to_socket": {
+                    "identifier": "Color"
+                }
+            }, {
+                "from_node": {
+                    "name": "Gamma"
+                },
+                "to_node": {
+                    "name": "Material"
+                },
+                "from_socket": {
+                    "identifier": "Color"
+                },
+                "to_socket": {
+                    "identifier": "Spec"
+                }
+            }, {
+                "from_node": {
+                    "name": "Material"
+                },
+                "to_node": {
+                    "name": "Output"
+                },
+                "from_socket": {
+                    "identifier": "Color"
+                },
+                "to_socket": {
+                    "identifier": "Color"
+                }
+            }],
+            "animation_data": null
+        },
+        "texture_slots": []
+    }, {
+        "use_orco_tex_coord": false,
+        "name": "Material",
+        "uuid": "3447b94555fb19c9df84fb37eccc6222",
+        "use_nodes": false,
+        "diffuse_color": [0.0036, 0.0036, 0.0036],
+        "diffuse_shader": "LAMBERT",
+        "roughness": 0.5,
+        "diffuse_fresnel": 0.1,
+        "diffuse_fresnel_factor": 0.5,
+        "darkness": 1,
+        "diffuse_toon_size": 0.5,
+        "diffuse_toon_smooth": 0.1,
+        "diffuse_intensity": 0.8,
+        "alpha": 1,
+        "specular_alpha": 1,
+        "raytrace_transparency": {
+            "fresnel": 0,
+            "fresnel_factor": 1.25
+        },
+        "raytrace_mirror": {
+            "reflect_factor": 0,
+            "fresnel": 0,
+            "fresnel_factor": 1.25
+        },
+        "specular_color": [1, 1, 1],
+        "specular_intensity": 0.5,
+        "specular_shader": "COOKTORR",
+        "specular_hardness": 50,
+        "specular_ior": 4,
+        "specular_slope": 0.1,
+        "specular_toon_size": 0.5,
+        "specular_toon_smooth": 0.1,
+        "emit": 0,
+        "ambient": 1,
+        "use_vertex_color_paint": false,
+        "b4w_water": false,
+        "b4w_water_shore_smoothing": true,
+        "b4w_water_absorb_factor": 6,
+        "b4w_water_dynamic": false,
+        "b4w_waves_height": 1,
+        "b4w_waves_length": 10,
+        "b4w_generated_mesh": false,
+        "b4w_water_num_cascads": 5,
+        "b4w_water_subdivs": 64,
+        "b4w_water_detailed_dist": 1000,
+        "b4w_water_fog_color": [0.4, 0.6, 0.7],
+        "b4w_water_fog_density": 0.06,
+        "b4w_foam_factor": 0.5,
+        "b4w_shallow_water_col": [0, 0.8, 0.3],
+        "b4w_shore_water_col": [0, 0.9, 0.2],
+        "b4w_shallow_water_col_fac": 1,
+        "b4w_shore_water_col_fac": 0.5,
+        "b4w_water_dst_noise_scale0": 0.05,
+        "b4w_water_dst_noise_scale1": 0.03,
+        "b4w_water_dst_noise_freq0": 1.3,
+        "b4w_water_dst_noise_freq1": 1,
+        "b4w_water_dir_min_shore_fac": 0.4,
+        "b4w_water_dir_freq": 0.5,
+        "b4w_water_dir_noise_scale": 0.05,
+        "b4w_water_dir_noise_freq": 0.07,
+        "b4w_water_dir_min_noise_fac": 0.5,
+        "b4w_water_dst_min_fac": 0.2,
+        "b4w_water_waves_hor_fac": 5,
+        "b4w_water_sss_strength": 1,
+        "b4w_water_sss_width": 0.45,
+        "b4w_water_norm_uv_velocity": 0.05,
+        "b4w_water_enable_caust": false,
+        "b4w_water_caust_scale": 0.25,
+        "b4w_water_caust_brightness": 0.5,
+        "b4w_terrain": false,
+        "b4w_dynamic_grass_size": "",
+        "b4w_dynamic_grass_color": "",
+        "b4w_do_not_render": false,
+        "b4w_collision": false,
+        "b4w_use_ghost": false,
+        "b4w_collision_id": "",
+        "b4w_collision_margin": 0.03999999910593033,
+        "b4w_collision_group": 128,
+        "b4w_collision_mask": 65407,
+        "b4w_double_sided_lighting": false,
+        "b4w_wettable": false,
+        "b4w_refractive": false,
+        "b4w_refr_bump": 0.0010000000474974513,
+        "b4w_render_above_all": false,
+        "physics": {
+            "friction": 0.5,
+            "elasticity": 0
+        },
+        "type": "SURFACE",
+        "b4w_halo_sky_stars": false,
+        "b4w_halo_stars_blend_height": 10.0,
+        "b4w_halo_stars_min_height": 0.0,
+        "halo": {
+            "hardness": 50,
+            "size": 0.5,
+            "b4w_halo_rings_color": [1, 1, 1],
+            "b4w_halo_lines_color": [1, 1, 1],
+            "ring_count": 0,
+            "line_count": 0,
+            "star_tip_count": 0
+        },
+        "use_transparency": false,
+        "use_shadeless": false,
+        "offset_z": 0,
+        "game_settings": {
+            "alpha_blend": "OPAQUE",
+            "use_backface_culling": true
+        },
+        "node_tree": null,
+        "texture_slots": []
+    }],
+    "meshes": [{
+        "name": "Iwatch-cover_MODIFIERS_APPLIED",
+        "uuid": "9a942815ba7dbed81553a4ccb2a14395",
+        "materials": [{
+            "uuid": "205101656500bc245d2911ec02731102"
+        }],
+        "b4w_vertex_anim": [],
+        "vertex_groups": [],
+        "uv_textures": ["UVMap"],
+        "active_vcol_name": null,
+        "submeshes": [{
+            "base_length": 1557,
+            "indices": [0, 8256],
+            "normal": [0, 4671],
+            "tangent": [4671, 6228],
+            "color": [0, 0],
+            "group": [0, 0],
+            "position": [0, 4671],
+            "texcoord": [4671, 3114],
+            "texcoord2": [0, 0],
+            "vertex_colors": []
+        }],
+        "b4w_bounding_box": {
+            "max_x": 2.098,
+            "max_y": 2.613,
+            "max_z": 3.747,
+            "min_x": -2.098,
+            "min_y": -2.613,
+            "min_z": 3.218
+        },
+        "b4w_bounding_sphere_radius": 3.199,
+        "b4w_bounding_cylinder_radius": 2.114,
+        "b4w_bounding_sphere_center": [-0.066, 0.013, 3.488],
+        "b4w_bounding_cylinder_center": [0, 0, 3.48],
+        "b4w_bounding_ellipsoid_axes": [3.57, 4.445, 0.45],
+        "b4w_bounding_ellipsoid_center": [0.053, -0.039, 3.492],
+        "b4w_bounding_box_source": {
+            "max_x": 2.098,
+            "max_y": 2.613,
+            "max_z": 3.747,
+            "min_x": -2.098,
+            "min_y": -2.613,
+            "min_z": 3.218
+        },
+        "b4w_shape_keys": []
+    }, {
+        "name": "Iwatch-handle-bxg_MODIFIERS_APPLIED",
+        "uuid": "5c9bf47b2ba40ce9cb3ab0c7085190e2",
+        "materials": [{
+            "uuid": "b36828256bd734c6efef82df03b697fb"
+        }],
+        "b4w_vertex_anim": [],
+        "vertex_groups": [],
+        "uv_textures": ["UVMap"],
+        "active_vcol_name": null,
+        "submeshes": [{
+            "base_length": 1899,
+            "indices": [8256, 7392],
+            "normal": [10899, 5697],
+            "tangent": [16596, 7596],
+            "color": [0, 0],
+            "group": [0, 0],
+            "position": [7785, 5697],
+            "texcoord": [13482, 3798],
+            "texcoord2": [0, 0],
+            "vertex_colors": []
+        }],
+        "b4w_bounding_box": {
+            "max_x": 0.566,
+            "max_y": 0.567,
+            "max_z": -3.058,
+            "min_x": -0.566,
+            "min_y": -0.567,
+            "min_z": -4.141
+        },
+        "b4w_bounding_sphere_radius": 0.7,
+        "b4w_bounding_cylinder_radius": 0.668,
+        "b4w_bounding_sphere_center": [-0.006, 0.037, -3.525],
+        "b4w_bounding_cylinder_center": [0.004, 0, -3.546],
+        "b4w_bounding_ellipsoid_axes": [0.708, 0.708, 0.677],
+        "b4w_bounding_ellipsoid_center": [-0.007, 0.041, -3.521],
+        "b4w_bounding_box_source": {
+            "max_x": 0.566,
+            "max_y": 0.567,
+            "max_z": -3.058,
+            "min_x": -0.566,
+            "min_y": -0.567,
+            "min_z": -4.141
+        },
+        "b4w_shape_keys": []
+    }, {
+        "name": "Iwatch-handle_MODIFIERS_APPLIED",
+        "uuid": "c9217957d07b4b5c9972dd2469e6a288",
+        "materials": [{
+            "uuid": "b36828256bd734c6efef82df03b697fb"
+        }, {
+            "uuid": "2b7407108a3a19fac41e74ff6b65b3ef"
+        }],
+        "b4w_vertex_anim": [],
+        "vertex_groups": [],
+        "uv_textures": ["UVMap"],
+        "active_vcol_name": null,
+        "submeshes": [{
+            "base_length": 0,
+            "indices": [0, 0],
+            "normal": [0, 0],
+            "tangent": [0, 0],
+            "color": [0, 0],
+            "group": [0, 0],
+            "position": [0, 0],
+            "texcoord": [0, 0],
+            "texcoord2": [0, 0],
+            "vertex_colors": []
+        }, {
+            "base_length": 14801,
+            "indices": [15648, 66324],
+            "normal": [24192, 44403],
+            "tangent": [68595, 59204],
+            "color": [0, 0],
+            "group": [0, 0],
+            "position": [17280, 44403],
+            "texcoord": [61683, 29602],
+            "texcoord2": [0, 0],
+            "vertex_colors": []
+        }],
+        "b4w_bounding_box": {
+            "max_x": 2.202,
+            "max_y": 4.076,
+            "max_z": 3.099,
+            "min_x": -2.202,
+            "min_y": -4.076,
+            "min_z": -4.05
+        },
+        "b4w_bounding_sphere_radius": 4.683,
+        "b4w_bounding_cylinder_radius": 3.969,
+        "b4w_bounding_sphere_center": [0.044, 0.19, -0.089],
+        "b4w_bounding_cylinder_center": [0.088, 0, -0.206],
+        "b4w_bounding_ellipsoid_axes": [3.266, 6.045, 5.302],
+        "b4w_bounding_ellipsoid_center": [0.071, 0.602, 0.217],
+        "b4w_bounding_box_source": {
+            "max_x": 2.202,
+            "max_y": 4.076,
+            "max_z": 3.099,
+            "min_x": -2.202,
+            "min_y": -4.076,
+            "min_z": -4.05
+        },
+        "b4w_shape_keys": []
+    }, {
+        "name": "Iwatch-body_MODIFIERS_APPLIED",
+        "uuid": "e529a60459efde398818490bcddd00a1",
+        "materials": [{
+            "uuid": "b36828256bd734c6efef82df03b697fb"
+        }, {
+            "uuid": "2b7407108a3a19fac41e74ff6b65b3ef"
+        }, {
+            "uuid": "3447b94555fb19c9df84fb37eccc6222"
+        }],
+        "b4w_vertex_anim": [],
+        "vertex_groups": [],
+        "uv_textures": ["UVMap"],
+        "active_vcol_name": null,
+        "submeshes": [{
+            "base_length": 15154,
+            "indices": [81972, 86346],
+            "normal": [127799, 45462],
+            "tangent": [173261, 60616],
+            "color": [0, 0],
+            "group": [0, 0],
+            "position": [91285, 45462],
+            "texcoord": [136747, 30308],
+            "texcoord2": [0, 0],
+            "vertex_colors": []
+        }, {
+            "base_length": 0,
+            "indices": [0, 0],
+            "normal": [0, 0],
+            "tangent": [0, 0],
+            "color": [0, 0],
+            "group": [0, 0],
+            "position": [0, 0],
+            "texcoord": [0, 0],
+            "texcoord2": [0, 0],
+            "vertex_colors": []
+        }, {
+            "base_length": 1057,
+            "indices": [168318, 6138],
+            "normal": [233877, 3171],
+            "tangent": [237048, 4228],
+            "color": [0, 0],
+            "group": [0, 0],
+            "position": [167055, 3171],
+            "texcoord": [170226, 2114],
+            "texcoord2": [0, 0],
+            "vertex_colors": []
+        }],
+        "b4w_bounding_box": {
+            "max_x": 2.432,
+            "max_y": 2.755,
+            "max_z": 3.526,
+            "min_x": -2.255,
+            "min_y": -2.755,
+            "min_z": 2.263
+        },
+        "b4w_bounding_sphere_radius": 3.35,
+        "b4w_bounding_cylinder_radius": 2.354,
+        "b4w_bounding_sphere_center": [0.001, 0.097, 2.857],
+        "b4w_bounding_cylinder_center": [0.094, 0, 2.896],
+        "b4w_bounding_ellipsoid_axes": [3.808, 4.477, 1.026],
+        "b4w_bounding_ellipsoid_center": [0.086, 0.379, 2.924],
+        "b4w_bounding_box_source": {
+            "max_x": 2.432,
+            "max_y": 2.755,
+            "max_z": 3.526,
+            "min_x": -2.255,
+            "min_y": -2.755,
+            "min_z": 2.263
+        },
+        "b4w_shape_keys": []
+    }],
+    "armatures": [],
+    "cameras": [{
+        "name": "Camera",
+        "uuid": "9178c4dbd4a43ba8d1e5f499b626c3e2",
+        "type": "PERSP",
+        "angle": 0.857556,
+        "angle_y": 0.50338,
+        "ortho_scale": 7.314,
+        "clip_start": 0.1,
+        "clip_end": 100,
+        "dof_distance": 0,
+        "b4w_dof_front": 1,
+        "b4w_dof_rear": 1,
+        "b4w_dof_power": 3,
+        "b4w_move_style": "TARGET",
+        "b4w_hover_zero_level": 0.0,
+        "b4w_trans_velocity": 1,
+        "b4w_rot_velocity": 1,
+        "b4w_zoom_velocity": 0.1,
+        "b4w_use_distance_limits": false,
+        "b4w_distance_min": 1,
+        "b4w_distance_max": 100,
+        "b4w_use_horizontal_clamping": false,
+        "b4w_rotation_left_limit": -3.141593,
+        "b4w_rotation_right_limit": 3.141593,
+        "b4w_horizontal_clamping_type": "LOCAL",
+        "b4w_use_vertical_clamping": false,
+        "b4w_rotation_down_limit": -1.570796,
+        "b4w_rotation_up_limit": 1.570796,
+        "b4w_vertical_clamping_type": "LOCAL",
+        "b4w_horizontal_translation_min": -100,
+        "b4w_horizontal_translation_max": 100,
+        "b4w_vertical_translation_min": -100,
+        "b4w_vertical_translation_max": 100,
+        "b4w_hover_angle_min": 0,
+        "b4w_hover_angle_max": 1.570796,
+        "b4w_enable_hover_hor_rotation": true,
+        "b4w_use_panning": true,
+        "b4w_target": [0, 0, 0],
+        "dof_object": null
+    }],
+    "curves": [],
+    "lamps": [{
+        "name": "Lamp",
+        "uuid": "d49c6de15fb42d23a642ba3c927af5bd",
+        "type": "HEMI",
+        "energy": 0.8,
+        "distance": 30,
+        "use_diffuse": true,
+        "use_specular": true,
+        "falloff_type": null,
+        "spot_size": null,
+        "spot_blend": null,
+        "b4w_generate_shadows": false,
+        "b4w_dynamic_intensity": false,
+        "color": [1, 1, 1]
+    }],
+    "sounds": [],
+    "speakers": [],
+    "particles": [],
+    "objects": [{
+        "name": "main-iwatch",
+        "uuid": "62ad8c1244d4841726aa73332f02f457",
+        "body_text": null,
+        "type": "EMPTY",
+        "data": "",
+        "proxy": null,
+        "dupli_group": null,
+        "parent": null,
+        "parent_type": "OBJECT",
+        "parent_bone": "",
+        "modifiers": [],
+        "constraints": [],
+        "particle_systems": [],
+        "animation_data": {
+            "action": null,
+            "nla_tracks": []
+        },
+        "b4w_do_not_batch": true,
+        "b4w_dynamic_geometry": false,
+        "b4w_do_not_cull": false,
+        "b4w_disable_fogging": false,
+        "b4w_do_not_render": false,
+        "b4w_shadow_cast": false,
+        "b4w_shadow_receive": false,
+        "b4w_reflexible": false,
+        "b4w_reflexible_only": false,
+        "b4w_reflective": false,
+        "b4w_reflection_type": "PLANE",
+        "b4w_caustics": false,
+        "b4w_wind_bending": false,
+        "b4w_wind_bending_angle": 10,
+        "b4w_wind_bending_freq": 0.25,
+        "b4w_detail_bending_amp": 0.1,
+        "b4w_detail_bending_freq": 1,
+        "b4w_branch_bending_amp": 0.3,
+        "b4w_main_bend_stiffness_col": "",
+        "b4w_detail_bend_colors": {
+            "leaves_stiffness_col": "",
+            "leaves_phase_col": "",
+            "overall_stiffness_col": ""
+        },
+        "b4w_lod_transition": 0.01,
+        "lod_levels": [],
+        "b4w_proxy_inherit_anim": true,
+        "b4w_selectable": false,
+        "b4w_outlining": false,
+        "b4w_billboard": false,
+        "b4w_pres_glob_orientation": false,
+        "b4w_billboard_geometry": "SPHERICAL",
+        "b4w_outline_settings": {
+            "outline_duration": 1,
+            "outline_period": 1,
+            "outline_relapses": 0
+        },
+        "b4w_outline_on_select": false,
+        "b4w_use_default_animation": true,
+        "b4w_anim_behavior": "FINISH_STOP",
+        "b4w_animation_mixing": false,
+        "b4w_collision": false,
+        "b4w_collision_id": "",
+        "b4w_shadow_cast_only": false,
+        "b4w_vehicle": false,
+        "b4w_vehicle_settings": null,
+        "b4w_character": false,
+        "b4w_character_settings": null,
+        "b4w_floating": false,
+        "b4w_floating_settings": null,
+        "b4w_correct_bounding_offset": "AUTO",
+        "game": {
+            "physics_type": "NO_COLLISION",
+            "use_ghost": false,
+            "use_sleep": false,
+            "mass": 1,
+            "velocity_min": 0,
+            "velocity_max": 0,
+            "damping": 0.04,
+            "rotation_damping": 0.1,
+            "lock_location_x": false,
+            "lock_location_y": false,
+            "lock_location_z": false,
+            "lock_rotation_x": false,
+            "lock_rotation_y": false,
+            "lock_rotation_z": false,
+            "collision_margin": 0.03999999910593033,
+            "collision_group": 1,
+            "collision_mask": 65535,
+            "use_collision_bounds": false,
+            "collision_bounds_type": "BOX",
+            "use_collision_compound": false
+        },
+        "pose": null,
+        "field": null,
+        "location": [0, 0, 0],
+        "rotation_quaternion": [1, 0, 0, 0],
+        "scale": [0.96331, 0.96331, 0.96331],
+        "b4w_object_tags": null,
+        "b4w_anchor": null
+    }, {
+        "name": "Empty",
+        "uuid": "c3127ea93b6289221cc3f6528e296e71",
+        "body_text": null,
+        "type": "EMPTY",
+        "data": "",
+        "proxy": null,
+        "dupli_group": null,
+        "parent": {
+            "uuid": "62ad8c1244d4841726aa73332f02f457"
+        },
+        "parent_type": "OBJECT",
+        "parent_bone": "",
+        "modifiers": [],
+        "constraints": [],
+        "particle_systems": [],
+        "animation_data": null,
+        "b4w_do_not_batch": false,
+        "b4w_dynamic_geometry": false,
+        "b4w_do_not_cull": false,
+        "b4w_disable_fogging": false,
+        "b4w_do_not_render": false,
+        "b4w_shadow_cast": false,
+        "b4w_shadow_receive": false,
+        "b4w_reflexible": false,
+        "b4w_reflexible_only": false,
+        "b4w_reflective": false,
+        "b4w_reflection_type": "PLANE",
+        "b4w_caustics": false,
+        "b4w_wind_bending": false,
+        "b4w_wind_bending_angle": 10,
+        "b4w_wind_bending_freq": 0.25,
+        "b4w_detail_bending_amp": 0.1,
+        "b4w_detail_bending_freq": 1,
+        "b4w_branch_bending_amp": 0.3,
+        "b4w_main_bend_stiffness_col": "",
+        "b4w_detail_bend_colors": {
+            "leaves_stiffness_col": "",
+            "leaves_phase_col": "",
+            "overall_stiffness_col": ""
+        },
+        "b4w_lod_transition": 0.01,
+        "lod_levels": [],
+        "b4w_proxy_inherit_anim": true,
+        "b4w_selectable": false,
+        "b4w_outlining": false,
+        "b4w_billboard": false,
+        "b4w_pres_glob_orientation": false,
+        "b4w_billboard_geometry": "SPHERICAL",
+        "b4w_outline_settings": {
+            "outline_duration": 1,
+            "outline_period": 1,
+            "outline_relapses": 0
+        },
+        "b4w_outline_on_select": false,
+        "b4w_use_default_animation": false,
+        "b4w_anim_behavior": "CYCLIC",
+        "b4w_animation_mixing": false,
+        "b4w_collision": false,
+        "b4w_collision_id": "",
+        "b4w_shadow_cast_only": false,
+        "b4w_vehicle": false,
+        "b4w_vehicle_settings": null,
+        "b4w_character": false,
+        "b4w_character_settings": null,
+        "b4w_floating": false,
+        "b4w_floating_settings": null,
+        "b4w_correct_bounding_offset": "AUTO",
+        "game": {
+            "physics_type": "NO_COLLISION",
+            "use_ghost": false,
+            "use_sleep": false,
+            "mass": 1,
+            "velocity_min": 0,
+            "velocity_max": 0,
+            "damping": 0.04,
+            "rotation_damping": 0.1,
+            "lock_location_x": false,
+            "lock_location_y": false,
+            "lock_location_z": false,
+            "lock_rotation_x": false,
+            "lock_rotation_y": false,
+            "lock_rotation_z": false,
+            "collision_margin": 0.03999999910593033,
+            "collision_group": 1,
+            "collision_mask": 65535,
+            "use_collision_bounds": false,
+            "collision_bounds_type": "BOX",
+            "use_collision_compound": false
+        },
+        "pose": null,
+        "field": null,
+        "location": [2.46047, 1.01785, 3.02223],
+        "rotation_quaternion": [1, 0, 0, 0],
+        "scale": [1.03808, 1.03808, 1.03808],
+        "b4w_object_tags": null,
+        "b4w_anchor": {
+            "type": "ELEMENT",
+            "detect_visibility": true,
+            "element_id": "gongneng",
+            "max_width": 250
+        }
+    }, {
+        "name": "Iwatch-cover",
+        "uuid": "bd43e8f7af7d5a9b3c13ec39aee62e58",
+        "body_text": null,
+        "type": "MESH",
+        "data": {
+            "uuid": "9a942815ba7dbed81553a4ccb2a14395"
+        },
+        "proxy": null,
+        "dupli_group": null,
+        "parent": {
+            "uuid": "62ad8c1244d4841726aa73332f02f457"
+        },
+        "parent_type": "OBJECT",
+        "parent_bone": "",
+        "modifiers": [],
+        "constraints": [],
+        "particle_systems": [],
+        "animation_data": null,
+        "b4w_do_not_batch": false,
+        "b4w_dynamic_geometry": false,
+        "b4w_do_not_cull": false,
+        "b4w_disable_fogging": false,
+        "b4w_do_not_render": false,
+        "b4w_shadow_cast": false,
+        "b4w_shadow_receive": false,
+        "b4w_reflexible": false,
+        "b4w_reflexible_only": false,
+        "b4w_reflective": false,
+        "b4w_reflection_type": "PLANE",
+        "b4w_caustics": false,
+        "b4w_wind_bending": false,
+        "b4w_wind_bending_angle": 10,
+        "b4w_wind_bending_freq": 0.25,
+        "b4w_detail_bending_amp": 0.1,
+        "b4w_detail_bending_freq": 1,
+        "b4w_branch_bending_amp": 0.3,
+        "b4w_main_bend_stiffness_col": "",
+        "b4w_detail_bend_colors": {
+            "leaves_stiffness_col": "",
+            "leaves_phase_col": "",
+            "overall_stiffness_col": ""
+        },
+        "b4w_lod_transition": 0.01,
+        "lod_levels": [],
+        "b4w_proxy_inherit_anim": true,
+        "b4w_selectable": false,
+        "b4w_outlining": false,
+        "b4w_billboard": false,
+        "b4w_pres_glob_orientation": false,
+        "b4w_billboard_geometry": "SPHERICAL",
+        "b4w_outline_settings": {
+            "outline_duration": 1,
+            "outline_period": 1,
+            "outline_relapses": 0
+        },
+        "b4w_outline_on_select": false,
+        "b4w_use_default_animation": false,
+        "b4w_anim_behavior": "CYCLIC",
+        "b4w_animation_mixing": false,
+        "b4w_collision": false,
+        "b4w_collision_id": "",
+        "b4w_shadow_cast_only": false,
+        "b4w_vehicle": false,
+        "b4w_vehicle_settings": null,
+        "b4w_character": false,
+        "b4w_character_settings": null,
+        "b4w_floating": false,
+        "b4w_floating_settings": null,
+        "b4w_correct_bounding_offset": "AUTO",
+        "game": {
+            "physics_type": "STATIC",
+            "use_ghost": false,
+            "use_sleep": false,
+            "mass": 1,
+            "velocity_min": 0,
+            "velocity_max": 0,
+            "damping": 0.04,
+            "rotation_damping": 0.1,
+            "lock_location_x": false,
+            "lock_location_y": false,
+            "lock_location_z": false,
+            "lock_rotation_x": false,
+            "lock_rotation_y": false,
+            "lock_rotation_z": false,
+            "collision_margin": 0.03999999910593033,
+            "collision_group": 1,
+            "collision_mask": 255,
+            "use_collision_bounds": false,
+            "collision_bounds_type": "BOX",
+            "use_collision_compound": false
+        },
+        "pose": null,
+        "field": null,
+        "location": [0, 0, 0],
+        "rotation_quaternion": [1, 0, 0, 0],
+        "scale": [1, 1, 1],
+        "b4w_object_tags": null,
+        "b4w_anchor": null
+    }, {
+        "name": "Iwatch-handle-bxg",
+        "uuid": "cdacedbbe80868e98c9831d1923cdc5f",
+        "body_text": null,
+        "type": "MESH",
+        "data": {
+            "uuid": "5c9bf47b2ba40ce9cb3ab0c7085190e2"
+        },
+        "proxy": null,
+        "dupli_group": null,
+        "parent": {
+            "uuid": "62ad8c1244d4841726aa73332f02f457"
+        },
+        "parent_type": "OBJECT",
+        "parent_bone": "",
+        "modifiers": [],
+        "constraints": [],
+        "particle_systems": [],
+        "animation_data": null,
+        "b4w_do_not_batch": false,
+        "b4w_dynamic_geometry": false,
+        "b4w_do_not_cull": false,
+        "b4w_disable_fogging": false,
+        "b4w_do_not_render": false,
+        "b4w_shadow_cast": false,
+        "b4w_shadow_receive": false,
+        "b4w_reflexible": false,
+        "b4w_reflexible_only": false,
+        "b4w_reflective": false,
+        "b4w_reflection_type": "PLANE",
+        "b4w_caustics": false,
+        "b4w_wind_bending": false,
+        "b4w_wind_bending_angle": 10,
+        "b4w_wind_bending_freq": 0.25,
+        "b4w_detail_bending_amp": 0.1,
+        "b4w_detail_bending_freq": 1,
+        "b4w_branch_bending_amp": 0.3,
+        "b4w_main_bend_stiffness_col": "",
+        "b4w_detail_bend_colors": {
+            "leaves_stiffness_col": "",
+            "leaves_phase_col": "",
+            "overall_stiffness_col": ""
+        },
+        "b4w_lod_transition": 0.01,
+        "lod_levels": [],
+        "b4w_proxy_inherit_anim": true,
+        "b4w_selectable": false,
+        "b4w_outlining": false,
+        "b4w_billboard": false,
+        "b4w_pres_glob_orientation": false,
+        "b4w_billboard_geometry": "SPHERICAL",
+        "b4w_outline_settings": {
+            "outline_duration": 1,
+            "outline_period": 1,
+            "outline_relapses": 0
+        },
+        "b4w_outline_on_select": false,
+        "b4w_use_default_animation": false,
+        "b4w_anim_behavior": "CYCLIC",
+        "b4w_animation_mixing": false,
+        "b4w_collision": false,
+        "b4w_collision_id": "",
+        "b4w_shadow_cast_only": false,
+        "b4w_vehicle": false,
+        "b4w_vehicle_settings": null,
+        "b4w_character": false,
+        "b4w_character_settings": null,
+        "b4w_floating": false,
+        "b4w_floating_settings": null,
+        "b4w_correct_bounding_offset": "AUTO",
+        "game": {
+            "physics_type": "STATIC",
+            "use_ghost": false,
+            "use_sleep": false,
+            "mass": 1,
+            "velocity_min": 0,
+            "velocity_max": 0,
+            "damping": 0.04,
+            "rotation_damping": 0.1,
+            "lock_location_x": false,
+            "lock_location_y": false,
+            "lock_location_z": false,
+            "lock_rotation_x": false,
+            "lock_rotation_y": false,
+            "lock_rotation_z": false,
+            "collision_margin": 0.03999999910593033,
+            "collision_group": 1,
+            "collision_mask": 65535,
+            "use_collision_bounds": false,
+            "collision_bounds_type": "BOX",
+            "use_collision_compound": false
+        },
+        "pose": null,
+        "field": null,
+        "location": [0, 0, 0],
+        "rotation_quaternion": [1, 0, 0, 0],
+        "scale": [1, 1, 1],
+        "b4w_object_tags": null,
+        "b4w_anchor": null
+    }, {
+        "name": "Iwatch-handle",
+        "uuid": "9c10ab936b7b0c6e6f4fcdb30f62deba",
+        "body_text": null,
+        "type": "MESH",
+        "data": {
+            "uuid": "c9217957d07b4b5c9972dd2469e6a288"
+        },
+        "proxy": null,
+        "dupli_group": null,
+        "parent": {
+            "uuid": "62ad8c1244d4841726aa73332f02f457"
+        },
+        "parent_type": "OBJECT",
+        "parent_bone": "",
+        "modifiers": [],
+        "constraints": [],
+        "particle_systems": [],
+        "animation_data": null,
+        "b4w_do_not_batch": true,
+        "b4w_dynamic_geometry": true,
+        "b4w_do_not_cull": false,
+        "b4w_disable_fogging": false,
+        "b4w_do_not_render": false,
+        "b4w_shadow_cast": false,
+        "b4w_shadow_receive": false,
+        "b4w_reflexible": false,
+        "b4w_reflexible_only": false,
+        "b4w_reflective": false,
+        "b4w_reflection_type": "PLANE",
+        "b4w_caustics": false,
+        "b4w_wind_bending": false,
+        "b4w_wind_bending_angle": 10,
+        "b4w_wind_bending_freq": 0.25,
+        "b4w_detail_bending_amp": 0.1,
+        "b4w_detail_bending_freq": 1,
+        "b4w_branch_bending_amp": 0.3,
+        "b4w_main_bend_stiffness_col": "",
+        "b4w_detail_bend_colors": {
+            "leaves_stiffness_col": "",
+            "leaves_phase_col": "",
+            "overall_stiffness_col": ""
+        },
+        "b4w_lod_transition": 0.01,
+        "lod_levels": [],
+        "b4w_proxy_inherit_anim": true,
+        "b4w_selectable": true,
+        "b4w_outlining": true,
+        "b4w_billboard": false,
+        "b4w_pres_glob_orientation": false,
+        "b4w_billboard_geometry": "SPHERICAL",
+        "b4w_outline_settings": {
+            "outline_duration": 1,
+            "outline_period": 1,
+            "outline_relapses": 1
+        },
+        "b4w_outline_on_select": true,
+        "b4w_use_default_animation": false,
+        "b4w_anim_behavior": "CYCLIC",
+        "b4w_animation_mixing": false,
+        "b4w_collision": false,
+        "b4w_collision_id": "",
+        "b4w_shadow_cast_only": false,
+        "b4w_vehicle": false,
+        "b4w_vehicle_settings": null,
+        "b4w_character": false,
+        "b4w_character_settings": null,
+        "b4w_floating": false,
+        "b4w_floating_settings": null,
+        "b4w_correct_bounding_offset": "AUTO",
+        "game": {
+            "physics_type": "STATIC",
+            "use_ghost": false,
+            "use_sleep": false,
+            "mass": 1,
+            "velocity_min": 0,
+            "velocity_max": 0,
+            "damping": 0.04,
+            "rotation_damping": 0.1,
+            "lock_location_x": false,
+            "lock_location_y": false,
+            "lock_location_z": false,
+            "lock_rotation_x": false,
+            "lock_rotation_y": false,
+            "lock_rotation_z": false,
+            "collision_margin": 0.03999999910593033,
+            "collision_group": 1,
+            "collision_mask": 65535,
+            "use_collision_bounds": false,
+            "collision_bounds_type": "BOX",
+            "use_collision_compound": false
+        },
+        "pose": null,
+        "field": null,
+        "location": [0, 0, 0],
+        "rotation_quaternion": [1, 0, 0, 0],
+        "scale": [1, 1, 1],
+        "b4w_object_tags": null,
+        "b4w_anchor": null
+    }, {
+        "name": "Iwatch-body",
+        "uuid": "db233f68318fabb366d3db8b06e2eeb2",
+        "body_text": null,
+        "type": "MESH",
+        "data": {
+            "uuid": "e529a60459efde398818490bcddd00a1"
+        },
+        "proxy": null,
+        "dupli_group": null,
+        "parent": {
+            "uuid": "62ad8c1244d4841726aa73332f02f457"
+        },
+        "parent_type": "OBJECT",
+        "parent_bone": "",
+        "modifiers": [],
+        "constraints": [],
+        "particle_systems": [],
+        "animation_data": null,
+        "b4w_do_not_batch": false,
+        "b4w_dynamic_geometry": false,
+        "b4w_do_not_cull": false,
+        "b4w_disable_fogging": false,
+        "b4w_do_not_render": false,
+        "b4w_shadow_cast": false,
+        "b4w_shadow_receive": false,
+        "b4w_reflexible": false,
+        "b4w_reflexible_only": false,
+        "b4w_reflective": false,
+        "b4w_reflection_type": "PLANE",
+        "b4w_caustics": false,
+        "b4w_wind_bending": false,
+        "b4w_wind_bending_angle": 10,
+        "b4w_wind_bending_freq": 0.25,
+        "b4w_detail_bending_amp": 0.1,
+        "b4w_detail_bending_freq": 1,
+        "b4w_branch_bending_amp": 0.3,
+        "b4w_main_bend_stiffness_col": "",
+        "b4w_detail_bend_colors": {
+            "leaves_stiffness_col": "",
+            "leaves_phase_col": "",
+            "overall_stiffness_col": ""
+        },
+        "b4w_lod_transition": 0.01,
+        "lod_levels": [],
+        "b4w_proxy_inherit_anim": true,
+        "b4w_selectable": false,
+        "b4w_outlining": false,
+        "b4w_billboard": false,
+        "b4w_pres_glob_orientation": false,
+        "b4w_billboard_geometry": "SPHERICAL",
+        "b4w_outline_settings": {
+            "outline_duration": 1,
+            "outline_period": 1,
+            "outline_relapses": 0
+        },
+        "b4w_outline_on_select": false,
+        "b4w_use_default_animation": false,
+        "b4w_anim_behavior": "CYCLIC",
+        "b4w_animation_mixing": false,
+        "b4w_collision": false,
+        "b4w_collision_id": "",
+        "b4w_shadow_cast_only": false,
+        "b4w_vehicle": false,
+        "b4w_vehicle_settings": null,
+        "b4w_character": false,
+        "b4w_character_settings": null,
+        "b4w_floating": false,
+        "b4w_floating_settings": null,
+        "b4w_correct_bounding_offset": "AUTO",
+        "game": {
+            "physics_type": "STATIC",
+            "use_ghost": false,
+            "use_sleep": false,
+            "mass": 1,
+            "velocity_min": 0,
+            "velocity_max": 0,
+            "damping": 0.04,
+            "rotation_damping": 0.1,
+            "lock_location_x": false,
+            "lock_location_y": false,
+            "lock_location_z": false,
+            "lock_rotation_x": false,
+            "lock_rotation_y": false,
+            "lock_rotation_z": false,
+            "collision_margin": 0.03999999910593033,
+            "collision_group": 1,
+            "collision_mask": 65535,
+            "use_collision_bounds": false,
+            "collision_bounds_type": "BOX",
+            "use_collision_compound": false
+        },
+        "pose": null,
+        "field": null,
+        "location": [0, 0, 0],
+        "rotation_quaternion": [1, 0, 0, 0],
+        "scale": [1, 1, 1],
+        "b4w_object_tags": null,
+        "b4w_anchor": null
+    }, {
+        "name": "Lamp",
+        "uuid": "6026510aa18a6e59316731b9bea9f074",
+        "body_text": null,
+        "type": "LAMP",
+        "data": {
+            "uuid": "d49c6de15fb42d23a642ba3c927af5bd"
+        },
+        "proxy": null,
+        "dupli_group": null,
+        "parent": null,
+        "parent_type": "OBJECT",
+        "parent_bone": "",
+        "modifiers": [],
+        "constraints": [],
+        "particle_systems": [],
+        "animation_data": null,
+        "b4w_do_not_batch": false,
+        "b4w_dynamic_geometry": false,
+        "b4w_do_not_cull": false,
+        "b4w_disable_fogging": false,
+        "b4w_do_not_render": false,
+        "b4w_shadow_cast": false,
+        "b4w_shadow_receive": false,
+        "b4w_reflexible": false,
+        "b4w_reflexible_only": false,
+        "b4w_reflective": false,
+        "b4w_reflection_type": "PLANE",
+        "b4w_caustics": false,
+        "b4w_wind_bending": false,
+        "b4w_wind_bending_angle": 10,
+        "b4w_wind_bending_freq": 0.25,
+        "b4w_detail_bending_amp": 0.1,
+        "b4w_detail_bending_freq": 1,
+        "b4w_branch_bending_amp": 0.3,
+        "b4w_main_bend_stiffness_col": "",
+        "b4w_detail_bend_colors": {
+            "leaves_stiffness_col": "",
+            "leaves_phase_col": "",
+            "overall_stiffness_col": ""
+        },
+        "b4w_lod_transition": 0.01,
+        "lod_levels": [],
+        "b4w_proxy_inherit_anim": true,
+        "b4w_selectable": false,
+        "b4w_outlining": false,
+        "b4w_billboard": false,
+        "b4w_pres_glob_orientation": false,
+        "b4w_billboard_geometry": "SPHERICAL",
+        "b4w_outline_settings": {
+            "outline_duration": 1,
+            "outline_period": 1,
+            "outline_relapses": 0
+        },
+        "b4w_outline_on_select": false,
+        "b4w_use_default_animation": false,
+        "b4w_anim_behavior": "CYCLIC",
+        "b4w_animation_mixing": false,
+        "b4w_collision": false,
+        "b4w_collision_id": "",
+        "b4w_shadow_cast_only": false,
+        "b4w_vehicle": false,
+        "b4w_vehicle_settings": null,
+        "b4w_character": false,
+        "b4w_character_settings": null,
+        "b4w_floating": false,
+        "b4w_floating_settings": null,
+        "b4w_correct_bounding_offset": "AUTO",
+        "game": {
+            "physics_type": "STATIC",
+            "use_ghost": false,
+            "use_sleep": false,
+            "mass": 1,
+            "velocity_min": 0,
+            "velocity_max": 0,
+            "damping": 0.025,
+            "rotation_damping": 0.159,
+            "lock_location_x": false,
+            "lock_location_y": false,
+            "lock_location_z": false,
+            "lock_rotation_x": false,
+            "lock_rotation_y": false,
+            "lock_rotation_z": false,
+            "collision_margin": 0.05999999865889549,
+            "collision_group": 1,
+            "collision_mask": 255,
+            "use_collision_bounds": false,
+            "collision_bounds_type": "BOX",
+            "use_collision_compound": false
+        },
+        "pose": null,
+        "field": null,
+        "location": [-4.07625, 5.90386, 1.00545],
+        "rotation_quaternion": [-0.75588, -0.27217, 0.57095, -0.16908],
+        "scale": [1, 1, 1],
+        "b4w_object_tags": null,
+        "b4w_anchor": null
+    }, {
+        "name": "Camera",
+        "uuid": "9c50f1411156124c7e0fe4ec0b2423b4",
+        "body_text": null,
+        "type": "CAMERA",
+        "data": {
+            "uuid": "9178c4dbd4a43ba8d1e5f499b626c3e2"
+        },
+        "proxy": null,
+        "dupli_group": null,
+        "parent": null,
+        "parent_type": "OBJECT",
+        "parent_bone": "",
+        "modifiers": [],
+        "constraints": [],
+        "particle_systems": [],
+        "animation_data": null,
+        "b4w_do_not_batch": false,
+        "b4w_dynamic_geometry": false,
+        "b4w_do_not_cull": false,
+        "b4w_disable_fogging": false,
+        "b4w_do_not_render": false,
+        "b4w_shadow_cast": false,
+        "b4w_shadow_receive": false,
+        "b4w_reflexible": false,
+        "b4w_reflexible_only": false,
+        "b4w_reflective": false,
+        "b4w_reflection_type": "PLANE",
+        "b4w_caustics": false,
+        "b4w_wind_bending": false,
+        "b4w_wind_bending_angle": 10,
+        "b4w_wind_bending_freq": 0.25,
+        "b4w_detail_bending_amp": 0.1,
+        "b4w_detail_bending_freq": 1,
+        "b4w_branch_bending_amp": 0.3,
+        "b4w_main_bend_stiffness_col": "",
+        "b4w_detail_bend_colors": {
+            "leaves_stiffness_col": "",
+            "leaves_phase_col": "",
+            "overall_stiffness_col": ""
+        },
+        "b4w_lod_transition": 0.01,
+        "lod_levels": [],
+        "b4w_proxy_inherit_anim": true,
+        "b4w_selectable": false,
+        "b4w_outlining": false,
+        "b4w_billboard": false,
+        "b4w_pres_glob_orientation": false,
+        "b4w_billboard_geometry": "SPHERICAL",
+        "b4w_outline_settings": {
+            "outline_duration": 1,
+            "outline_period": 1,
+            "outline_relapses": 0
+        },
+        "b4w_outline_on_select": false,
+        "b4w_use_default_animation": false,
+        "b4w_anim_behavior": "CYCLIC",
+        "b4w_animation_mixing": false,
+        "b4w_collision": false,
+        "b4w_collision_id": "",
+        "b4w_shadow_cast_only": false,
+        "b4w_vehicle": false,
+        "b4w_vehicle_settings": null,
+        "b4w_character": false,
+        "b4w_character_settings": null,
+        "b4w_floating": false,
+        "b4w_floating_settings": null,
+        "b4w_correct_bounding_offset": "AUTO",
+        "game": {
+            "physics_type": "STATIC",
+            "use_ghost": false,
+            "use_sleep": false,
+            "mass": 1,
+            "velocity_min": 0,
+            "velocity_max": 0,
+            "damping": 0.566,
+            "rotation_damping": 0.626,
+            "lock_location_x": false,
+            "lock_location_y": false,
+            "lock_location_z": false,
+            "lock_rotation_x": false,
+            "lock_rotation_y": false,
+            "lock_rotation_z": false,
+            "collision_margin": 0.05999999865889549,
+            "collision_group": 1,
+            "collision_mask": 255,
+            "use_collision_bounds": false,
+            "collision_bounds_type": "BOX",
+            "use_collision_compound": false
+        },
+        "pose": null,
+        "field": null,
+        "location": [14.24562, -2.55891, 15.125],
+        "rotation_quaternion": [0.61578, 0.69627, 0.24433, -0.27627],
+        "scale": [1.19471, 1.19471, 1.19471],
+        "b4w_object_tags": null,
+        "b4w_anchor": null
+    }],
+    "groups": [],
+    "scenes": [{
+        "name": "Scene",
+        "uuid": "35d07707811f44cc51fa928f8dcc8c9c",
+        "b4w_use_nla": false,
+        "b4w_nla_cyclic": false,
+        "b4w_logic_nodes": [],
+        "b4w_use_logic_editor": false,
+        "b4w_enable_audio": true,
+        "b4w_enable_dynamic_compressor": false,
+        "b4w_dynamic_compressor_settings": {
+            "threshold": -24,
+            "knee": 30,
+            "ratio": 12,
+            "attack": 0.003,
+            "release": 0.25
+        },
+        "b4w_shadow_settings": {
+            "csm_resolution": 2048,
+            "self_shadow_polygon_offset": 1,
+            "self_shadow_normal_offset": 0.01,
+            "b4w_enable_csm": false,
+            "csm_num": 1,
+            "csm_first_cascade_border": 10,
+            "first_cascade_blur_radius": 3,
+            "csm_last_cascade_border": 100,
+            "last_cascade_blur_radius": 1.5,
+            "fade_last_cascade": true,
+            "blend_between_cascades": true
+        },
+        "b4w_god_rays_settings": {
+            "intensity": 0.7,
+            "max_ray_length": 1,
+            "steps_per_pass": 10
+        },
+        "b4w_ssao_settings": {
+            "radius_increase": 3,
+            "hemisphere": false,
+            "blur_depth": false,
+            "blur_discard_value": 1,
+            "influence": 0.7,
+            "dist_factor": 0,
+            "samples": 16
+        },
+        "b4w_color_correction_settings": {
+            "brightness": 0,
+            "contrast": 0,
+            "exposure": 1,
+            "saturation": 1
+        },
+        "b4w_bloom_settings": {
+            "key": 1,
+            "blur": 4,
+            "edge_lum": 1
+        },
+        "b4w_motion_blur_settings": {
+            "motion_blur_factor": 0.01,
+            "motion_blur_decay_threshold": 0.01
+        },
+        "b4w_glow_settings": {
+            "render_glow_over_blend": false,
+            "small_glow_mask_coeff": 2,
+            "large_glow_mask_coeff": 2,
+            "small_glow_mask_width": 2,
+            "large_glow_mask_width": 6
+        },
+        "b4w_outline_color": [1, 1, 0],
+        "b4w_outline_factor": 1,
+        "b4w_enable_physics": true,
+        "b4w_render_shadows": "AUTO",
+        "b4w_render_reflections": "ON",
+        "b4w_reflection_quality": "MEDIUM",
+        "b4w_render_refractions": "AUTO",
+        "b4w_enable_god_rays": false,
+        "b4w_enable_glow_materials": "AUTO",
+        "b4w_enable_ssao": false,
+        "b4w_batch_grid_size": 0,
+        "b4w_anisotropic_filtering": "OFF",
+        "b4w_enable_bloom": false,
+        "b4w_enable_motion_blur": false,
+        "b4w_enable_color_correction": false,
+        "b4w_enable_antialiasing": true,
+        "b4w_enable_object_selection": "AUTO",
+        "b4w_enable_outlining": "AUTO",
+        "b4w_enable_anchors_visibility": "AUTO",
+        "b4w_tags": null,
+        "objects": [{
+            "uuid": "62ad8c1244d4841726aa73332f02f457"
+        }, {
+            "uuid": "c3127ea93b6289221cc3f6528e296e71"
+        }, {
+            "uuid": "bd43e8f7af7d5a9b3c13ec39aee62e58"
+        }, {
+            "uuid": "cdacedbbe80868e98c9831d1923cdc5f"
+        }, {
+            "uuid": "9c10ab936b7b0c6e6f4fcdb30f62deba"
+        }, {
+            "uuid": "db233f68318fabb366d3db8b06e2eeb2"
+        }, {
+            "uuid": "6026510aa18a6e59316731b9bea9f074"
+        }, {
+            "uuid": "9c50f1411156124c7e0fe4ec0b2423b4"
+        }],
+        "camera": {
+            "uuid": "9c50f1411156124c7e0fe4ec0b2423b4"
+        },
+        "world": {
+            "uuid": "2d6fdd8b593c7eef4db98fd466329059"
+        },
+        "frame_start": 1,
+        "frame_end": 360,
+        "timeline_markers": null,
+        "fps": 24,
+        "audio_volume": 1,
+        "audio_doppler_speed": 343.3,
+        "audio_doppler_factor": 1
+    }],
+    "worlds": [{
+        "name": "World",
+        "uuid": "2d6fdd8b593c7eef4db98fd466329059",
+        "texture_slots": [],
+        "horizon_color": [0.0509, 0.0509, 0.0509],
+        "zenith_color": [0.01, 0.01, 0.01],
+        "use_sky_paper": false,
+        "use_sky_blend": false,
+        "use_sky_real": false,
+        "light_settings": {
+            "use_environment_light": true,
+            "environment_energy": 0.5,
+            "environment_color": "PLAIN"
+        },
+        "b4w_sky_settings": {
+            "render_sky": false,
+            "reflexible": false,
+            "reflexible_only": false,
+            "procedural_skydome": false,
+            "use_as_environment_lighting": false,
+            "color": [0.087, 0.255, 0.6],
+            "rayleigh_brightness": 3.3,
+            "mie_brightness": 0.1,
+            "spot_brightness": 20,
+            "scatter_strength": 0.2,
+            "rayleigh_strength": 0.2,
+            "mie_strength": 0.006,
+            "rayleigh_collection_power": 0.35,
+            "mie_collection_power": 0.5,
+            "mie_distribution": 0.4
+        },
+        "fog_settings": {
+            "use_fog": false,
+            "intensity": 0,
+            "depth": 25,
+            "start": 5,
+            "height": 0,
+            "falloff": "QUADRATIC",
+            "use_custom_color": true,
+            "color": [0.5, 0.5, 0.5]
+        }
+    }],
+    "node_groups": [{
+        "name": "B4W_SMOOTHSTEP",
+        "use_orco_tex_coord": false,
+        "uuid": "41d82356db83faffc98a7dda834ccfcc",
+        "node_tree": {
+            "nodes": [{
+                "name": "Math.007",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 3
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": true,
+                    "default_value": 2
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "SUBTRACT",
+                "use_clamp": false
+            }, {
+                "name": "Math.006",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 3
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": true,
+                    "default_value": 2
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "SUBTRACT",
+                "use_clamp": false
+            }, {
+                "name": "Group Input",
+                "type": "GROUP_INPUT",
+                "inputs": [],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Input_1",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }, {
+                    "name": "Edge0",
+                    "identifier": "Input_5",
+                    "is_linked": true,
+                    "default_value": 2
+                }, {
+                    "name": "Edge1",
+                    "identifier": "Input_7",
+                    "is_linked": true,
+                    "default_value": 3
+                }]
+            }, {
+                "name": "Math.008",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 3
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": true,
+                    "default_value": 2
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "DIVIDE",
+                "use_clamp": false
+            }, {
+                "name": "Math",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": false,
+                    "default_value": 1
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "MINIMUM",
+                "use_clamp": false
+            }, {
+                "name": "Math.001",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 1
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": false,
+                    "default_value": 0
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "MAXIMUM",
+                "use_clamp": false
+            }, {
+                "name": "Math.004",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": false,
+                    "default_value": 2
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "MULTIPLY",
+                "use_clamp": false
+            }, {
+                "name": "Math.002",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "MULTIPLY",
+                "use_clamp": false
+            }, {
+                "name": "Math.005",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": false,
+                    "default_value": 3
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": true,
+                    "default_value": 2
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "SUBTRACT",
+                "use_clamp": false
+            }, {
+                "name": "Math.003",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "MULTIPLY",
+                "use_clamp": false
+            }, {
+                "name": "Group Output",
+                "type": "GROUP_OUTPUT",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Output_3",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "outputs": []
+            }],
+            "links": [{
+                "from_node": {
+                    "name": "Math.001"
+                },
+                "to_node": {
+                    "name": "Math.002"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math.001"
+                },
+                "to_node": {
+                    "name": "Math.002"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value_001"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math.002"
+                },
+                "to_node": {
+                    "name": "Math.003"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math.003"
+                },
+                "to_node": {
+                    "name": "Group Output"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Output_3"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math.001"
+                },
+                "to_node": {
+                    "name": "Math.004"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math.004"
+                },
+                "to_node": {
+                    "name": "Math.005"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value_001"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math.005"
+                },
+                "to_node": {
+                    "name": "Math.003"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value_001"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group Input"
+                },
+                "to_node": {
+                    "name": "Math.006"
+                },
+                "from_socket": {
+                    "identifier": "Input_1"
+                },
+                "to_socket": {
+                    "identifier": "Value"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group Input"
+                },
+                "to_node": {
+                    "name": "Math.006"
+                },
+                "from_socket": {
+                    "identifier": "Input_5"
+                },
+                "to_socket": {
+                    "identifier": "Value_001"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group Input"
+                },
+                "to_node": {
+                    "name": "Math.007"
+                },
+                "from_socket": {
+                    "identifier": "Input_7"
+                },
+                "to_socket": {
+                    "identifier": "Value"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group Input"
+                },
+                "to_node": {
+                    "name": "Math.007"
+                },
+                "from_socket": {
+                    "identifier": "Input_5"
+                },
+                "to_socket": {
+                    "identifier": "Value_001"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math.006"
+                },
+                "to_node": {
+                    "name": "Math.008"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math.007"
+                },
+                "to_node": {
+                    "name": "Math.008"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value_001"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math.008"
+                },
+                "to_node": {
+                    "name": "Math"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math"
+                },
+                "to_node": {
+                    "name": "Math.001"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value"
+                }
+            }],
+            "animation_data": null
+        }
+    }, {
+        "name": "B4W_REFLECT",
+        "use_orco_tex_coord": false,
+        "uuid": "9545a4d46e2d2a44473916df20815a22",
+        "node_tree": {
+            "nodes": [{
+                "name": "Mapping",
+                "type": "MAPPING",
+                "inputs": [{
+                    "name": "Vector",
+                    "identifier": "Vector",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": [{
+                    "name": "Vector",
+                    "identifier": "Vector",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "translation": [0, 0, 0],
+                "rotation": [0, 3.142, 0],
+                "scale": [1, -1, 1],
+                "vector_type": "POINT",
+                "use_min": false,
+                "use_max": false,
+                "min": [0, 0, 0],
+                "max": [1, 1, 1]
+            }, {
+                "name": "Vector Math.001",
+                "type": "VECT_MATH",
+                "inputs": [{
+                    "name": "Vector",
+                    "identifier": "Vector",
+                    "is_linked": true,
+                    "default_value": [0, 0, 1]
+                }, {
+                    "name": "Vector",
+                    "identifier": "Vector_001",
+                    "is_linked": true,
+                    "default_value": [0.5, 0.5, 0.5]
+                }],
+                "outputs": [{
+                    "name": "Vector",
+                    "identifier": "Vector",
+                    "is_linked": false,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "DOT_PRODUCT"
+            }, {
+                "name": "Math",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": false,
+                    "default_value": 2
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "MULTIPLY",
+                "use_clamp": false
+            }, {
+                "name": "Math.001",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "MULTIPLY",
+                "use_clamp": false
+            }, {
+                "name": "Math.002",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "MULTIPLY",
+                "use_clamp": false
+            }, {
+                "name": "Math.003",
+                "type": "MATH",
+                "inputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }, {
+                    "name": "Value",
+                    "identifier": "Value_001",
+                    "is_linked": true,
+                    "default_value": 0.5
+                }],
+                "outputs": [{
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "operation": "MULTIPLY",
+                "use_clamp": false
+            }, {
+                "name": "Separate RGB",
+                "type": "SEPRGB",
+                "inputs": [{
+                    "name": "Image",
+                    "identifier": "Image",
+                    "is_linked": true,
+                    "default_value": [0.8, 0.8, 0.8, 1]
+                }],
+                "outputs": [{
+                    "name": "R",
+                    "identifier": "R",
+                    "is_linked": true,
+                    "default_value": 0
+                }, {
+                    "name": "G",
+                    "identifier": "G",
+                    "is_linked": true,
+                    "default_value": 0
+                }, {
+                    "name": "B",
+                    "identifier": "B",
+                    "is_linked": true,
+                    "default_value": 0
+                }]
+            }, {
+                "name": "Combine RGB",
+                "type": "COMBRGB",
+                "inputs": [{
+                    "name": "R",
+                    "identifier": "R",
+                    "is_linked": true,
+                    "default_value": 0
+                }, {
+                    "name": "G",
+                    "identifier": "G",
+                    "is_linked": true,
+                    "default_value": 0
+                }, {
+                    "name": "B",
+                    "identifier": "B",
+                    "is_linked": true,
+                    "default_value": 0
+                }],
+                "outputs": [{
+                    "name": "Image",
+                    "identifier": "Image",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0, 0]
+                }]
+            }, {
+                "name": "Group Input.001",
+                "type": "GROUP_INPUT",
+                "inputs": [],
+                "outputs": [{
+                    "name": "Vector",
+                    "identifier": "Input_1",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Vector",
+                    "identifier": "Input_9",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }]
+            }, {
+                "name": "Vector Math",
+                "type": "VECT_MATH",
+                "inputs": [{
+                    "name": "Vector",
+                    "identifier": "Vector",
+                    "is_linked": true,
+                    "default_value": [0, 0, 1]
+                }, {
+                    "name": "Vector",
+                    "identifier": "Vector_001",
+                    "is_linked": true,
+                    "default_value": [0.5, 0.5, 0.5]
+                }],
+                "outputs": [{
+                    "name": "Vector",
+                    "identifier": "Vector",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }, {
+                    "name": "Value",
+                    "identifier": "Value",
+                    "is_linked": false,
+                    "default_value": 0
+                }],
+                "operation": "SUBTRACT"
+            }, {
+                "name": "Group Output.001",
+                "type": "GROUP_OUTPUT",
+                "inputs": [{
+                    "name": "Vector",
+                    "identifier": "Output_3",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": []
+            }],
+            "links": [{
+                "from_node": {
+                    "name": "Vector Math.001"
+                },
+                "to_node": {
+                    "name": "Math"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math.001"
+                },
+                "to_node": {
+                    "name": "Combine RGB"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "R"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math.002"
+                },
+                "to_node": {
+                    "name": "Combine RGB"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "G"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math.003"
+                },
+                "to_node": {
+                    "name": "Combine RGB"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "B"
+                }
+            }, {
+                "from_node": {
+                    "name": "Combine RGB"
+                },
+                "to_node": {
+                    "name": "Vector Math"
+                },
+                "from_socket": {
+                    "identifier": "Image"
+                },
+                "to_socket": {
+                    "identifier": "Vector_001"
+                }
+            }, {
+                "from_node": {
+                    "name": "Mapping"
+                },
+                "to_node": {
+                    "name": "Separate RGB"
+                },
+                "from_socket": {
+                    "identifier": "Vector"
+                },
+                "to_socket": {
+                    "identifier": "Image"
+                }
+            }, {
+                "from_node": {
+                    "name": "Mapping"
+                },
+                "to_node": {
+                    "name": "Vector Math.001"
+                },
+                "from_socket": {
+                    "identifier": "Vector"
+                },
+                "to_socket": {
+                    "identifier": "Vector_001"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math"
+                },
+                "to_node": {
+                    "name": "Math.001"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value"
+                }
+            }, {
+                "from_node": {
+                    "name": "Separate RGB"
+                },
+                "to_node": {
+                    "name": "Math.001"
+                },
+                "from_socket": {
+                    "identifier": "R"
+                },
+                "to_socket": {
+                    "identifier": "Value_001"
+                }
+            }, {
+                "from_node": {
+                    "name": "Separate RGB"
+                },
+                "to_node": {
+                    "name": "Math.002"
+                },
+                "from_socket": {
+                    "identifier": "G"
+                },
+                "to_socket": {
+                    "identifier": "Value_001"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math"
+                },
+                "to_node": {
+                    "name": "Math.002"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value"
+                }
+            }, {
+                "from_node": {
+                    "name": "Separate RGB"
+                },
+                "to_node": {
+                    "name": "Math.003"
+                },
+                "from_socket": {
+                    "identifier": "B"
+                },
+                "to_socket": {
+                    "identifier": "Value_001"
+                }
+            }, {
+                "from_node": {
+                    "name": "Math"
+                },
+                "to_node": {
+                    "name": "Math.003"
+                },
+                "from_socket": {
+                    "identifier": "Value"
+                },
+                "to_socket": {
+                    "identifier": "Value"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group Input.001"
+                },
+                "to_node": {
+                    "name": "Vector Math.001"
+                },
+                "from_socket": {
+                    "identifier": "Input_1"
+                },
+                "to_socket": {
+                    "identifier": "Vector"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group Input.001"
+                },
+                "to_node": {
+                    "name": "Vector Math"
+                },
+                "from_socket": {
+                    "identifier": "Input_1"
+                },
+                "to_socket": {
+                    "identifier": "Vector"
+                }
+            }, {
+                "from_node": {
+                    "name": "Group Input.001"
+                },
+                "to_node": {
+                    "name": "Mapping"
+                },
+                "from_socket": {
+                    "identifier": "Input_9"
+                },
+                "to_socket": {
+                    "identifier": "Vector"
+                }
+            }, {
+                "from_node": {
+                    "name": "Vector Math"
+                },
+                "to_node": {
+                    "name": "Group Output.001"
+                },
+                "from_socket": {
+                    "identifier": "Vector"
+                },
+                "to_socket": {
+                    "identifier": "Output_3"
+                }
+            }],
+            "animation_data": null
+        }
+    }, {
+        "name": "B4W_VECTOR_VIEW",
+        "use_orco_tex_coord": false,
+        "uuid": "1699bfce75444f3823e2652342c873e5",
+        "node_tree": {
+            "nodes": [{
+                "name": "Group Input",
+                "type": "GROUP_INPUT",
+                "inputs": [],
+                "outputs": [{
+                    "name": "Vector",
+                    "identifier": "Input_1",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }]
+            }, {
+                "name": "Group Output",
+                "type": "GROUP_OUTPUT",
+                "inputs": [{
+                    "name": "Vector",
+                    "identifier": "Output_3",
+                    "is_linked": true,
+                    "default_value": [0, 0, 0]
+                }],
+                "outputs": []
+            }],
+            "links": [{
+                "from_node": {
+                    "name": "Group Input"
+                },
+                "to_node": {
+                    "name": "Group Output"
+                },
+                "from_socket": {
+                    "identifier": "Input_1"
+                },
+                "to_socket": {
+                    "identifier": "Output_3"
+                }
+            }],
+            "animation_data": null
+        }
+    }],
+    "binaries": [{
+        "binfile": "iwatchvsiri.bin",
+        "int": 0,
+        "float": 697824,
+        "short": 1387184,
+        "ushort": 1869736
+    }],
+    "b4w_export_warnings": [],
+    "b4w_export_errors": []
+}

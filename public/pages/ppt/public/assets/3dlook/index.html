@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Look3D</title>
+    <link rel="stylesheet" href="incude/header/header.css">
+    <link rel="stylesheet" href="incude/materialize/css/materialize.css">
+    <link rel="stylesheet" href="incude/fonts/font-awesome-4.4.0/css/font-awesome.css" />
+    <!-- CUSTOMIZE -->
+    <link rel="stylesheet" href="incude/customize.css">
+
+
+
+
+</head>
+
+<body>
+    <div>
+        <header>
+            <!-- <h1> Look3D </h1>  -->
+            <div class="headereyes">
+                <iframe src="assets/webgl/eyes/eyes.html" frameBorder=0 scrolling=no width="100%" height="100%"="100%"></iframe>
+            </div>
+            <div id="expandmenu">
+                <nav>
+                    <ul>
+                        <li class='navitem'><a href="#"><i class="material-icons">group_work</i> GALD首页 </a></li>
+                        <li class='navitem'><a href="#2"><i class="material-icons">group_work</i> 团队介绍 </a></li>
+                        <li class='navitem'><a href="#3"><i class="material-icons">group_work</i> 工作项目 </a></li>
+                        <li class='navitem'><a href="#4"><i class="material-icons">group_work</i> 设计流程 </a></li>
+                        <li class='navitem'><a href="#5"><i class="material-icons">group_work</i> 联系我们 </a></li>
+                        <li class='navitem'><a href="#6"> 13640566324 </a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+    </div>
+    <div class="main-cont">
+        <div class="logo">
+            <img src="assets/img/logo/logokh.png">
+        </div>
+
+
+
+
+
+        <div id="gridSort">
+            <div class="filter waves-effect waves-light btn" data-filter="all">全部</div>
+            <div class="filter waves-effect waves-light btn" data-filter=".griditerm1">电器</div>
+            <div class="filter waves-effect waves-light btn" data-filter=".griditerm2">服装</div>
+        </div>
+        <div id="mixitupgrid" class='main-grid'>
+
+            <div class="mix griditerm1 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>
+                                    <a class="card-title filter" data-filter=".griditerm1" href="#1"> <i class="material-icons">search</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+
+            <div class="mix griditerm2 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/glmg/glmg.html"><img src="assets/img/gridimg/01.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>                                    
+                                    <a class="card-title filter" data-filter=".griditerm2" href="#1"> <i class="material-icons">image</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+            <div class="mix griditerm1 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>
+                                    <a class="card-title filter" data-filter=".griditerm1" href="#1"> <i class="material-icons">search</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+
+            <div class="mix griditerm2 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>                                    
+                                    <a class="card-title filter" data-filter=".griditerm2" href="#1"> <i class="material-icons">image</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+            <div class="mix griditerm1 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>
+                                    <a class="card-title filter" data-filter=".griditerm1" href="#1"> <i class="material-icons">search</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+
+            <div class="mix griditerm2 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>                                    
+                                    <a class="card-title filter" data-filter=".griditerm2" href="#1"> <i class="material-icons">image</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+            <div class="mix griditerm1 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>
+                                    <a class="card-title filter" data-filter=".griditerm1" href="#1"> <i class="material-icons">search</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+
+            <div class="mix griditerm2 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>                                    
+                                    <a class="card-title filter" data-filter=".griditerm2" href="#1"> <i class="material-icons">image</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+            <div class="mix griditerm1 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>
+                                    <a class="card-title filter" data-filter=".griditerm1" href="#1"> <i class="material-icons">search</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+
+            <div class="mix griditerm2 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>                                    
+                                    <a class="card-title filter" data-filter=".griditerm2" href="#1"> <i class="material-icons">image</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+            <div class="mix griditerm1 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>
+                                    <a class="card-title filter" data-filter=".griditerm1" href="#1"> <i class="material-icons">search</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+
+            <div class="mix griditerm2 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>                                    
+                                    <a class="card-title filter" data-filter=".griditerm2" href="#1"> <i class="material-icons">image</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+            <div class="mix griditerm1 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>
+                                    <a class="card-title filter" data-filter=".griditerm1" href="#1"> <i class="material-icons">search</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+
+            <div class="mix griditerm2 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>                                    
+                                    <a class="card-title filter" data-filter=".griditerm2" href="#1"> <i class="material-icons">image</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+            <div class="mix griditerm1 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>
+                                    <a class="card-title filter" data-filter=".griditerm1" href="#1"> <i class="material-icons">search</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+
+            <div class="mix griditerm2 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>                                    
+                                    <a class="card-title filter" data-filter=".griditerm2" href="#1"> <i class="material-icons">image</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+            <div class="mix griditerm1 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>
+                                    <a class="card-title filter" data-filter=".griditerm1" href="#1"> <i class="material-icons">search</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+
+            <div class="mix griditerm2 card"> <!-- card-start -->                
+                <div class=" card-img waves-block waves-red">
+                    <a href="assets/webgl/iwatchthreejs/iwatchlable.html"><img src="assets/img/gridimg/iwatch.png"></a>
+                </div>
+                <div class="card-content">
+                    <span class="grey-text text-darken-4"> Iwatch 3D 演示</span>
+                    <div id="grid-info" class="grid-info">
+                        <nav>
+                            <ul>
+                                <li class='infoitem'>                                    
+                                    <a class="card-title filter" data-filter=".griditerm2" href="#1"> <i class="material-icons">image</i> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="assets/webgl/iwatchthreejs/iwatchlable.html"> <span>3D</span> </li>
+                                <li class='infoitem'>
+                                    <a class="card-title activator grey-text text-darken-4" href="#1"> <i class="material-icons">info</i> </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+                <div class="card-reveal">
+                    <span class="card-title grey-text text-darken-4"> 电器 <i class="material-icons right">close</i></span>
+                    <p>WebGL是一种3D绘图标准，这种绘图技术标准允许把JavaScript和OpenGL ES 2.0结合在一起</p>
+                </div>
+            </div> <!-- card-end -->
+
+
+                       
+
+
+
+        </div>
+    </div>
+</body>
+<script src='incude/common/jquery/jquery.min.js'></script>
+
+<script src='incude/smoothscroll/smoothscroll.js'></script>
+<script src="incude/header/header.js"></script>
+<script src="incude/materialize/js/materialize.js"></script>
+<!-- EXPAND MENU -->
+<script src="incude/expandmenu/expandmenu.js"></script>
+<script src="incude/expandmenu/TweenMax.min.js"></script>
+
+
+
+<script type="text/javascript">
+  var n = $(".navitem").length; // Div count
+  var OW = 38; // Div over width
+  TweenMax.set($(".navitem"), {
+      width: 100 / n + '%'
+  });
+  $(".navitem").hover(over, out);
+
+  function over() {
+      TweenMax.to($(this), 0.5, {
+          width: OW + '%'
+      });
+      TweenMax.to($(this).siblings(), 0.5, {
+          width: (100 - OW) / (n - 1) + '%'
+      })
+  }
+
+  function out() {
+      TweenMax.to($(".navitem"), 0.5, {
+          width: 100 / n + '%',
+          ease: Back.easeOut
+      })
+  }
+  </script>
+  <script type="text/javascript">
+
+  var cardcont = $(".card").length;
+  var c = $(".infoitem").length / cardcont; // Div count
+  var KD = 60; // Div over width
+  TweenMax.set($(".infoitem"), {
+      width: 100 / c + '%'
+  });
+  $(".infoitem").hover(over, out);
+
+  function over() {
+      TweenMax.to($(this), 0.5, {
+          width: KD + '%'
+      });
+      TweenMax.to($(this).siblings(), 0.5, {
+          width: (100 - KD) / (c - 1) + '%'
+      })
+  }
+
+  function out() {
+      TweenMax.to($(".infoitem"), 0.5, {
+          width: 100 / c + '%',
+          ease: Back.easeOut
+      })
+  }
+</script>
+<!-- MIXITUP -->
+<script src="http://cdn.jsdelivr.net/jquery.mixitup/latest/jquery.mixitup.min.js"></script>
+<script type="text/javascript">
+
+$(function() {
+    $('#mixitupgrid').mixItUp({
+        animation: {
+            effects: 'fade scale stagger',            
+        }
+    });
+});
+</script>
+
+
+
+</html>

@@ -1,0 +1,58 @@
+/* CSS Document */
+
+.logo img {
+	margin-bottom:40px;
+	margin-top:20px;
+	width:40%;	
+}
+
+#header {
+	display:none;	
+}
+
+
+/* =Print Logo
+----------------------------------------------- */
+#enstrom-print-logo {
+	display:block;
+	margin-bottom:20px;
+	text-align:center;	
+}
+
+	#enstrom-print-logo img {
+		display:block;
+		width:auto;
+	}
+
+
+#headerMenuJumpLink {
+	display:none;	
+}
+
+#ci-title {
+	width:auto;	
+}
+
+.notification-bar-br {
+	display:none;	
+}
+
+#accent-patterns {
+	display:none;	
+}
+
+#colors-container {
+	display:none;	
+}
+
+#copter-buttons {
+	display:none;	
+}
+
+#footer {
+	display:none;	
+}
+
+.notification-bar-br {
+	display:none;	
+}

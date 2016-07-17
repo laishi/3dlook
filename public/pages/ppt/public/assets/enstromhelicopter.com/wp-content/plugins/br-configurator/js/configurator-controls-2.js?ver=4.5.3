@@ -1,0 +1,451 @@
+// http://www.w3schools.com/js/js_objects.asp
+// http://api.jquery.com/click/
+jQuery(document).ready(function(){
+	
+	
+	/****
+	*
+	*	Variable list.
+	*
+	****/
+
+		//	Current copter info.
+		heli_color_option = 'ci-base-color-block';
+		color_value = '';
+		color_name = '';
+		color_slug = '';
+		
+		//	Color permanent storage.
+		color_hex = rgb2hex( jQuery('#ci-base-color-block').css('background-color'), false );
+		stripe_color_hex = rgb2hex( jQuery('#ci-accent-color-block').css('background-color'), false );
+		base_color_value = jQuery('#ci-base-color-block').css('background-color');
+		accent_color_value = jQuery('#ci-accent-color-block').css('background-color');
+		heli_stripe_choice = jQuery('#configurator-cont').attr('stripe');
+		
+		//	PHP based info.
+		site_url = jQuery('#configurator-cont').attr('site');
+		plugin_url = jQuery('#configurator-cont').attr('directory');
+		copter_type = jQuery('#configurator-cont').attr('copter');
+		
+		dir_stripe = jQuery('#accent-patterns .notification-bar-br');
+		dir_base = jQuery('#ci-base-color .notification-bar-br');
+		dir_accent = jQuery('#ci-accent-color .notification-bar-br');
+		
+		dir_stripe_run = false;
+		dir_base_run = false;
+		dir_accent_run = false;
+		
+		var active_option_styles		= {
+			'background-color'	:	'#666666',
+			'color'				:	'#FFFFFF'
+		}
+		
+		var non_active_option_styles	= {
+			'background-color'	:	'',
+			'color'				:	'#FFFFFF'
+		}
+
+
+	/****
+	*
+	*	Convert RGB colors to Hex values.
+	*
+	****/
+		function rgb2hex(rgb, pound) {
+			if (  rgb.search("rgb") == -1 ) {
+		
+				if ( true == pound )
+				{
+				
+					return rgb;
+				
+				}
+				else
+				{
+					rgb = rgb.substr(1);
+					
+					return rgb;
+				}
+				
+			} else {
+				
+				rgb = rgb.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+))?\)$/);
+				
+				function hex(x) {
+					
+					return ("0" + parseInt(x).toString(16)).slice(-2);
+					
+				}
+				
+				if( true == pound )
+				{
+					return "#" + hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+				}
+				else
+				{
+					return hex(rgb[1]) + hex(rgb[2]) + hex(rgb[3]);
+				}
+			
+			}
+			
+		}
+	
+	
+	
+	/*
+		function rgb2hex(rgb, pound) {
+		  rgb = [].slice.call(arguments).join(",").match(/\d+/g);
+		  var hex,l;
+		  l=( hex = ( (rgb[0] << 16 ) + ( rgb[1] << 8 ) + +rgb[2] ).toString(16) ).length;
+			 while( l++ < 6 )
+				 hex="0"+hex
+				 
+			if( true == pound )
+			{
+			  return '#' + hex;
+			}
+			else
+			{
+				return	hex;
+			}
+			
+		}
+		*/
+		
+
+
+	/****
+	*
+	*	Initial style changes.
+	*
+	****/
+		jQuery('#ci-base-color-block').parent('div').css('background-color','#CCCCCC');
+		jQuery('#share-url').hide();
+		
+		// Apply a Z-index to correctly display email form.
+		jQuery('#header').css('z-index', 200);
+		jQuery('#main').css('z-index', 100);
+		
+		// Hide unecessary help items.
+		jQuery(dir_base).hide();
+		jQuery(dir_accent).hide();
+
+		jQuery('#ci-base-color-block').parent('div').css( active_option_styles );
+
+	/****
+	*
+	*	Show the shareable URL when the share button is clicked.
+	*
+	****/
+		jQuery('#ci-share-url-btn').click(function() {
+
+			jQuery('#share-url').stop().toggle('fast');
+			
+		});
+		
+	
+	/****
+	*
+	*	Change the color option that should change when a color is clicked.
+	*
+	****/
+		jQuery('#ci-base-color-block, #ci-accent-color-block').click(function(e){
+			
+			color_selection_option = jQuery(this).attr('id');
+			
+			heli_color_option = color_selection_option;
+						
+			jQuery('#ci-base-color-block, #ci-accent-color-block').parent('div').css( non_active_option_styles );
+			
+			jQuery(this).parent('div').css( active_option_styles );
+						
+			jQuery(dir_stripe).hide('fast');
+			jQuery(dir_base).hide('fast');
+			jQuery(dir_accent).hide('fast');
+			dir_stripe_run = true;
+			dir_base_run = true;
+			dir_accent_run = true;
+			
+			// Prevent the page jump issues on links with href="#".
+			e.preventDefault();
+		});
+		
+	
+	/****
+	*
+	*	Change the color of the current heli_color_option and then change helicopter color.
+	*
+	****/
+		jQuery('#color-grid li a').click(function(e){
+			
+			color_value = jQuery(this).css( 'background-color' );
+			color_name = jQuery(this).text();
+			color_slug = jQuery(this).css( 'slug' );
+						
+			if( 'ci-base-color-block' == heli_color_option )
+			{
+				base_color_value = color_value;
+				color_hex = rgb2hex( color_value, false );
+				
+				jQuery('#ci-base-color-block').css( 'background-color', rgb2hex( base_color_value, true ) );
+				jQuery('#ci-base-color-name').text(color_name);
+				jQuery('.copc-sky').css( 'background-color', base_color_value );
+				jQuery('.copc-color').html('<img src="'+ plugin_url + '/br-configurator/images/color-pixels/' + rgb2hex( base_color_value, false ) + '.png" alt="" />');
+				jQuery('#ci-base-color-block').html('<img src="'+ plugin_url + '/br-configurator/images/color-pixels/' + rgb2hex( base_color_value, false ) + '.png" alt="" />');
+				
+				if( false == dir_base_run )
+				{
+					jQuery(dir_stripe).hide('fast');
+					jQuery(dir_base).hide('fast');
+					jQuery(dir_accent).show('fast');
+					
+					heli_color_option = 'ci-accent-color-block';
+					jQuery('#ci-base-color-block').parent('div').css( non_active_option_styles );
+					jQuery('#ci-accent-color-block').parent('div').css( active_option_styles );
+					
+					dir_base_run = true;
+					dir_stripe_run = true;
+				}
+				
+			}
+			else
+			{
+				accent_color_value = color_value;
+				
+				jQuery('#ci-accent-color-block').css( 'background-color', accent_color_value );
+				jQuery('#ci-accent-color-name').text(color_name);
+				
+				stripe_color_hex = rgb2hex( accent_color_value, false );
+				
+				jQuery('#ci-accent-color-block').html('<img src="'+ plugin_url + '/br-configurator/images/color-pixels/' + stripe_color_hex + '.png" alt="" />');
+				
+				//	Large copter stripe.
+				if('' == heli_stripe_choice )
+				{
+					color_stripe_url = plugin_url + '/br-configurator/images/transparency-square.png';
+				}
+				else
+				{
+					color_stripe_url = get_stripe_url( plugin_url, copter_type, stripe_color_hex, heli_stripe_choice );
+				}
+				
+				jQuery('#large-copter-stripe img').attr('src', color_stripe_url);
+				
+				//	Small copter stripes.
+				jQuery('#stripe-grid li a').each(function()
+				{					
+					temp_stripe_name = jQuery(this).attr('stripe');
+										
+					if('' != temp_stripe_name)
+					{
+						temp_stripe_url = get_stripe_url(plugin_url, copter_type, stripe_color_hex, temp_stripe_name );
+						
+						jQuery(this).find('.copc-stripe img').attr('src', temp_stripe_url );
+						
+					}
+					
+				});
+				
+				if( false == dir_accent_run )
+				{
+					jQuery(dir_stripe).hide('fast');
+					jQuery(dir_base).hide('fast');
+					
+					if( false == dir_stripe_run )
+					{
+						jQuery(dir_accent).hide('fast');
+					}
+					
+					dir_accent_run = true;
+					dir_stripe_run = true;
+					
+				}
+				
+				jQuery(dir_stripe).hide('fast');
+				jQuery(dir_base).hide('fast');
+				jQuery(dir_accent).hide('fast');
+				
+			}
+			
+			change_share_url( copter_type, color_hex, stripe_color_hex, heli_stripe_choice);
+			
+			// Prevent the page jump issues on links with href="#".
+			e.preventDefault();
+		});
+
+
+	/****
+	*
+	*	Change the stripe accent when user clicks a different stripe.
+	*
+	****/
+		jQuery('#stripe-grid li a').click(function(e){
+			
+			heli_stripe_choice = jQuery(this).attr('stripe');
+			stripe_color_hex = rgb2hex( accent_color_value, false );
+			
+			if( false == dir_stripe_run )
+			{
+				jQuery(dir_stripe).hide('fast');
+				jQuery(dir_base).show('fast');
+				
+				dir_stripe_run = true;
+				
+			}
+
+			// Change the large copter stripe.
+			if( '' != heli_stripe_choice )
+			{
+				color_stripe_url = get_stripe_url( plugin_url, copter_type, stripe_color_hex, heli_stripe_choice );
+			}
+			else
+			{
+				color_stripe_url = plugin_url + '/br-configurator/images/transparency-square.png';
+			}
+			
+			jQuery('#large-copter-stripe img').attr('src', color_stripe_url);
+			
+			change_share_url( copter_type, color_hex, stripe_color_hex, heli_stripe_choice);
+	
+			// Prevent the page jump issues on links with href="#".
+			e.preventDefault();
+			
+		});
+
+
+	/****
+	*
+	*	Calculate the stripe to show on the copters.
+	*
+	****/
+		function get_stripe_url( plugin_url, copter_type, color_value, heli_stripe_choice )
+		{
+			color_hex_temp = color_value;
+			
+			heli_stripe_img_src = plugin_url + '/br-configurator/images/pieces/' + copter_type + '/' + heli_stripe_choice + '/' + color_hex_temp + '.png';
+				
+			return heli_stripe_img_src;
+			
+		}
+		
+		
+	/****
+	*
+	*	Create and change the shareable url.
+	*
+	****/
+		function change_share_url( copter, color_hex, stripe_color_hex, heli_stripe_choice)
+		{
+			
+			if( '' != color_hex)
+			{
+				color_hex = 'basec=' + color_hex;
+			}
+			
+			if( '' != stripe_color_hex )
+			{
+				stripe_color_hex = 'accentc=' + stripe_color_hex;
+			}
+			
+			if( '' != heli_stripe_choice )
+			{
+				heli_stripe_choice = 'stripe=' + heli_stripe_choice;	
+			}
+			
+			var get_info = new Array( color_hex, stripe_color_hex, heli_stripe_choice);
+			
+			var first_run = true;
+			
+			computed_url = site_url + '/configurator/' + copter + '/';
+			
+			for( var i=0; i < 3; i++)
+			{
+				if( '' != get_info[i] )
+				{
+					if( true == first_run )
+					{
+						computed_url += '?' + get_info[i];
+						first_run = false;
+					}
+					else
+					{
+						computed_url += '&' + get_info[i];
+					}
+				}
+			}
+			
+			jQuery('#share-url').attr('value', computed_url);
+			jQuery('#email-form').attr('action', computed_url);
+			
+		}
+		
+	/****
+	*
+	*	Email lightbox form settings.
+	*
+	****/
+	
+		jQuery('div').on( 'click', function(bar){
+			bar.stopPropagation();
+		});
+	
+		// Send email form request button.
+			jQuery('#ci-submit-btn').click(function(){
+				
+				// Apply a Z-index to correctly display email form.
+				jQuery('#header').css('z-index', 100);
+				jQuery('#main').css('z-index', 200);
+				
+				jQuery('#lightbox-form').toggle();
+				
+			});
+		
+		// Close the form if wanted.
+		
+			jQuery('#lightbox-form, #lfc-close').click( function() {
+
+				// Apply a Z-index to correctly display email form.
+				jQuery('#header').css('z-index', 200);
+				jQuery('#main').css('z-index', 100);
+
+				jQuery('#lightbox-form').toggle();
+								
+			});
+			
+			
+			jQuery( '#email-form' ).submit( function(e) {
+				
+				//e.preventDefault();
+				
+				/*html2canvas( jQuery( '#large-copter-container' ), {
+					onrendered: function(canvas) {
+						// canvas is the final rendered <canvas> element						
+						jQuery.post( plugin_url + '/br-configurator/saves/save.php', { data: canvas.toDataURL('image/png') });
+						jQuery( '#email-form' ).submit();
+					}
+				});*/
+								
+			});				
+	
+	
+	/****
+	*
+	*	Email form validation
+	*
+	****/
+		jQuery( '#email-form' ).validate({
+			rules: {
+				username: 'required',
+				useremail: 'required',
+				/*useremail: {
+					required:	true,
+					email:		true,
+				},*/
+				userphone: 'required'
+				
+			}
+			
+		});
+	
+	
+});

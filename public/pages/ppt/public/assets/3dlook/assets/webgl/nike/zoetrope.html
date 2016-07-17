@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Genealogy of Nike Free</title>
+		<meta property="og:image" content="http://www.nike.com/xp/b/genealogyofthefree/images/teaser.jpg"/>
+		<meta property="og:title" content="Explore the Genealogy of Nike Free interactive experience."/>
+		<meta property="og:url" content="http://nike.com/GNF/"/>
+		<meta property="og:site_name" content="Genealogy of Nike Free"/>
+		<meta property="og:description" content="A digital, interactive timeline of innovative Nike products that have led to the latest Nike Free innovation." />
+
+
+		<link rel="stylesheet" type="text/css" media="all" href="fonts/nike/font.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="fonts/tradegothic/font.css" />
+		<link rel="stylesheet" type="text/css" media="all" href="css/nike.css" />
+
+		<script src="js/jquery.js"></script>
+		<script src="js/tweenjs/tween.js"></script>
+		<script src="js/threejs/three.js"></script>
+		<script src="js/threejs/binaryloader.js"></script>
+		<!--<script src="js/holder.js"></script>-->
+		<script src="js/threejs/OBJLoader.js"></script>
+		<script src="js/threejs/MTLLoader.js"></script>
+		<script src="js/threejs/UTF8Loader.js"></script>
+		<script src="js/threejs/shaders/FXAAShader.js"></script>
+		
+
+		<script src="js/threejs/orbitcontrols.js"></script>
+		<script src="js/threejs/Detector.js"></script>
+		<script src="js/threejs/Stats.js"></script>
+		<script src="js/threejs/shaders/CopyShader.js"></script>
+		<script src="js/threejs/postprocessing/EffectComposer.js"></script>
+		<script src="js/threejs/postprocessing/RenderPass.js"></script>
+		<script src="js/threejs/postprocessing/MaskPass.js"></script>
+		<script src="js/threejs/postprocessing/ShaderPass.js"></script>
+		<script src="js/threejs/postprocessing/TexturePass.js"></script>
+		
+
+<!--
+		<script src="js/postproc.js"></script>
+		<script src="js/tools.js"></script>
+		<script src="js/tube.js"></script>
+		<script src="js/sequencer.js"></script>
+		<script src="js/assets.js"></script>
+		<script src="js/loader.js"></script>
+		<script src="js/sequencerdisplay.js"></script>
+		<script src="js/ui.js"></script>
+		<script src="js/cam.js"></script>
+		<script src="js/nike.js"></script>
+-->
+
+		<script src="js/min/detect.min.js"></script>
+		<script src="js/min/postproc.min.js"></script>
+		<script src="js/min/tools.min.js"></script>
+		<script src="js/min/tube.min.js"></script>
+		<script src="js/min/sequencer.min.js"></script>
+		<script src="js/min/assets.min.js"></script>
+		<script src="js/min/loader.min.js"></script>
+		<script src="js/min/sequencerdisplay.min.js"></script>
+		<script src="js/min/ui.min.js"></script>
+		<script src="js/min/cam.min.js"></script>
+		<script src="js/min/nike.min.js"></script>
+
+        <noscript>
+            Your browser does not support JavaScript!<br/>
+            Please turn on Javascript or get an up-to-date Browser and try again!
+        </noscript>
+
+
+
+		<!-- ********************************************************************************* -->
+
+		<script type="x-shader/x-vertex" id="particle-vs">
+        	uniform float size;
+        	uniform float off;
+        	uniform float time;
+        	uniform float alpha;
+
+			void main() 
+			{
+				vec3 pos=position;
+				float mul=20.0;
+				pos.y+=sin(time+position.z)*mul*0.3;
+
+				vec4 mvPosition = modelViewMatrix * vec4( pos, 1.0 );
+				gl_PointSize = sin((position.x+position.y))*40.0+size;
+				gl_Position = projectionMatrix * mvPosition;
+			}
+		</script>
+		
+		<script type="x-shader/x-fragment" id="particle-fs">
+			uniform sampler2D tex;
+			uniform float time;
+			uniform float alpha;
+
+			void main()
+			{
+				gl_FragColor=texture2D( tex, vec2( gl_PointCoord.x, 1.0 - gl_PointCoord.y ));
+				gl_FragColor.a*=alpha;
+			}
+		</script>
+
+		<!-- ********************************************************************************* -->
+
+		<script type="x-shader/x-vertex" id="sphere-vs">
+			void main() 
+			{
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+			}
+		</script>
+
+		<script type="x-shader/x-fragment" id="sphere-fs">
+
+			uniform vec2 resolution;
+			uniform float noise;
+
+			#define VIG_REDUCTION_POWER 5.5
+			#define VIG_BOOST 4.1
+
+			float random(vec3 scale,float seed){return fract(sin(dot(gl_FragCoord.xyz+seed,scale))*43758.5453+seed);}
+
+			void main() 
+			{
+				vec3 color = vec3( 34. / 255. );
+				vec2 center = resolution * 0.5;
+				float vignette = distance( center, gl_FragCoord.xy ) / resolution.x;
+				vignette = VIG_BOOST - vignette * VIG_REDUCTION_POWER;
+
+				float n = noise * ( .5 - random( vec3( 1. ), length( gl_FragCoord ) ) );
+
+				gl_FragColor = vec4( color * vec3( vignette ) + vec3( n ), 1. );
+				gl_FragColor.r=1.0;
+			}
+
+		</script>
+		<script type="x-shader/x-vertex" id="vertexShader">
+
+			attribute vec4 tangent;
+
+			uniform float time;
+			uniform vec2 repeat;
+			uniform float useNormal;
+			uniform float useRim;
+
+			varying vec2 vUv;
+			varying vec3 vTangent;
+			varying vec3 vBinormal;
+			varying vec3 vNormal;
+			varying vec3 vEye;
+			varying vec3 vU;
+			varying vec2 vN;
+    		varying float eyeDist;
+
+			void main() 
+			{
+				vU = normalize( vec3( modelViewMatrix * vec4( position, 1.0 ) ) );
+				eyeDist = length(modelViewMatrix * vec4( position, 1.0 ))-length(viewMatrix*vec4(0.0,0.0,0.0,1.0));
+
+
+
+				vec3 n = normalize( normalMatrix * normal );
+				vec3 r = reflect( vU, n );
+				float m = 2.0 * sqrt( r.x * r.x + r.y * r.y + ( r.z+1.0 ) * ( r.z+1.0 ) );
+				vN = vec2( r.x / m + 0.5,  r.y / m + 0.5 );
+
+/*
+				if( useNormal == 0. ) {
+				} else {
+					vN = vec2( 0. );
+				}
+				*/
+
+				vUv = repeat * uv;
+				gl_Position = projectionMatrix * modelViewMatrix * vec4( position, 1.0 );
+
+				vNormal = normalize( normalMatrix * normal );
+				if( useNormal == 1. ) {
+					vTangent = normalize( normalMatrix * tangent.xyz );
+					vBinormal = normalize( cross( vNormal, vTangent ) * tangent.w );
+				} else {
+					vTangent = vec3( 0. );
+					vBinormal = vec3( 0. );
+				}
+
+				if( useRim > 0. ) {
+					vEye = ( modelViewMatrix * vec4( position, 1.0 ) ).xyz;
+				} else {
+					vEye = vec3( 0. );
+				}
+			}
+		</script>
+		
+		<script type="x-shader/x-vertex" id="fragmentShader">
+			
+			uniform float time;
+			uniform float bump;
+			uniform sampler2D tNormal;
+			uniform sampler2D tMatCap;
+			uniform sampler2D tDiffuse;
+			uniform sampler2D tMatCapRim;
+			uniform sampler2D tSpecular;
+			uniform sampler2D tAlpha;
+			uniform float fogmul;
+			
+			uniform float noise;
+			uniform float useNormal;
+			uniform float useRim;
+			uniform float rimPower;
+			uniform float useScreen;
+			uniform float normalScale;
+			uniform float normalRepeat;
+			uniform float blackwhite;
+			uniform float giPos;
+			uniform float mulalpha;
+
+			varying vec2 vUv;
+			varying vec3 vTangent;
+			varying vec3 vBinormal;
+			varying vec3 vNormal;
+			varying vec3 vEye;
+			varying vec3 vU;
+			varying vec2 vN;
+    		varying float eyeDist;
+
+			float random(vec3 scale,float seed){return fract(sin(dot(gl_FragCoord.xyz+seed,scale))*43758.5453+seed);}
+
+			void main() 
+			{
+				vec3 finalNormal = vNormal;
+				vec2 calculatedNormal = vN;
+
+				if( useNormal == 1. ) 
+				{
+					vec3 normalTex = texture2D( tNormal, vUv * normalRepeat ).xyz * 2.0 - 1.0;
+					normalTex.xy *= normalScale;
+					normalTex.y *= -1.;
+
+					normalTex = normalize( normalTex );
+					mat3 tsb = mat3( normalize( vTangent ), normalize( vBinormal ), normalize( vNormal ) );
+					finalNormal = tsb * normalTex;
+
+					vec3 r = reflect( vU, normalize( finalNormal ) );
+					float m = 2.0 * sqrt( r.x * r.x + r.y * r.y + ( r.z + 1.0 ) * ( r.z+1.0 ) );
+					calculatedNormal = vec2( r.x / m + 0.5,  r.y / m + 0.5 );
+				}
+
+
+
+						
+
+				calculatedNormal.t=clamp(calculatedNormal.t, 0.0, 1.0);
+				calculatedNormal.s=clamp(calculatedNormal.s, 0.0, 1.0);
+
+				if(calculatedNormal.t<=0.03 || calculatedNormal.s<=0.03 )
+				{
+					calculatedNormal = vN;
+				}
+
+				float fgipos=giPos;
+				if(blackwhite==0.0)fgipos=0.0;
+				float fakegiUV=calculatedNormal.s/8.0+0.125*fgipos;
+
+
+				vec3 base = texture2D( tMatCap, vec2(fakegiUV,calculatedNormal.t) ).rgb;
+
+				// vec3 base= vec3(calculatedNormal.t,
+				// 	calculatedNormal.s,
+				// 	0.0);
+
+
+				vec3 baseRim = texture2D( tMatCapRim, calculatedNormal ).rgb;
+				
+				// rim lighting
+				if( useRim > 0. ) {
+					float f = rimPower * abs( dot( vNormal, normalize( vEye ) ) );
+					f = useRim * ( 1. - smoothstep( 0.0, 1., f ) );
+			        base += vec3( f );
+			    }
+
+			    // screen blending
+		        if( useScreen == 1. ) {
+					base = vec3( 1. ) - ( vec3( 1. ) - base ) * ( vec3( 1. ) - base );
+				}
+
+		        // noise 
+		        base += noise * ( .5 - random( vec3( 1. ), length( gl_FragCoord ) ) );
+
+				
+
+				vec4 rgba = texture2D( tDiffuse, vUv );
+
+
+				float spec=texture2D( tSpecular, vUv ).r;
+
+		        base*=rgba.rgb;
+		        base+=baseRim.rgb*spec;
+
+
+				gl_FragColor = vec4( base, rgba.a );
+
+				vec3 fogColor=vec3(0.09098039215686,0.11843137254902,0.15196078431373);
+				float fogFactor = (eyeDist*0.004);
+				fogFactor=1.0-fogFactor*fogmul;
+         		gl_FragColor.rgb = mix(gl_FragColor.rgb, fogColor, 1.0-fogFactor);
+
+
+	    		float brightness=(0.2126*gl_FragColor.r) + (0.7152*gl_FragColor.g) + (0.0722*gl_FragColor.b);
+
+				if(blackwhite!=1.0)
+	    			brightness=0.6*brightness;
+
+				gl_FragColor.rgb=vec3(
+					(gl_FragColor.r*(blackwhite))+(1.0-blackwhite)*brightness, 
+					(gl_FragColor.g*(blackwhite))+(1.0-blackwhite)*brightness, 
+					(gl_FragColor.b*(blackwhite))+(1.0-blackwhite)*brightness 
+					);
+
+
+	           if(mulalpha!=0.0) gl_FragColor.a = texture2D( tAlpha, vUv ).r;
+
+
+	           //gl_FragColor = vec4( base, 1.0 );
+				
+			}
+		
+		</script>
+
+
+
+	</head>
+
+	<body>
+
+
+
+		<div id="sequencer" style="display:none">
+		</div>
+
+		<div class="centered" id="noWebGl">
+			<div class="centeredContent">
+				sorry your browser or graphics card does not support webGL
+			</div>
+		</div>
+		
+		<div id="pad" class="centered_full"></div>
+		<div id="padcursor"></div>
+		<div id="prompt_dragme" class="centered_full"></div>
+		<div id="prompt_play" class="centered_full" onclick="$('#prompt_play').hide();nike.ui.play();">
+			<div id="prompt_play_title">start me up!<br/>scroll to zoom</div>
+		</div>
+		<div id="prompt_sequencer" class="centered_full" onclick="$('#prompt_sequencer').hide();nike.ui.sequencer();">
+			<div id="prompt_sequencer_title">make a beat!</div> 
+		</div>
+
+		<div id="shoe-details">
+
+			<div id="detail-controls">
+				<div id="detail-prev" onClick="nike.ui.continueloadingdetail=false;nike.detailNext(-1);">prev</div>
+				<div id="detail-next" onClick="nike.ui.continueloadingdetail=false;nike.detailNext( 1);">next</div>
+			</div>
+
+			<div id="shoe-detail-0" class="shoe-detail next">
+
+
+				<div class="screen">
+					<h2>NIKE SOCK RACER</h2>
+
+					<div class="button_play_anim play_play" style="position:absolute;top:50%;" onclick="nike.ui.toggleAnimPlay();"></div>
+
+				</div>
+
+				<div class="">
+					<div class="">
+						<div class="screen">
+							<h3>Part sandal, part running tight and introduced in a bumblebee color scheme, the Nike Sock Racer wasn't your average shoe. It was inspired by Bill Bowerman’s mandate to strip away all unnecessary elements of a running shoe and honed to act as an extension of the foot. 
+							</h3>
+							<span class="divider"></span>
+
+
+
+							<div class="button_play_anim play_play" style="margin-top:200px;" onclick="nike.ui.toggleAnimPlay();"></div>
+
+
+
+						</div>
+					</div>
+					
+					<span class="scroll" onclick="nike.ui.scrollScreen('shoe-detail-0');"></span>
+
+				</div>
+				<img src="images/shoes/details_sockracer.jpg" style="width:100%;position:relative;margin-top:25%;margin-bottom:10%;"/>
+
+
+				<div class="screen">
+					<h3>Still, no one expected this ultralight racing flat to make the impact it did, but it became an instant favourite of marathon runners and triathletes. Transcending sports and genders, the Sock Racer also inspired cult favorites like the Air Sock, Air Flow, Air Current and Aqua Sock — and made a fashion statement, due to its avant-garde styling.</h3>
+					<span class="divider"></span>
+				</div>
+
+
+
+			</div>
+
+
+			<div id="shoe-detail-1" class="shoe-detail next">
+				<div class="screen">
+					<h2>NIKE AIR RIFT</h2>
+					<div class="button_play_anim play_play" style="position:absolute;top:50%;" onclick="nike.ui.toggleAnimPlay();"></div>
+				</div>
+
+				<div class="">
+					<div class="">
+						<div class="screen">
+							<h3>Debuting in 1996, the Nike Air Rift wasn't heavily advertised — but word of mouth and a fascination with its statement looks helped it move quickly. A stretch fit, Velcro fastening and, most of all, unique split-toe design made the Air Rift instantly recognizable. </h3>
+							<span class="divider"></span>
+
+						</div>
+					</div>
+					<span class="scroll" onclick="nike.ui.scrollScreen('shoe-detail-1');"></span>
+
+
+				</div>
+				<img src="images/shoes/details_airrift.jpg" style="width:100%;position:relative;margin-top:25%;margin-bottom:10%;"/>
+
+
+				<div class="screen">
+					<h3>Developed with insight from Tinker Hatfield, its design was inspired by the running style of Kenyan barefoot athletes. Named after Kenya’s Rift Valley Province and debuting in the colors of the country's flag, the Air Rift would also attract an audience who simply wanted to wear something this strange and beautiful on their feet.</h3>
+					<span class="divider"></span>
+				</div>
+
+
+
+			</div>
+
+
+			<div id="shoe-detail-2" class="shoe-detail next">
+				<div class="screen">
+					<h2>NIKE AIR PRESTO</h2>
+
+					<div class="button_play_anim play_play" style="position:absolute;top:50%;" onclick="nike.ui.toggleAnimPlay();"></div>
+
+					</div>
+				<div class="">
+					<div class="">
+						<div class="screen">
+							<h3>The Nike Air Presto was created as a kind of T-shirt for the foot, with a unique XXXS-XXXL sizing structure that referred to its apparel inspiration. It also conveyed the sock-like snugness of the elastic upper's fit, which drew upon the technical advances of the 1993 Air Huarache Light. Additionally, an injection-moulded ‘finger cage’ provided extra support around the mid-foot and heel, while eyelets located at the tips of the ‘fingers’ were laced across the V-notch of the mesh upper. </h3>
+							<span class="divider"></span>
+						</div>
+					</div>
+					<span class="scroll" onclick="nike.ui.scrollScreen('shoe-detail-2');"></span>
+				</div>
+
+				<img src="images/shoes/details_presto.jpg" style="width:100%;position:relative;margin-top:25%;margin-bottom:10%;"/>
+
+
+				<div class="screen">
+					<h3>
+					Once laced, the shoe’s flexibility meant it could be pulled on and off like a slip-on, using the heel clip. This commitment to minimalism won it fans from the start, when the Air Presto arrived the same year as the equally experimental Air Woven, in a spectrum of bright colorways derived from the ‘fruit flavours’ of the original Apple iMac computer. Reworked as an HTM (Hiroshi Fujiwara, Tinker Hatfield, Mark Parker) release, given an early NIKEiD option and spawning an entire series of its own, the Presto design was a favorite of runners and collectors alike.
+
+					</h3>
+					<span class="divider"></span>
+				</div>
+
+			</div>
+
+
+			<div id="shoe-detail-3" class="shoe-detail next">
+				<div class="screen">
+					<h2>NIKE FREE 5.0 OG</h2>
+
+					<div class="button_play_anim play_play" style="position:absolute;top:50%;" onclick="nike.ui.toggleAnimPlay();"></div>
+				</div>
+				<div class="">
+					<div class="">
+						<div class="screen">
+							<h3>Pitched halfway between a bare foot and a regular running shoe, the Nike Free 5.0 was so revolutionary that it spawned countless imitators and came with a warning attached. </h3>
+							<span class="divider"></span>
+						</div>
+					</div>
+					<span class="scroll" onclick="nike.ui.scrollScreen('shoe-detail-3');"></span>
+				</div>
+
+				<img src="images/shoes/details_freeog.jpg" style="width:100%;position:relative;margin-top:25%;margin-bottom:10%;"/>
+
+				<div class="screen">
+					<h3>
+					Due to its flexible design and the natural motion philosophy, the Free 5.0 struck a chord with athletes everywhere. But the seamless upper and responsive cushioning—elements that had been designed purely for performance—began to resonate with a discerning audience seeking progressive design for everyday wear, too. 
+					</h3>
+					<span class="divider"></span>
+
+				</div>
+
+			</div>
+
+
+			<div id="shoe-detail-4" class="shoe-detail next">
+				<div class="screen">
+					<h2>NIKE FREE RUN+ 2</h2>
+
+					<div class="button_play_anim play_play" style="position:absolute;top:50%;" onclick="nike.ui.toggleAnimPlay();"></div>
+				</div>
+
+				<div class="">
+					<div class="">
+						<div class="screen">
+							<h3>Back in 2011, urban running clubs were gaining in popularity and the traditional running shoe was growing stale. Nike designed the Free Run+ 2 to flex and move naturally with the foot, and it offered a more sock-like fit, distinctive asymmetrical lacing and decidedly non-traditional design lines. </h3>
+							<span class="divider"></span>
+						</div>
+					</div>
+					<span class="scroll" onclick="nike.ui.scrollScreen('shoe-detail-4');"></span>
+				</div>
+
+				<img src="images/shoes/details_freerun2.jpg" style="width:100%;position:relative;margin-top:25%;margin-bottom:10%;"/>
+
+				<div class="screen">
+					<h3>
+					A great ride supported its good looks, and the shoe quickly transcended the performance running world to become an icon of modern sport style. Later, the City Pack dropped, featuring color schemes for New York, London, Tokyo, Shanghai and Rio, cementing the shoe as a global classic and helping to redefine what a running shoe could be.
+					</h3>
+					<span class="divider"></span>
+
+				</div>
+
+			</div>
+
+
+			<div id="shoe-detail-5" class="shoe-detail next">
+				<div class="screen">
+					<h2>NIKE FREE 3.0 FLYKNIT</h2>
+
+					<div class="button_play_anim play_play" style="position:absolute;top:50%;" onclick="nike.ui.toggleAnimPlay();"></div>
+				</div>
+				<div class="">
+					<div class="">
+						<div class="screen">
+							<h3>This is the epitome of natural performance, wrapped in Flyknit and cushioned with a hex outsole. The new flexible hex design evolves from the classic square-cut Nike Free to bring better multi-directional movement to a runner’s natural stride. </h3>
+							<span class="divider"></span>
+						</div>
+					</div>
+					<span class="scroll" onclick="nike.ui.scrollScreen('shoe-detail-5');"></span>
+				</div>
+
+				<img src="images/shoes/details_flyknit.jpg" style="width:100%;position:relative;margin-top:25%;margin-bottom:10%;"/>
+				<div class="screen">
+					<h3>Allowing the foot to move like it’s meant to, the Free 3.0 helps to ensure ultimate natural motion for a better, stronger run. Up top, 	flexibility meets the ultralight support and contoured fit of Flyknit, creating the most adaptive, natural fit to ever hit the road. 
+					</h3>
+					<span class="divider"></span>
+
+				</div>
+
+			</div>
+
+
+			<div id="shoe-detail-6" class="shoe-detail next">
+				<div class="screen">
+					<h2>NIKE FREE RUN 5.0</h2>
+
+					<div class="button_play_anim play_play" style="position:absolute;top:50%;" onclick="nike.ui.toggleAnimPlay();"></div>
+
+				</div>
+
+				<div class="">
+					<div class="">
+						<div class="screen">
+							<h3>Marking the 10th anniversary of Nike Free, 2014’s Nike Free 5.0 brings everyday flexibility to the people. More supportive and cushioned than the 3.0 or 4.0, the versatile 5.0 shares their new hexagonal outsole—an evolution of the iconic square-cut Nike Free design, bringing better multi-directional movement to a runner’s natural stride.
+							</h3>
+							<span class="divider"></span>
+						</div>
+					</div>
+					<span class="scroll" onclick="nike.ui.scrollScreen('shoe-detail-6');"></span>
+				</div>
+
+				<img src="images/shoes/details_freerun5.jpg" style="width:100%;position:relative;margin-top:25%;margin-bottom:25%;"/>
+
+				<div class="screen">
+					<h3>Up top, an ultra-breathable Flywire-reinforced upper delivers a secure, lightweight and highly adaptive fit. Engineered to move as you’re meant to, the Free 5.0 is the perfect fit for every foot.</h3>
+					<span class="divider"></span>
+				</div>
+			</div>
+		</div>
+
+		<div id="loadinghider" class="centered_full"></div>
+
+
+		<div id="instruction1" class="instruction ">
+			Welcome to the genealogy of <br/>nike free zoetrope experience
+		</div>
+
+		<div id="instruction2" class="instruction ">
+			<div class="instructionPlay"></div>
+			press the play button to spin up the zoetrope. scroll to zoom and <br/> click and drag to rotate the camera.
+		</div>
+
+		<div id="instruction3" class="instruction ">
+			<div class="instructionSequencer"></div>
+			click the sequencer button to create new beats.
+		</div>
+
+		<div id="instruction4" class="instruction ">
+			<div class="instructionShare"></div>
+			click the share button to send them to a friend.
+		</div>
+
+
+		<div class="title title0">NIKE SOCK RACER</div>
+		<div class="title title1">NIKE AIR RIFT</div>
+		<div class="title title2">NIKE AIR PRESTO</div>
+		<div class="title title3">NIKE FREE 5.0 OG</div>
+		<div class="title title4">NIKE FREE RUN+ 2</div>
+		<div class="title title5">NIKE FREE 3.0 FLYKNIT</div>
+		<div class="title title6">NIKE FREE RUN 5.0</div>
+
+
+
+		<div class="startnike centered_full" id="startnike" >
+			<div class="startnikebutton" onClick="$('.startnike').hide();$('#loadinghider').hide(); nike.start(false);">
+		</div>
+		</div>
+
+
+		<div id="logo" class="" ></div>
+		<div id="logo_claim"></div>
+
+
+		<div id="button_sequencer" class="button sequencer" style="display:none;" onclick="nike.ui.sequencer();"></div>
+		<div id="button_back" class="button back" style="display:none;" onclick="nike.ui.back();"></div>
+
+
+		<div id="button_share" class="button share"  onclick="nike.ui.toggleShare();"></div>
+
+
+		<div id="button_clear" class="button" onclick="if(!nike.ui.interaction())return; sequencer.clear();nike.sequencerDisplay.clearSequencerMaterials();"><span></span></div>
+
+		<div id="button_random" class="button" onclick="if(!nike.ui.interaction())return; sequencer.randomizeTriggers();nike.sequencerDisplay.markSequencerShoes();"><span></span></div>
+
+
+		<div id="button_play" onclick="nike.ui.play();" class="button play_play" ></div>
+
+
+		<div id="loading" class="centered_full"></div>
+		<div id="loading_logo" class=""></div>
+
+
+
+		<div id="info_sequencer" class="infooverlay" style="opacity:0.0;position:absolute;top:300px;left:20px;width:200px;" >
+			<h2>SEQUENCER</h2>
+			Click the shoes to trigger different sounds being played.
+		</div>
+
+		<div id="share">
+			<div class="button_back button" style="display:block;" onclick="$('#share').fadeOut();$('#sharecorner').fadeOut();nike.ui.setInteraction(true);"></div>
+			<div style="margin-top:80px;font-family:'nike';">
+				<textarea id="sharetxt"></textarea>
+
+				<div id="wechatqrcode" style="display:none;color:white;font-size:20px;text-align:center;">
+					扫描二维码分享至微信朋友圈<br/>
+					<img id="" src="images/wechatqrcode.png" style="margin-left:5px;margin-top:20px;"/>
+					<br/><br/>
+				</div>
+			</div>
+			<div style="position:absolute;margin-left:150px;">
+				<a id="twittershare" class="twitter" href="zoetrope.html" rel="nofollow" target="_blank"></a>
+				<a id="fbshare" class="facebook" href="zoetrope.html" rel="nofollow" target="_blank"></a>
+				<a id="wechatshare" class="wechat" onclick="nike.ui.showwechat();" rel="nofollow" target="_blank"></a>
+			</div>
+
+		</div>
+
+		<div id="sharecorner"></div>
+
+		<div id="render"></div>
+
+		<div id="interaction" class="interaction"></div>
+	</body>
+
+
+<!--
+
+         /)             /)                         /)     /) ,           /) 
+ _    _ (/   _       _ (/  _/_    _|_       __   _(/  _  //   __    _  _(/  
+/_)__(/_/ )_/_)_(_(_(__/ )_(__     |    (_(_/ (_(_(__(/_/(__(_/ (__(/_(_(_  
+                                                       /)                   
+                                                      (/                    
+-->
+
+</html>
+
+
+
